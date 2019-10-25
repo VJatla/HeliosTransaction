@@ -1,0 +1,675 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/vj/Dropbox/Marios_Shared/Journals/HeliosTransactions/paper_resubmission/figures/
+\textclass IEEEtran
+\options journal
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 1 is in group A (rank=2, bad match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model1Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m1g1"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 6 is in group A (rank=2, bad match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model6Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m6g1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 8 is in group A (rank=2, bad match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model8Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m8g1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 9 is in group A (rank=2, bad match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model9Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m9g1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 11 is in group A (rank=2, bad match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model11Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m11g1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 4 is in group B (rank=1, good match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model4Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m4g2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 10 is in group B (rank=1, good match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model10Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m10g2"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Model 12 is in group B (rank=1, good match).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename paper_resubmission/pictures/thesis/chapter3/classificationProtocol/20110120model12Matched_cropped.png
+	width 45line%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:m12g2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ Map classification example (see Fig. 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:classAlg"
+
+\end_inset
+
+). The maps are grouped into groups A and B. Group A is classified as rank 2. Group B is classified as rank 1. Maps with rank 1 are classified as good. Maps with rank 2 are classified as bad. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% date=1/20/2011. 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:classificationInAction"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

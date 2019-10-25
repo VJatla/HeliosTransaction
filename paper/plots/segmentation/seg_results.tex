@@ -1,0 +1,55 @@
+\begin{figure}[!t]
+	\color{blue}
+\subfloat{
+		\begin{tikzpicture}
+\centering
+\begin{axis}[
+grid=both,
+enlarge x limits=false,
+symbolic x coords={20100715,
+	20100719,
+	20100721,
+	20100727,
+	20100730,
+	20100731,
+	20100807,
+	20110120,
+	20110122,
+	20110123,
+	20110129,
+	20110207,
+	20110209,
+	20110210,
+	20110211
+},
+x tick label style={rotate=45,anchor=north east},
+ymin  = 0,
+ymax  = 0.65,
+ylabel={Unit distance from (1,1)},
+]
+
+
+
+
+\addplot [blue, mark=*]table [x=Date, y=Henney_Harvey, col sep=comma] {./plots/segmentation/results.csv};
+\addplot [red, mark=triangle*]table [x=Date, y=FCN, col sep=comma] {./plots/segmentation/results.csv};
+\addplot [green, mark=square*] table [x=Date, y=Segnet, col sep=comma] {./plots/segmentation/results.csv};
+\addplot table [x=Date, y=HH+SegNets+FCN+LevelSets, col sep=comma] {./plots/segmentation/results.csv};
+\legend{HenneyHarvey,FCN,Segnet,Proposed method}
+\fill[gray,opacity=0.1] ({rel axis cs:0,0}) rectangle ({rel axis cs:0.425,1});
+\fill[gray,opacity=0.2] ({rel axis cs:0.425,0}) rectangle ({rel axis cs:1,1});
+
+\end{axis}
+
+\end{tikzpicture}
+
+}
+	
+\caption{\color{blue}
+Comparative segmentation results for different dates.
+Results over the first cycle are shown on the left.
+Results over the second cycle are shown on the right (shaded region).	
+\color{black}
+}
+\label{plt:segmentation_results}
+\end{figure}

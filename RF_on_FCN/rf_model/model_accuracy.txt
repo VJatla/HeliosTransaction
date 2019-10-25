@@ -1,0 +1,7 @@
+    "Accuracy on Testing set: 83.6502"
+
+    "Saving model as rf_mdl:"
+
+    "Area Accuracy on testing set: 96.592"
+
+    "Saving model as rf_mdl:"

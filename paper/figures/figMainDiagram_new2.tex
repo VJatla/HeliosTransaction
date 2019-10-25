@@ -1,0 +1,233 @@
+\begin{figure*}[!t]  
+	\centering
+	\resizebox{0.95\textwidth}{!}{%
+		\begin{tikzpicture}[node distance=2cm]
+		
+		% Input
+		\node(syn)[EMPTY, draw=none, text width=2.5cm, text centered, 
+		minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3, text width = 3cm]
+		{
+			EUVI
+		};
+		\node(mag)[EMPTY, text width=2.5cm, text centered,below of =syn, node distance = 8cm,
+		rounded corners, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3, text width=4cm]
+		{
+			Magnetic map
+		};
+		
+		
+		
+		
+		
+		
+		
+		% Inital segmeting algorithms
+		\node(fcn)[BOXL3, rounded corners, node distance = 6cm, right of= syn,minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			FCN
+		};
+		
+		\node(sn)[BOXL3, below of = fcn, rounded corners, node distance = 4cm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			SegNet
+		};
+		\node(hh)[BOXL3, below of = sn, rounded corners, node distance = 4cm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Henney\\
+			Harvey
+		};
+		
+		
+		
+		
+		
+		
+		% Inital segmeting algorithms
+		\node(fcn)[BOXL3, rounded corners, node distance = 6cm, right of= syn,minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			FCN
+		};
+		
+		\node(sn)[BOXL3, below of = fcn, rounded corners, node distance = 4cm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			SegNet
+		};
+		\node(hh)[BOXL3, below of = sn, rounded corners, node distance = 4cm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Henney\\
+			Harvey
+		};
+		
+		
+		
+		
+		
+		
+		
+		% The calssifiers
+		\node(fcnsel)[BOXL3, right of = fcn, rounded corners, node distance = 7cm, minimum width = 4cm, text width=4cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Coronal hole Sel
+		};
+		\node(snsel)[BOXL3, right of = sn, rounded corners, node distance = 7cm, minimum width = 4cm, minimum height = 1.5cm, scale=1.3, text width=4cm,]
+		{
+			Coronal hole Sel
+		};
+		\node(hhsel)[BOXL3, right of = hh, rounded corners, node distance = 7cm, minimum width = 4cm, minimum height = 1.5cm, scale=1.3, text width=4cm]
+		{
+			Coronal hole Sel
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		% The union
+		\node(union)[BOXL3, right of = snsel, rounded corners, node distance = 6cm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Union
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		% Level sets
+		\node(ls)[BOXL3, right of = union, rounded corners, node distance = 6cm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Level-Set
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		% Combine everything into segmentation box
+		\node [ BOXLD2, minimum width = 24cm, minimum height = 11cm, fit={(fcn) (sn) (hh) (fcnsel) (snsel) (hhsel) (ls)}](segbox) {
+			\vspace{7cm}
+			\hspace{15cm}
+			Segmentation
+		};
+		
+		
+		
+		
+		
+		
+		
+		% Clustering and matching
+		\node(cm)[BOXL2, right of = ls, node distance = 7cm,
+		minimum width = 5cm, minimum height = 3cm, scale=1.3,yshift=-30mm, text width=5cm]
+		{
+			Clustering \\[0.25cm]and \\[0.25cm]Matching 
+		};
+		\node(cls)[BOXL2, right of = cm, node distance = 8cm,
+		minimum width = 5cm, minimum height = 3cm, scale=1.3, text width=5cm]
+		{
+			Classification
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		% Model generation and map extraction
+		\node(me)[BOXL2, right of = ls, node distance = 7cm,
+		minimum width = 5cm, minimum height = 3cm, scale=1.3,yshift=30mm, text width=5cm]
+		{
+			Coronal hole \\[0.5cm] maps extraction
+		};
+		
+		\node(mg)[BOXL2, right of = me, node distance = 8cm,
+		minimum width = 5cm, minimum height = 3cm, scale=1.3, text width=5cm]
+		{
+			Solar model \\[0.5cm]generation	
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		% Arrows from Syn map
+		\draw[ARROW, line width=2pt] (1,0) |- (fcn.west) ;
+		\draw[ARROW, line width=2pt] (syn.east) to [|-] (sn.west);
+		\draw[ARROW, line width=2pt] (syn.east) to [|-] (hh.165);
+		% Arrow from magnetic map
+		\draw[ARROW, line width=2pt] (2.1,-8) |- (hh.west);
+		% Arrows to respective classifiers
+		\draw[ARROW, line width=2pt] (fcn.east) to [|-] (fcnsel.west);
+		\draw[ARROW, line width=2pt] (sn.east) to [|-] (snsel.west);
+		\draw[ARROW, line width=2pt] (hh.east) to [|-] (hhsel.west);
+		% Arrows giving magnetic input to classifiers
+		\draw[ARROW, line width=2pt] (13,-2) node[below, font=\fontsize{19}{0}\selectfont]{Magnetic map} -| (fcnsel.south);
+		\draw[ARROW, line width=2pt] (13,-6) node[below, font=\fontsize{19}{0}\selectfont]{Magnetic map} -| (snsel.south);
+		\draw[ARROW, line width=2pt] (13,-10) node[below, font=\fontsize{19}{0}\selectfont]{Magnetic map} -| (hhsel.south);
+		% Connecting to union
+		\draw[ARROW, line width=2pt] (fcnsel.east) -| (union.north);
+		\draw[ARROW, line width=2pt] (snsel.east) -- (union.west);
+		\draw[ARROW, line width=2pt] (hhsel.east) -| (union.south);
+		% Connecting union and Level sets
+		\draw[ARROW, line width=2pt] (union.east) -- (ls.west);
+		% Magnetic input to ls
+		\draw[ARROW, line width=2pt] (25,-2) node[above, font=\fontsize{19}{0}\selectfont]{EUVI} -| (ls.north);
+		% EUVI input to ls
+		\draw[ARROW, line width=2pt] (25,-6) node[below, font=\fontsize{19}{0}\selectfont]{Magnetic map} -| (ls.south);
+		% Connecting model gen with coronal hole extraction
+		\draw[ARROW, line width=2pt] (mg.west) -- (me.east);
+		% Connecting ls to cluster and matching
+		\draw[ARROW, line width=2pt] (ls.east) to [-|-] (cm.west);
+		% cm to cls
+		\draw[ARROW, line width=2pt] (cm.east) -- (cls.west);
+		% me to cm
+		\draw[ARROW, line width=2pt] (me.south) -- (cm.north);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\end{tikzpicture}
+	}
+	\caption{\label{fig:IntroBlkDiag}
+		\color{blue}
+		General system diagram.
+		A collection of coronal hole maps are generated for
+		different physical model parameters.
+		The input observations are used to generate a candidate
+		coronal hole map.
+		A hierarichical clustering and matching algorithm
+		is used for matching clusters of coronal holes.
+		The final classifier is based on the matching results.		
+		\color{black}    
+	}
+\end{figure*}

@@ -1,0 +1,110 @@
+% [28] is the number of lines to occupy. This has to be done manually.
+\begin{figure*}[!t]  
+  \centering
+  \resizebox{0.88\textwidth}{!}{%
+    \begin{tikzpicture}[node distance=2cm]
+	    \node(syn)[EMPTY, draw=none, text width=2.5cm, text centered, 
+	    minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	    {
+	    	Synoptic maps
+	    };
+	    \node(mag)[EMPTY, text width=2.5cm, text centered,below of =syn, node distance = 4cm,
+	    rounded corners, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	    {
+	    	Magnetic maps
+	    };
+	    
+
+	    \node(fcn)[EMPTY, rounded corners, draw=red!50, node distance = 6 cm, line width=0.5pt,right of= syn, yshift = 15mm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3,yshift=-12mm]
+	    {
+	    	\small{FCN}
+	    };
+    	    \node(hh)[EMPTY,rounded corners, draw=red!50,   node distance = 4 cm, line width=0.5pt,below of= fcn, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	    {
+	    	\small{Henney\\Harvey}
+	    };
+        	    \node(comb)[EMPTY,rounded corners, draw=red!50, node distance = 4 cm, line width=0.5pt,right of= hh,yshift=20mm, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+    {
+    	\small{Combine}
+    };
+
+     \node(ls)[EMPTY,rounded corners, draw=red!50, node distance = 4.5 cm, line width=0.5pt,right of= comb, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	{
+		\small{Level sets}
+	};
+	    \node [ BOXL, minimum width = 13cm, minimum height = 7cm, line width = 2pt, fit={(fcn) (hh) (comb) (ls)}](segbox) {
+	    	\vspace{5cm}
+	    	\Large{Segmentation}
+    	};
+	    
+	    
+      \node(cm)[BOXL, 
+right of = hh, node distance = 8cm,line width=2pt,
+minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3,xshift=50mm
+]
+{
+	Clustering \\and\\ Matching 
+};
+
+      % Classification
+\node(class)[BOXL, right of = cm, line width = 2pt, node distance = 5.5cm,
+minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+{
+	Classification
+};
+
+
+
+      \node (obs) [BOXL, line width=2pt,
+minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3, above of=class, yshift=8mm]
+{
+	Solar model\\
+	generation
+	% Solar Model \\ Simulation
+};
+      \node (sim)[BOXL, left of=obs, node distance = 5.5cm,line width=2pt,
+minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+{
+	Coronal hole\\
+	maps\\extraction
+	% Pred. Coronal Hole Maps.
+};
+
+
+% Input arrows
+\draw[ARROW, line width=2pt] (syn.east) to [|-] (fcn.west);
+\draw[line width=2pt] (syn.east) to [|-] (segbox.west);
+\draw[ARROW,line width=2pt] (segbox.west) -| (hh.north);
+\draw[ARROW, line width=2pt] (mag.east) to [|-] (hh.west);
+\draw[line width=2pt] (mag.east) to [|-] (segbox.207);
+\draw[ARROW,line width=2pt] (segbox.207) -| (ls.south);
+
+
+
+
+
+\draw[ARROW, line width=2pt] (fcn.east) -| (comb.north);
+\draw[ARROW, line width=2pt] (hh.east) -| (comb.south);
+\draw[ARROW, line width=2pt] (comb.east) to[-|-] (ls.west);
+\draw[line width=2pt] (ls.east) to[-|-] (segbox.east);
+% Segmentation to Matching
+\draw[ARROW, line width=2pt] (segbox.east) to[-|-] (cm.west);
+\draw[ARROW, line width=2pt] (cm.east) to[-|-] (class.west);
+% Model generation
+\draw[ARROW, line width=2pt] (obs.west) to[-|-] (sim.east);
+\draw[ARROW, line width=2pt] (sim.south) to (cm.north);
+
+    \end{tikzpicture}
+  }
+  \caption{\label{fig:IntroBlkDiag}
+  	\color{blue}
+    General system diagram.
+    A collection of coronal hole maps are generated for
+    different physical model parameters.
+    The input observations are used to generate a candidate
+    coronal hole map.
+    A hierarichical clustering and matching algorithm
+    is used for matching clusters of coronal holes.
+    The final classifier is based on the matching results.
+  }
+\end{figure*}

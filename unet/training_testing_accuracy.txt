@@ -1,0 +1,39 @@
+    "========== Training Set Start========="
+
+  1×5 table
+
+    GlobalAccuracy    MeanAccuracy    MeanIoU    WeightedIoU    MeanBFScore
+    ______________    ____________    _______    ___________    ___________
+
+       0.78661          0.84668       0.6088       0.68693        0.47501  
+
+  3×3 table
+
+          Accuracy      IoU      MeanBFScore
+          ________    _______    ___________
+
+    nd    0.99492     0.67027      0.47867  
+    c      0.7649     0.39989      0.46596  
+    nc    0.78024     0.75626      0.48039  
+
+    "========== Training Set End ========="
+
+    "========== Testing Set Start========="
+
+  1×5 table
+
+    GlobalAccuracy    MeanAccuracy    MeanIoU    WeightedIoU    MeanBFScore
+    ______________    ____________    _______    ___________    ___________
+
+       0.77908          0.83614       0.5962       0.67711        0.47306  
+
+  3×3 table
+
+          Accuracy      IoU      MeanBFScore
+          ________    _______    ___________
+
+    nd    0.99394     0.65142      0.47617  
+    c     0.73752     0.38778      0.46758  
+    nc    0.77696     0.74941      0.47544  
+
+    "========== Testing Set End ========="

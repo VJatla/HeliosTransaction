@@ -1,0 +1,27 @@
+\begin{table}[!b]
+  \caption{Coronal hole matching results. 
+  	 \textit{New} refers to coronal holes that appear in the physical model but are not seen
+  	     in the consensus segmentation maps.
+  	 \textit{Missing} refers to coronal holes that appear in the consensus maps
+  	     but are not produced in the physical model.
+  	 Note that by definition, a coronal hole cannot be both 
+  	      new and missing.        
+     The proposed method achieved an overall accuracy of
+     92.8\%.}
+  \label{tab:matchingConfusionMatrix}
+  \centering
+  \begin{tabular}{l l l l l }
+    \toprule    
+    \textbf{Manual}
+    &\multicolumn{3}{c}{\textbf{Proposed Method}} & \\
+    \cmidrule{2-4}
+    & New & Missing & Matched & Total \\    
+    \midrule
+    New & \textbf{1958} & 0 & 22 & 1980\\    
+    Missing & 0 & \textbf{868} & 3 & 871\\
+    Matched & 416 & 360 & \textbf{7522} & 8298\\
+    \midrule
+    Total & 2374 & 1228 & 7547 & 11149\\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,1045 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/vj/Dropbox/Marios_Shared/Journals/HeliosTransactions/paper_resubmission/algorithms/
+\textclass IEEEtran
+\options journal
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\end_inset
+
+[0] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+Function
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+LS
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\family typewriter
+EUVI
+\family default
+\series default
+\shape default
+, 
+\family typewriter
+mag_img
+\family default
+\series default
+\shape default
+, 
+\family typewriter
+init_img
+\family default
+\series default
+\shape default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Input:
+\series default
+ 
+\family typewriter
+EUVI
+\family default
+\series default
+\shape default
+ and 
+\family typewriter
+mag
+\family default
+\series default
+\shape default
+ images to process.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Output:
+\series default
+ Segmented image.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $I \gets$
+\end_inset
+
+ 
+\series bold
+smooth
+\series default
+ 
+\family typewriter
+EUVI
+\family default
+\series default
+\shape default
+ with 
+\begin_inset Formula $15\times 15$
+\end_inset
+
+ Gaussian kernel 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \hspace{}
+\length 1.9cm
+\end_inset
+
+ with optimization variable 
+\begin_inset Formula $\sigma$
+\end_inset
+
+. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+g
+\family default
+\series default
+\shape default
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{1}{1+(I_x^2+I_y^2)}$
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+Make 
+\family typewriter
+g
+\family default
+\series default
+\shape default
+ zero at magnetic boundaries
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+
+\family typewriter
+p
+\family default
+\series default
+\shape default
+ 
+\begin_inset space \hspace{}
+\length 2mm
+\end_inset
+
+
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\series bold
+DetectMagneticCrossLines
+\series default
+(
+\family typewriter
+mag_img
+\family default
+\series default
+\shape default
+) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+
+\family typewriter
+pg
+\family default
+\series default
+\shape default
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ (1 - 
+\family typewriter
+p
+\family default
+\series default
+\shape default
+ ) .* 
+\family typewriter
+g
+\family default
+\series default
+\shape default
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+Init. using combination of Henney-Harvey 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "Henney2005"
+
+\end_inset
+
+,
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+SegNet 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "SegNet"
+
+\end_inset
+
+, and FCN 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "long2015fully"
+
+\end_inset
+
+.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\phi$
+\end_inset
+
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\family typewriter
+init_img
+\family default
+\series default
+\shape default
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+For
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+i 
+\begin_inset Formula $\leq$
+\end_inset
+
+ n 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+(
+\begin_inset Formula $\phi$
+\end_inset
+
+) 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\series bold
+Dirac
+\series default
+(
+\begin_inset Formula $\phi$
+\end_inset
+
+, 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+) 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+hspace{0.5true in}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+Use modified edge function 
+\family typewriter
+pg
+\family default
+\series default
+\shape default
+:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $F_a$
+\end_inset
+
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\series bold
+areaTerm
+\series default
+(
+\begin_inset Formula $\delta$
+\end_inset
+
+(
+\begin_inset Formula $\phi$
+\end_inset
+
+), 
+\family typewriter
+pg
+\family default
+\series default
+\shape default
+) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $F_e$
+\end_inset
+
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\series bold
+edgeTerm
+\series default
+(
+\begin_inset Formula $\delta$
+\end_inset
+
+(
+\begin_inset Formula $\phi$
+\end_inset
+
+), 
+\begin_inset Formula $\phi$
+\end_inset
+
+, 
+\family typewriter
+pg
+\family default
+\series default
+\shape default
+) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $F_d$
+\end_inset
+
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\series bold
+Regularize_distance
+\series default
+(
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+hspace{0.5true in}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+COMMENT{
+\end_layout
+
+\end_inset
+
+Allow 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ to vary for optimization:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\phi$
+\end_inset
+
+ 
+\begin_inset Formula $\gets$
+\end_inset
+
+ 
+\begin_inset Formula $\phi$
+\end_inset
+
+ + ts
+\begin_inset Formula $\cdot$
+\end_inset
+
+(
+\begin_inset Formula $\mu F_d$
+\end_inset
+
+ + 
+\begin_inset Formula $\lambda F_e$
+\end_inset
+
+ + 
+\begin_inset Formula $\alpha F_a$
+\end_inset
+
+) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+EndFor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ???VJ: I think you need phi=0. Not <0. Please check! 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+return
+\family default
+\series default
+\shape default
+ 
+\begin_inset Formula $\delta(\phi)$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+EndFunction
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\color blue
+ Level-set segmentation algorithm using the modified edge function 
+\family typewriter
+pg
+\family default
+\series default
+\shape default
+.
+\color inherit
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:LevelSets"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

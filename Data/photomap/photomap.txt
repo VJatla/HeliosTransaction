@@ -1,0 +1,57 @@
+ Volume in drive D is Data
+ Volume Serial Number is 9A22-BFC5
+
+ Directory of D:\UNM\Spring2015\JournalRelated\consolidated_data\photomap
+
+02/13/2015  08:18 AM    <DIR>          .
+02/13/2015  08:18 AM    <DIR>          ..
+02/13/2015  08:18 AM                 0 photomap.txt
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100713.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100714.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100715.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100716.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100718.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100719.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100721.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100722.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100723.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100725.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100726.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100727.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100728.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100730.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100731.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100803.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100804.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100805.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100806.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100807.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100808.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20100809.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110120.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110121.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110122.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110123.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110124.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110125.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110126.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110128.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110129.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110130.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110131.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110201.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110202.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110203.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110205.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110206.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110207.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110208.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110209.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110210.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110211.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110213.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110214.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110215.fits
+10/19/2012  07:49 AM           521,280 photomap_GONG_20110216.fits
+              48 File(s)     24,500,160 bytes
+               2 Dir(s)  500,506,312,704 bytes free

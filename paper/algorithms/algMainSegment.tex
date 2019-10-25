@@ -1,0 +1,37 @@
+\begin{figure}
+  \begin{algorithmic}[0]
+    \Function{Segment}{{\tt EUVI}, {\tt mag}, $\alpha$, $\sigma$}
+    \State \COMMENT{\textbf{Input:} {\tt EUVI} and {\tt mag} images to process.}
+    \State \COMMENT{\textbf{Output:} Binary image with coronal holes marked as white.}\\
+    \State $I \gets$ \textbf{smooth} {\tt EUVI} with $15\times 15$ Gaussian kernel
+    \State \hspace{1.9cm} with optimization variable $\sigma$.
+    \State {\tt g}   $\gets$ $\frac{1}{1+(I_x^2+I_y^2)}$ 
+    ~\\
+    \State\COMMENT{Make $g$ zero at magnetic boundaries} 
+    \State{\tt p}   \hspace{2mm}$\gets$ \textbf{DetectMagneticCrossLines}({\tt mag\_img})
+    \State{\tt pg} $\gets$ (1 - {\tt p} ) .* {\tt g} 
+    ~\\
+    {\color{blue}
+    
+    \State\COMMENT{Initialize with a combination of HenneyHarvey,}
+    \State \COMMENT {FCN and SegNet methods.}
+    \State \texttt{hh\_img} \hspace{0.6cm}$\hspace{2mm}\gets$ \textbf{HenneyHarvey} ({\tt EUVI}, {\tt mag})
+    \State \texttt{fcn\_img} \hspace{0.6cm}$\gets$ \textbf{FCN-8} ({\tt EUVI}, {\tt fcn\_m})
+    \State \texttt{sn\_img} \hspace{0.78cm}$\gets$ \textbf{SegNet} ({\tt EUVI}, {\tt fcn\_m})
+    \State $\phi_0 \hspace{1.7cm}\gets$ \textbf{Combine} (\texttt{hh\_img}, \texttt{fcn\_img},
+			\State \hspace{4.2cm}\texttt{segnet\_img})\\
+	}
+    \State \COMMENT{Run with modified edge function}
+    \State \COMMENT{ and optimization parameter $\alpha$.}
+    \State {\bf return} {\tt LS}({\tt EUVI}, {\tt mag}, $\phi_0$, pg, $\alpha$)
+    \EndFunction
+  \end{algorithmic}
+  \caption{Main coronal hole segmentation algorithm. {\color{blue} A combination of
+  		\textbf{HenneyHarvey} \cite{Jatla2014, Henney2005} and \textbf{FCN} methods are used
+  		to used to properly initialize level sets algorithm.}
+    The parameters $\alpha$ and $\sigma$ {\color{blue} in level sets }are optimized using Pattern-Search
+           (see text).
+    {\tt EUVI} refers to the EUV image.
+    {\tt mag}   refers to the photomap (magnetic) image.
+  }\label{fig:mainAlgo}
+\end{figure}

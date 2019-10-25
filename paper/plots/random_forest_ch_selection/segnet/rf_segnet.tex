@@ -1,0 +1,46 @@
+\begin{figure}
+	\color{blue}
+		\begin{tikzpicture}
+		\centering
+		\begin{axis}[
+		grid=both,
+		enlarge x limits=false,
+		xlabel={Number of trees},
+		ymin  = 0.2,
+		ymax  = 0.4,
+		ylabel={OOB error},
+		legend style ={no markers,at={(0.98,0.98)},},
+		legend columns=3
+		]
+		
+
+
+        \addlegendimage{empty legend}
+		\addlegendentry{Number of}		
+		\addlegendimage{empty legend}
+		\addlegendentry{Splits}
+        \addlegendimage{empty legend}
+		\addlegendentry{}
+		\addplot[mark=none] table [x=trees, y=splits1, col sep=comma] {./plots/random_forest_ch_selection/segnet/oobError_segnet.csv};
+		\addplot table [x=trees, y=splits5, col sep=comma] {./plots/random_forest_ch_selection/segnet/oobError_segnet.csv};
+		\addplot[green] table [x=trees, y=splits10, col sep=comma] {./plots/random_forest_ch_selection/segnet/oobError_segnet.csv};
+		\addplot table [x=trees, y=splits20, col sep=comma] {./plots/random_forest_ch_selection/segnet/oobError_segnet.csv};
+		\addplot table [x=trees, y=splits50, col sep=comma] {./plots/random_forest_ch_selection/segnet/oobError_segnet.csv};
+		\addplot table [x=trees, y=splits100, col sep=comma] {./plots/random_forest_ch_selection/segnet/oobError_segnet.csv};
+		\draw[line width=0.75mm, gray] (30,0) -- (30,0.6);
+
+		\addlegendentry{1}
+		\addlegendentry{5}
+		\addlegendentry{10}
+		\addlegendentry{20}
+		\addlegendentry{50}
+		\addlegendentry{100}
+		\end{axis}
+		\end{tikzpicture}
+\caption{ 
+		\color{blue}
+		SEGNET OOB error against number of decision trees for number of tree splits.
+		 From this plot we can see that the error stabilizes after $30$ decision trees (marked by vertical gray line). Also it can be noted that beyond Number of splits $50$ (blue line)
+		 random forests does not give much reduction in error.}
+\label{plt:random_forest_segnet}
+\end{figure}

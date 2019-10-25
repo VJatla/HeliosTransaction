@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt; plt.rcdefaults()
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+objects = ('f1', 'f2', 'f3', 'f4', 'f5','f6')
+y_pos = np.arange(len(objects))
+performance = [0.02,0.03,0.06,0.3,0.19,0.10]
+ 
+plt.bar(y_pos, performance, align='center', alpha=0.5)
+plt.xticks(y_pos, objects)
+plt.xlabel('Features')
+plt.ylabel('Features relative importance') 
+plt.savefig('classificationFeatures.png')

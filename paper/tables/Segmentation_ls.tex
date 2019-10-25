@@ -1,0 +1,40 @@
+\begin{table*}[!t]
+	\color{blue}
+	\centering	
+	\caption{\color{blue}
+		    Segmentation results as a function of distance from the ideal result
+		        ({\tt Sens}=1, {\tt Spec}=1).
+		    Level-set segmentation improved all prior methods.    
+		    We trained a 3-stage U-net with 7M parameters, a learning rate of $10^{-4}$
+		        over 1000 epochs.
+		    For the rest of the methods, refer to
+		         section \ref{sec:Segmentation} for how the segmentation methods were trained.
+		    We list the ratio of the achieved performance over the proposed method in parenthesis.
+		    Thus, $1\times$ refers to the performance of the proposed method.
+		    A value of $2\times$ implies that the error was twice as large as the proposed method.
+		    }
+    \label{tab:SegmentationLevelSets}	    
+	\begin{tabular}{p{5cm} p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+		\toprule
+		\textbf{Method} & \multicolumn{5}{c}{\textbf{Distance from} ({\tt sens}, {\tt spec}) = $(1, 1)$}\\
+		 & \textbf{min} & $\mathbf{25\%}$ & \textbf{med} & $\mathbf{75\%}$ & \textbf{max}\\
+		\midrule
+		
+		U-Net (EUVI) & 0.29 (4.8$\times$) & 0.31 (3.8$\times$) & 0.34 (3.7$\times$) & 0.36 (3.6$\times$) & 0.39 (3$\times$) \\[0.2cm] % 521,289
+		
+		Henney-Harvey & 0.12 (2.00$\times$) & 0.17 (2.12$\times$) & 0.22 (2.44$\times$) & 0.27 (2.70$\times$) & 0.39(3.00$\times$)\\[0.01cm]
+		\textit{Henney-Harvey + Level-Sets} & \textbf{\textit{0.07} (1.16$\times$)} & \textbf{\textit{0.12} (1.50$\times$)} & \textbf{\textit{0.18} (2.00$\times$)} & \textbf{\textit{0.25} (2.50$\times$)} & \textbf{\textit{0.30 (2.30$\times$)}} \\[0.2cm]
+		
+		FCN (EUVI)& 0.09 (1.50$\times$) & 0.13 (1.62$\times$) & 0.15 (1.66$\times$) & 0.19 (1.90$\times$) & 0.25 (1.92$\times$) \\[0.01cm] % 134,277,746
+		FCN (EUVI + Mag) & 0.10 (1.66$\times$) & 0.13 (1.62$\times$) & 0.15 (1.66$\times$) & 0.2 (2.00$\times$) & 0.26 (2.00$\times$) \\[0.01cm] 
+		\textit{FCN (EUVI) + Level-Sets} & \textbf{\textit{0.06 (1.00$\times$)} } & \textbf{\textit{0.09 (1.12$\times$)}} & \textbf{\textit{0.11 (1.22$\times$)}} & \textbf{\textit{0.13 (1.30$\times$)}} & \textbf{\textit{0.17 (1.30$\times$)}} \\[0.2cm] 
+		
+		SegNet (EUVI) & 0.14 (2.33$\times$) & 0.17 (2.12$\times$) & 0.19 (2.11$\times$) & 0.24 (2.40$\times$) & 0.30 (2.30$\times$) \\[0.01cm] % 521,289
+		SegNet (EUVI + Mag) & 0.17 (2.83$\times$) & 0.23 (2.12$\times$) & 0.36 (2.11$\times$) & 0.44 (2.40$\times$) & 0.58 (2.30$\times$) \\[0.01cm]
+		\textit{SegNet (EUVI) + Level-Sets} & \textbf{\textit{0.11 (1.83$\times$)}} & \textbf{\textit{0.13 (1.62$\times$)}} & \textbf{\textit{0.14 (1.55$\times$)}} & \textbf{\textit{0.16 (1.60$\times$)}} & \textit{\textbf{0.21 (1.61$\times$)}}\\[0.2cm]
+		
+		\textit{Full segmentation method} & \textbf{\textit{0.06 (1$\times$)}} & \textbf{\textit{0.08 (1$\times$)}} & \textbf{\textit{0.09 (1$\times$)}} & \textbf{\textit{0.10 (1$\times$)}} & \textbf{\textit{0.13 
+				(1$\times$)}} \\
+		\bottomrule
+	\end{tabular}
+\end{table*}

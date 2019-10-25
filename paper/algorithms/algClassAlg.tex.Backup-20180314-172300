@@ -1,0 +1,26 @@
+\begin{figure}[!b]
+	\begin{algorithmic}[1]    
+		\State \textit{\textbf{Group}} maps based on matched clusters
+		\State \textit{\textbf{Rank}} groups as rank 1 (better) or rank 2 (worse).      
+		\Statex 
+		\If {(both ranks represent good matches)}
+		\State \textit{\textbf{Classify}} all maps of the day as good matches.
+		\EndIf
+		\Statex
+		\If {(both ranks represent bad matches)}
+		\State \textit{\textbf{Classify}} all maps of the day as bad matches.
+		\EndIf 
+		\Statex
+		\If {(rank 1 is acceptable and not rank 2)}
+		\State \textit{\textbf{Classify}} maps of rank 1 as good matches.
+		\State \textit{\textbf{Classify}} maps of rank 2 as bad matches.
+		\EndIf      
+	\end{algorithmic}
+	\caption{
+	Map classification protocol to ensure consistency.
+	For consistent classification, physical maps are grouped together
+	based on their overall matching performance.
+	Each group is then ranked.
+	Classification is then based on the group rank (good or bad).}
+	\label{fig:classAlg}
+\end{figure}

@@ -1,0 +1,266 @@
+ ====================================
+Layer 1
+	 Name =	ImageInputLayer
+	 Type =	ImageInputLayer
+ ====================================
+Layer 2
+	 Name =	Encoder-Stage-1-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	576
+	 Number of weights changed = 	576
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 3
+	 Name =	Encoder-Stage-1-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 4
+	 Name =	Encoder-Stage-1-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 5
+	 Name =	Encoder-Stage-1-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 6
+	 Name =	Encoder-Stage-1-MaxPool
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 7
+	 Name =	Encoder-Stage-2-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	73728
+	 Number of weights changed = 	73728
+	 Number of Bias = 	128
+	 Number of Bias changed = 	128
+ ====================================
+Layer 8
+	 Name =	Encoder-Stage-2-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 9
+	 Name =	Encoder-Stage-2-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	147456
+	 Number of weights changed = 	147456
+	 Number of Bias = 	128
+	 Number of Bias changed = 	128
+ ====================================
+Layer 10
+	 Name =	Encoder-Stage-2-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 11
+	 Name =	Encoder-Stage-2-MaxPool
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 12
+	 Name =	Encoder-Stage-3-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	294912
+	 Number of weights changed = 	294912
+	 Number of Bias = 	256
+	 Number of Bias changed = 	256
+ ====================================
+Layer 13
+	 Name =	Encoder-Stage-3-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 14
+	 Name =	Encoder-Stage-3-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	589824
+	 Number of weights changed = 	589824
+	 Number of Bias = 	256
+	 Number of Bias changed = 	256
+ ====================================
+Layer 15
+	 Name =	Encoder-Stage-3-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 16
+	 Name =	Encoder-Stage-3-DropOut
+	 Type =	DropoutLayer
+ ====================================
+Layer 17
+	 Name =	Encoder-Stage-3-MaxPool
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 18
+	 Name =	Bridge-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	1179648
+	 Number of weights changed = 	1179648
+	 Number of Bias = 	512
+	 Number of Bias changed = 	512
+ ====================================
+Layer 19
+	 Name =	Bridge-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 20
+	 Name =	Bridge-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	2359296
+	 Number of weights changed = 	2359296
+	 Number of Bias = 	512
+	 Number of Bias changed = 	512
+ ====================================
+Layer 21
+	 Name =	Bridge-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 22
+	 Name =	Bridge-DropOut
+	 Type =	DropoutLayer
+ ====================================
+Layer 23
+	 Name =	Decoder-Stage-1-UpConv
+	 Type =	TransposedConvolution2DLayer
+	 Number of weights = 	524288
+	 Number of weights changed = 	524288
+	 Number of Bias = 	256
+	 Number of Bias changed = 	256
+ ====================================
+Layer 24
+	 Name =	Decoder-Stage-1-UpReLU
+	 Type =	ReLULayer
+ ====================================
+Layer 25
+	 Name =	Decoder-Stage-1-DepthConcatenation
+	 Type =	DepthConcatenationLayer
+ ====================================
+Layer 26
+	 Name =	Decoder-Stage-1-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	1179648
+	 Number of weights changed = 	1179648
+	 Number of Bias = 	256
+	 Number of Bias changed = 	256
+ ====================================
+Layer 27
+	 Name =	Decoder-Stage-1-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 28
+	 Name =	Decoder-Stage-1-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	589824
+	 Number of weights changed = 	589824
+	 Number of Bias = 	256
+	 Number of Bias changed = 	256
+ ====================================
+Layer 29
+	 Name =	Decoder-Stage-1-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 30
+	 Name =	Decoder-Stage-2-UpConv
+	 Type =	TransposedConvolution2DLayer
+	 Number of weights = 	131072
+	 Number of weights changed = 	131072
+	 Number of Bias = 	128
+	 Number of Bias changed = 	128
+ ====================================
+Layer 31
+	 Name =	Decoder-Stage-2-UpReLU
+	 Type =	ReLULayer
+ ====================================
+Layer 32
+	 Name =	Decoder-Stage-2-DepthConcatenation
+	 Type =	DepthConcatenationLayer
+ ====================================
+Layer 33
+	 Name =	Decoder-Stage-2-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	294912
+	 Number of weights changed = 	294912
+	 Number of Bias = 	128
+	 Number of Bias changed = 	128
+ ====================================
+Layer 34
+	 Name =	Decoder-Stage-2-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 35
+	 Name =	Decoder-Stage-2-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	147456
+	 Number of weights changed = 	147456
+	 Number of Bias = 	128
+	 Number of Bias changed = 	128
+ ====================================
+Layer 36
+	 Name =	Decoder-Stage-2-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 37
+	 Name =	Decoder-Stage-3-UpConv
+	 Type =	TransposedConvolution2DLayer
+	 Number of weights = 	32768
+	 Number of weights changed = 	32768
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 38
+	 Name =	Decoder-Stage-3-UpReLU
+	 Type =	ReLULayer
+ ====================================
+Layer 39
+	 Name =	Decoder-Stage-3-DepthConcatenation
+	 Type =	DepthConcatenationLayer
+ ====================================
+Layer 40
+	 Name =	Decoder-Stage-3-Conv-1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	73728
+	 Number of weights changed = 	73728
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 41
+	 Name =	Decoder-Stage-3-ReLU-1
+	 Type =	ReLULayer
+ ====================================
+Layer 42
+	 Name =	Decoder-Stage-3-Conv-2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 43
+	 Name =	Decoder-Stage-3-ReLU-2
+	 Type =	ReLULayer
+ ====================================
+Layer 44
+	 Name =	Final-ConvolutionLayer
+	 Type =	Convolution2DLayer
+	 Number of weights = 	192
+	 Number of weights changed = 	192
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 45
+	 Name =	Softmax-Layer
+	 Type =	SoftmaxLayer
+ ====================================
+Layer 46
+	 Name =	Segmentation-Layer
+	 Type =	PixelClassificationLayer
+===========================================================
+===========================================================
+Number of layers = 46
+Total number of Weights = 		7693056
+Total number of Weights trained = 		7693056
+Total number of Bias = 		3267
+Total number of Bias trained = 		3267
+Total number of Learnables= 		7696323
+===========================================================
+===========================================================

@@ -1,0 +1,38 @@
+\begin{figure}
+	\begin{algorithmic}[0]
+		\color{blue}
+		\Function{Combine}{{\tt hh\_img}, {\tt fcn\_img}, {\tt sn\_img}}
+		\State \COMMENT{\textbf{Input: } Segmented images from HenneyHarvey,
+			\State			\hspace{1.5cm}FCN-8 and SegNet methods 
+			\State 			\hspace{1.5cm}respectively (Fig. \ref{fig:mainAlgo}).}\\
+		
+		
+		
+		
+		
+		\State \COMMENT{Extracts poles and mid-latitudes.}
+		\State {\tt hh\_pol,hh\_ml} \hspace{3mm} $\gets$ \textbf{ExtractPolesMids} ({\tt hh\_img})
+		\State {\tt fcn\_pol,fcn\_ml} $\gets$ \textbf{ExtractPolesMids} ({\tt fcn\_img})
+		\State {\tt sn\_pol,sn\_ml}\hspace{4mm} $\gets$ \textbf{ExtractPolesMids} ({\tt sn\_img})\\
+		
+		\State \COMMENT{Accept or reject individual coronal holes using}
+		\State \COMMENT{their respective classifiers.}
+		\State {\tt hh\_ml\_acc} \hspace{0.2cm}$\gets$ \textbf{GetValidCH\_HH} ({\tt hh\_ml})
+		\State {\tt fcn\_ml\_acc} $\gets$ \textbf{GetValidCH\_FCN} ({\tt fcn\_ml})
+		\State {\tt sn\_ml\_acc} \hspace{0.2cm}$\gets$ \textbf{GetValidCH\_SN} ({\tt hh\_ml})\\
+		
+		\State \COMMENT{Take union of all the valid coronal holes and poles}
+		\State {\tt ml} \hspace{1.2mm} $\gets$ \textbf{Union} ({\tt hh\_ml\_acc}, {\tt fcn\_ml\_acc},
+		\State \hspace{2.2cm} {\tt sn\_ml\_acc})
+		\State {\tt pol} $\gets$ \textbf{Union} ({\tt hh\_pol}, {\tt fcn\_pol}, {\tt sn\_pol})\\
+		
+		\State \COMMENT{Creating final image by combining union of mid}
+		\State \COMMENT{latitudes and poles}
+		\State $\phi_0$ $\gets$ {\tt pol} + {\tt ml}
+		
+		\noindent{\bf return} $\phi_0$
+		\EndFunction
+	\end{algorithmic}
+	\caption{Level-set initialization algorithm. }
+	\label{fig:Combine algorithm}
+\end{figure}

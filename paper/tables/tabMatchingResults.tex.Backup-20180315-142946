@@ -1,0 +1,18 @@
+\begin{table}
+  \caption{Matching confusion matrix}
+  \label{tab:matchingConfusionMatrix}
+  \begin{tabular}{l |l l l|l }
+    &\multicolumn{3}{l|}{\bf Manual Vs Automatic matching} & \\
+    & \textit{Generated} & \textit{Removed} & \textit{Matched} & \textit{Total}\\
+    \hline
+    & \multicolumn{3}{l|}{} & \\
+    \textit{Generated} & \textbf{1958} & 0 & 22 & 1980\\
+    & \multicolumn{3}{l|}{}&\\
+    \textit{Removed} & 0 & \textbf{868} & 3 & 871\\
+    & \multicolumn{3}{l|}{}&\\
+    \textit{Matched} & 416 & 360 & \textbf{7522} & 8298\\
+    & \multicolumn{3}{l|}{}&\\
+    \hline
+    \textit{Total} & 2374 & 1228 & 7547 & 11149\\
+  \end{tabular}
+\end{table}

@@ -1,0 +1,33 @@
+\begin{table}[b!]
+	\centering	
+	\caption{\color{blue}
+		SegNet architecture.
+		The total number of parameters to be learned 
+		is 0.52M.
+		The input is the EUV image and the output is
+		a segmentation into three categories
+		(no-observation, coronal hole, other).   	       
+		Here, Conv-bn-ReLU refers to the combination
+		of a convolution layer, batch normalization, and an ReLU
+		activation function.
+	}
+	\label{tab:segnet_arch}
+	\color{blue}
+	\begin{tabular}{p{1cm} p{6.5cm}}
+		\toprule
+		\textbf{Layer(s)} & \textbf{Description}\\
+		\midrule
+		Enc1	&   64 feature maps of 4 3x3 conv-bn-ReLU 	\\
+		Pool1	&	2x2 Max pooling with stride of [2, 2] 
+		(2$\times$ downs.).	\\
+		Enc2	&	Same as Enc1	\\
+		Pool2	&	Same as Pool1 (4$\times$ downs. of original) \\
+		Unpool1	&	2x2 Max unpooling (restore at $2\times$ orig. res.)	\\
+		Dec1	&	4 3x3 conv-bn-ReLU Layers	\\
+		Unpool2	&	Same as Unpool1	(restore original res.) \\
+		Dec2	&	Same as Dec1	\\
+		SoftMax	&	Pixel-level classification	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\color{black}

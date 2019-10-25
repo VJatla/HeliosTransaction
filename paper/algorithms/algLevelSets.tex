@@ -1,0 +1,36 @@
+\begin{figure}
+	\color{blue}
+	\begin{algorithmic}[0]
+		\Function{LS}{{\tt EUVI}, {\tt mag\_img}, {\tt init\_img}}
+		\State \COMMENT{\textbf{Input:} {\tt EUVI} and {\tt mag} images to process.}
+		\State \COMMENT{\textbf{Output:} Segmented image.}\\
+		\State $I \gets$ \textbf{smooth} {\tt EUVI} with $15\times 15$ Gaussian kernel
+		\State \hspace{1.9cm} with optimization variable $\sigma$.
+		\State {\tt g}   $\gets$ $\frac{1}{1+(I_x^2+I_y^2)}$ 
+		~\\
+		\State\COMMENT{Make {\tt g} zero at magnetic boundaries} 
+		\State{\tt p}   \hspace{2mm}$\gets$ \textbf{DetectMagneticCrossLines}({\tt mag\_img})
+		\State{\tt pg} $\gets$ (1 - {\tt p} ) .* {\tt g} \\
+		
+		\State \COMMENT{Init. using combination of Henney-Harvey \cite{Henney2005},}
+		\State \COMMENT {SegNet \cite{SegNet}, and FCN \cite{long2015fully}.}
+		\State $\phi$ $\gets$ {\tt init\_img} 
+		\For{i $\leq$ n }
+		\State $\delta$($\phi$) $\gets$ \textbf{Dirac}($\phi$, $\epsilon$) \\
+		~\\
+		\hspace{0.5 true in}\COMMENT{Use modified edge function {\tt pg}:}
+		\State $F_a$ $\gets$ \textbf{areaTerm}($\delta$($\phi$), {\tt pg}) \
+		\State $F_e$ $\gets$ \textbf{edgeTerm}($\delta$($\phi$), $\phi$, {\tt pg})
+		\State $F_d$ $\gets$ \textbf{Regularize\_distance}($\phi$)\\
+		~\\
+		\hspace{0.5 true in}\COMMENT{Allow $\alpha$ to vary for optimization:}
+		\State $\phi$ $\gets$ $\phi$ + ts$\cdot$($\mu F_d$ + $\lambda F_e$ + $\alpha F_a$)
+		\EndFor \\
+		% ???VJ: I think you need phi=0. Not <0. Please check! \\
+		\noindent{\bf return} $\delta(\phi)$
+		\EndFunction
+	\end{algorithmic}
+	\caption{\textcolor{blue}{
+		Level-set segmentation algorithm using
+		the modified edge function {\tt pg}.}}\label{fig:LevelSets}
+\end{figure}

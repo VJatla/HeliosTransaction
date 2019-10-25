@@ -1,0 +1,59 @@
+\begin{figure}[t!]
+        \begin{algorithmic}[1]
+                \Function{cluster\_matching}{{\tt dates}}\\
+                \COMMENT{\textbf{Input:} ~~~{\tt dates} to process. Each date has} 
+                \Statex \hspace{1.6cm} an associated list of physical models and a 
+                \Statex \hspace{1.6cm} a reference (segmentation) map.\\
+                \COMMENT{\textbf{Output:}{\tt ~model\_maps} of the new, missing, and}
+                \Statex \hspace{1.6cm} matched coronal holes for each physical model
+                \Statex \hspace{1.6cm} and date are stored as separate files.
+                \Statex
+                \State~\C{Process each date separately}
+                \For{ {\tt date} $\in$ {\tt dates}}
+                \State \C{Read  and process reference image}
+                \State {\tt ref\_map} $\gets$ {\bf load\_ref\_data}({\tt date})
+                \State {\tt ref\_map$_{\{+,-\}}$} $\gets$ {\bf pre\_process}({\tt ref\_map})\label{alg:ov_preprocessing1}
+                \Statex
+                \State~\C{Process associated physical models}
+                \For{ {\tt model} $\in \{{\tt model\_1}, \dots, {\tt model\_M}\}$ }
+                \State {\tt model\_map} $\gets$ {\bf load\_model}({\tt date}, {\tt model})
+                \State {\tt model\_map$_{\{+,-\}}$}  
+                \Statex \hspace{3.7cm}$\gets$ {\bf pre\_process}({\tt model\_map})\label{alg:ov_preprocessing2}
+                \Statex
+                \State~\C{Analyze each polarity separately}
+                \For{polarity {\tt p} $\in$ \{ $+$, $-$\}}
+                \State {\textbf{\textit{Cluster}}} coronal holes that are are close.
+                \State {\textbf{\textit{Detect}}}  coronal hole clusters that are in
+                \Statex \hspace{2.9cm} physical maps but not in reference
+                \Statex \hspace{2.9cm} map using Mahalanobis distance
+                \Statex \hspace{2.9cm} threshold and store the results in
+                \Statex \hspace{2.9cm} {\tt new\_map$_p$} and {\tt missing\_map$_p$}
+                \State {\textbf{\textit{Re-cluster}}} remaining coronal holes in 
+                \Statex \hspace{2.9cm} {\tt ref\_map} and {\tt model\_map} to
+                \Statex \hspace{2.9cm} achieve equal number of clusters.
+                \State {\textbf{\textit{Match}}} clusters using \textit{linear programming} 
+                \Statex \hspace{2.9cm} and save the results in
+                \Statex \hspace{2.9cm} {\tt matched\_map$_p$}                                                            
+                \EndFor
+                %\State {\small \textbf{\textit{Extract}}} {\tt features}  from {\tt new\_map$_p$}, 
+                %\Statex \hspace{2.53cm} {\tt missing\_map$_p$} and {\tt missing\_map$_p$}
+                %\Statex \hspace{2.53cm} for polarity {\tt p} $\in$ \{+, -\}.         
+                %\State {\small \textbf{\textit{Classify}}} {\tt model} using extracted features.
+                %\label{algLine:get_features}
+                \Statex
+                \State~\C{Save maps for each physical model}
+                \State {\tt model\_maps} $\gets$  ({\tt new\_map$_p$}, 
+                \Statex \hspace{2.2cm} {\tt missing\_map$_p$}, {\tt matched\_map$_p$})
+                \Statex \hspace{2.2cm} for polarity {\tt p} $\in$ \{+, -\}.
+                \State {\textbf{\textit{Store}}} {\tt model\_maps}
+                \EndFor
+                \EndFor     
+                \EndFunction
+        \end{algorithmic}
+        \caption{Cluster matching algorithm. The algorithm process the segmentation map
+                  (reference map) against the physical models for each given date. 
+                  The resulting maps contain the new, missing, and matched coronal holes
+                       between the reference map and each physical model.
+                  In our example, we have 12 physical maps ($M=12$).     }
+        \label{Fig:autoClassOverviewAlg}
+      \end{figure} 

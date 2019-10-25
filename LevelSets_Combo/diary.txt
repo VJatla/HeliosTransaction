@@ -1,0 +1,1566 @@
+20100808
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0910659             1      
+    1           2      0.0910659           0.5     Refine Mesh
+    2           3      0.0899733             1     Successful Poll
+    3           4      0.0899733           0.5     Refine Mesh
+    4           8      0.0899733          0.25     Refine Mesh
+    5          12      0.0827594           0.5     Successful Poll
+    6          16      0.0827594          0.25     Refine Mesh
+    7          17      0.0820118           0.5     Successful Poll
+    8          20      0.0820118          0.25     Refine Mesh
+    9          24      0.0820118         0.125     Refine Mesh
+   10          28      0.0820118        0.0625     Refine Mesh
+   11          32      0.0820118       0.03125     Refine Mesh
+   12          36      0.0820118       0.01563     Refine Mesh
+   13          37      0.0814933       0.03125     Successful Poll
+   14          41      0.0814933       0.01563     Refine Mesh
+   15          45      0.0814933      0.007813     Refine Mesh
+   16          49      0.0814933      0.003906     Refine Mesh
+   17          53      0.0814933      0.001953     Refine Mesh
+   18          57      0.0814933     0.0009766     Refine Mesh
+   19          61      0.0805332      0.001953     Successful Poll
+   20          65      0.0805332     0.0009766     Refine Mesh
+   21          69      0.0805332     0.0004883     Refine Mesh
+   22          73      0.0805332     0.0002441     Refine Mesh
+   23          77      0.0805332     0.0001221     Refine Mesh
+   24          81      0.0805332     6.104e-05     Refine Mesh
+   25          85      0.0805027     0.0001221     Successful Poll
+   26          89      0.0805027     6.104e-05     Refine Mesh
+   27          93      0.0805027     3.052e-05     Refine Mesh
+   28          97      0.0805027     1.526e-05     Refine Mesh
+   29          99      0.0802926     3.052e-05     Successful Poll
+   30         103      0.0802926     1.526e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         107      0.0802926     7.629e-06     Refine Mesh
+   32         111      0.0802926     3.815e-06     Refine Mesh
+   33         115      0.0802926     1.907e-06     Refine Mesh
+   34         119      0.0802926     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 3044.535041 seconds.
+20100723
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.080072             1      
+    1           2       0.080072           0.5     Refine Mesh
+    2           5      0.0789604             1     Successful Poll
+    3           6      0.0789604           0.5     Refine Mesh
+    4           9      0.0789604          0.25     Refine Mesh
+    5          12      0.0789604         0.125     Refine Mesh
+    6          13      0.0788372          0.25     Successful Poll
+    7          16      0.0788372         0.125     Refine Mesh
+    8          20      0.0788372        0.0625     Refine Mesh
+    9          24      0.0788372       0.03125     Refine Mesh
+   10          25      0.0788215        0.0625     Successful Poll
+   11          29      0.0788215       0.03125     Refine Mesh
+   12          33      0.0787413        0.0625     Successful Poll
+   13          37      0.0787413       0.03125     Refine Mesh
+   14          41      0.0787413       0.01563     Refine Mesh
+   15          42      0.0786946       0.03125     Successful Poll
+   16          46      0.0786946       0.01563     Refine Mesh
+   17          50      0.0782263       0.03125     Successful Poll
+   18          54      0.0782263       0.01563     Refine Mesh
+   19          58      0.0782263      0.007813     Refine Mesh
+   20          62      0.0782263      0.003906     Refine Mesh
+   21          66      0.0782263      0.001953     Refine Mesh
+   22          70      0.0782263     0.0009766     Refine Mesh
+   23          74      0.0782263     0.0004883     Refine Mesh
+   24          78      0.0782263     0.0002441     Refine Mesh
+   25          82      0.0782263     0.0001221     Refine Mesh
+   26          86      0.0782263     6.104e-05     Refine Mesh
+   27          90      0.0782263     3.052e-05     Refine Mesh
+   28          94      0.0782263     1.526e-05     Refine Mesh
+   29          98      0.0782263     7.629e-06     Refine Mesh
+   30         102      0.0782263     3.815e-06     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         106      0.0782263     1.907e-06     Refine Mesh
+   32         110      0.0782263     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 5819.782634 seconds.
+20100803
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0682522             1      
+    1           2      0.0682522           0.5     Refine Mesh
+    2           5      0.0670691             1     Successful Poll
+    3           6      0.0670691           0.5     Refine Mesh
+    4           9      0.0670691          0.25     Refine Mesh
+    5          12      0.0670691         0.125     Refine Mesh
+    6          15      0.0662124          0.25     Successful Poll
+    7          18      0.0662124         0.125     Refine Mesh
+    8          21      0.0662124        0.0625     Refine Mesh
+    9          25      0.0662124       0.03125     Refine Mesh
+   10          27      0.0658142        0.0625     Successful Poll
+   11          30      0.0657489         0.125     Successful Poll
+   12          33      0.0657489        0.0625     Refine Mesh
+   13          36      0.0657489       0.03125     Refine Mesh
+   14          40      0.0657489       0.01563     Refine Mesh
+   15          44      0.0657489      0.007813     Refine Mesh
+   16          48      0.0657489      0.003906     Refine Mesh
+   17          52      0.0657489      0.001953     Refine Mesh
+   18          54        0.06567      0.003906     Successful Poll
+   19          58        0.06567      0.001953     Refine Mesh
+   20          62        0.06567     0.0009766     Refine Mesh
+   21          65      0.0655572      0.001953     Successful Poll
+   22          69      0.0655572     0.0009766     Refine Mesh
+   23          73      0.0655572     0.0004883     Refine Mesh
+   24          77      0.0655572     0.0002441     Refine Mesh
+   25          81      0.0655572     0.0001221     Refine Mesh
+   26          85      0.0655572     6.104e-05     Refine Mesh
+   27          89      0.0655572     3.052e-05     Refine Mesh
+   28          93      0.0655572     1.526e-05     Refine Mesh
+   29          97      0.0655572     7.629e-06     Refine Mesh
+   30         101      0.0655572     3.815e-06     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         105      0.0655572     1.907e-06     Refine Mesh
+   32         109      0.0655572     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 8564.589125 seconds.
+20100718
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.101218             1      
+    1           2       0.101218           0.5     Refine Mesh
+    2           6       0.101218          0.25     Refine Mesh
+    3          10      0.0936495           0.5     Successful Poll
+    4          14      0.0936495          0.25     Refine Mesh
+    5          17      0.0934845           0.5     Successful Poll
+    6          20      0.0934845          0.25     Refine Mesh
+    7          24      0.0934845         0.125     Refine Mesh
+    8          28      0.0934845        0.0625     Refine Mesh
+    9          29      0.0930682         0.125     Successful Poll
+   10          33      0.0930682        0.0625     Refine Mesh
+   11          37      0.0930682       0.03125     Refine Mesh
+   12          41      0.0930682       0.01563     Refine Mesh
+   13          45      0.0930682      0.007813     Refine Mesh
+   14          49      0.0930682      0.003906     Refine Mesh
+   15          52      0.0928432      0.007813     Successful Poll
+   16          56      0.0928432      0.003906     Refine Mesh
+   17          60      0.0928432      0.001953     Refine Mesh
+   18          61      0.0927224      0.003906     Successful Poll
+   19          65      0.0927224      0.001953     Refine Mesh
+   20          69      0.0927224     0.0009766     Refine Mesh
+   21          73      0.0927224     0.0004883     Refine Mesh
+   22          77      0.0927224     0.0002441     Refine Mesh
+   23          81      0.0927224     0.0001221     Refine Mesh
+   24          85      0.0927224     6.104e-05     Refine Mesh
+   25          89      0.0927224     3.052e-05     Refine Mesh
+   26          93      0.0927224     1.526e-05     Refine Mesh
+   27          97      0.0927224     7.629e-06     Refine Mesh
+   28          98      0.0926796     1.526e-05     Successful Poll
+   29         102      0.0926796     7.629e-06     Refine Mesh
+   30         106      0.0926796     3.815e-06     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         110      0.0926796     1.907e-06     Refine Mesh
+   32         111      0.0924475     3.815e-06     Successful Poll
+   33         115      0.0924475     1.907e-06     Refine Mesh
+   34         119      0.0924475     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 11588.571964 seconds.
+20100802
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.134845             1      
+    1           2       0.134845           0.5     Refine Mesh
+    2           5        0.13433             1     Successful Poll
+    3           6        0.13433           0.5     Refine Mesh
+    4           9       0.122853             1     Successful Poll
+    5          11       0.122853           0.5     Refine Mesh
+    6          13       0.122853          0.25     Refine Mesh
+    7          15      0.0969016           0.5     Successful Poll
+    8          18      0.0969016          0.25     Refine Mesh
+    9          19      0.0968455           0.5     Successful Poll
+   10          22      0.0968455          0.25     Refine Mesh
+   11          26      0.0968455         0.125     Refine Mesh
+   12          27      0.0965302          0.25     Successful Poll
+   13          31      0.0965302         0.125     Refine Mesh
+   14          35      0.0965302        0.0625     Refine Mesh
+   15          39      0.0965302       0.03125     Refine Mesh
+   16          43      0.0965153        0.0625     Successful Poll
+   17          44      0.0956995         0.125     Successful Poll
+   18          48      0.0956995        0.0625     Refine Mesh
+   19          52      0.0956995       0.03125     Refine Mesh
+   20          53      0.0956338        0.0625     Successful Poll
+   21          57      0.0956338       0.03125     Refine Mesh
+   22          61      0.0956338       0.01563     Refine Mesh
+   23          65      0.0956338      0.007813     Refine Mesh
+   24          69      0.0956338      0.003906     Refine Mesh
+   25          73      0.0956338      0.001953     Refine Mesh
+   26          77      0.0956338     0.0009766     Refine Mesh
+   27          81      0.0956338     0.0004883     Refine Mesh
+   28          83      0.0950195     0.0009766     Successful Poll
+   29          87      0.0950195     0.0004883     Refine Mesh
+   30          91      0.0950195     0.0002441     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          95      0.0950195     0.0001221     Refine Mesh
+   32          99      0.0950195     6.104e-05     Refine Mesh
+   33         103      0.0950195     3.052e-05     Refine Mesh
+   34         107      0.0950195     1.526e-05     Refine Mesh
+   35         111      0.0950195     7.629e-06     Refine Mesh
+   36         115      0.0950195     3.815e-06     Refine Mesh
+   37         119      0.0950195     1.907e-06     Refine Mesh
+   38         122      0.0949861     3.815e-06     Successful Poll
+   39         126      0.0949861     1.907e-06     Refine Mesh
+   40         130      0.0949861     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 14916.925559 seconds.
+20100725
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.062087             1      
+    1           2       0.062087           0.5     Refine Mesh
+    2           6       0.062087          0.25     Refine Mesh
+    3           7      0.0620149           0.5     Successful Poll
+    4          11      0.0620149          0.25     Refine Mesh
+    5          15      0.0620149         0.125     Refine Mesh
+    6          19      0.0588296          0.25     Successful Poll
+    7          23      0.0588296         0.125     Refine Mesh
+    8          27      0.0588296        0.0625     Refine Mesh
+    9          31      0.0588296       0.03125     Refine Mesh
+   10          35      0.0588296       0.01563     Refine Mesh
+   11          39      0.0588296      0.007813     Refine Mesh
+   12          43      0.0588296      0.003906     Refine Mesh
+   13          47      0.0588296      0.001953     Refine Mesh
+   14          51      0.0588296     0.0009766     Refine Mesh
+   15          55      0.0588296     0.0004883     Refine Mesh
+   16          59      0.0588296     0.0002441     Refine Mesh
+   17          63      0.0588296     0.0001221     Refine Mesh
+   18          67      0.0588296     6.104e-05     Refine Mesh
+   19          69      0.0583148     0.0001221     Successful Poll
+   20          73      0.0583148     6.104e-05     Refine Mesh
+   21          77      0.0583148     3.052e-05     Refine Mesh
+   22          81      0.0583148     1.526e-05     Refine Mesh
+   23          85      0.0583148     7.629e-06     Refine Mesh
+   24          89      0.0583148     3.815e-06     Refine Mesh
+   25          93      0.0583148     1.907e-06     Refine Mesh
+   26          97      0.0583148     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 17393.134626 seconds.
+20100728
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0977781             1      
+    1           2      0.0961922             2     Successful Poll
+    2           4      0.0961922             1     Refine Mesh
+    3           6      0.0909931             2     Successful Poll
+    4           8      0.0909931             1     Refine Mesh
+    5          10      0.0909931           0.5     Refine Mesh
+    6          13      0.0909931          0.25     Refine Mesh
+    7          16      0.0909931         0.125     Refine Mesh
+    8          17      0.0874241          0.25     Successful Poll
+    9          20      0.0874241         0.125     Refine Mesh
+   10          23      0.0874241        0.0625     Refine Mesh
+   11          26      0.0874241       0.03125     Refine Mesh
+   12          27       0.086933        0.0625     Successful Poll
+   13          30       0.086933       0.03125     Refine Mesh
+   14          33       0.086933       0.01563     Refine Mesh
+   15          36       0.086933      0.007813     Refine Mesh
+   16          37      0.0869239       0.01563     Successful Poll
+   17          39      0.0868712       0.03125     Successful Poll
+   18          42      0.0868712       0.01563     Refine Mesh
+   19          45      0.0868712      0.007813     Refine Mesh
+   20          48      0.0868712      0.003906     Refine Mesh
+   21          51      0.0868712      0.001953     Refine Mesh
+   22          54      0.0868712     0.0009766     Refine Mesh
+   23          56      0.0867643      0.001953     Successful Poll
+   24          59      0.0867643     0.0009766     Refine Mesh
+   25          62      0.0867643     0.0004883     Refine Mesh
+   26          65      0.0867643     0.0002441     Refine Mesh
+   27          68      0.0867643     0.0001221     Refine Mesh
+   28          71      0.0867643     6.104e-05     Refine Mesh
+   29          74      0.0867643     3.052e-05     Refine Mesh
+   30          76      0.0866825     6.104e-05     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          79      0.0866825     3.052e-05     Refine Mesh
+   32          82      0.0866825     1.526e-05     Refine Mesh
+   33          85      0.0866825     7.629e-06     Refine Mesh
+   34          88      0.0866825     3.815e-06     Refine Mesh
+   35          91      0.0866825     1.907e-06     Refine Mesh
+   36          94      0.0866825     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 19794.245778 seconds.
+20100809
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0771983             1      
+    1           2       0.076985             2     Successful Poll
+    2           4       0.076985             1     Refine Mesh
+    3           6       0.076985           0.5     Refine Mesh
+    4           9       0.076985          0.25     Refine Mesh
+    5          10      0.0765614           0.5     Successful Poll
+    6          13      0.0765614          0.25     Refine Mesh
+    7          16      0.0765614         0.125     Refine Mesh
+    8          18      0.0756753          0.25     Successful Poll
+    9          21      0.0756753         0.125     Refine Mesh
+   10          24      0.0756753        0.0625     Refine Mesh
+   11          26       0.075561         0.125     Successful Poll
+   12          29       0.075561        0.0625     Refine Mesh
+   13          32       0.075561       0.03125     Refine Mesh
+   14          35       0.075561       0.01563     Refine Mesh
+   15          38       0.075561      0.007813     Refine Mesh
+   16          41       0.075561      0.003906     Refine Mesh
+   17          44       0.075561      0.001953     Refine Mesh
+   18          47       0.075561     0.0009766     Refine Mesh
+   19          50       0.075561     0.0004883     Refine Mesh
+   20          53       0.075561     0.0002441     Refine Mesh
+   21          56       0.075561     0.0001221     Refine Mesh
+   22          59       0.075561     6.104e-05     Refine Mesh
+   23          62       0.075561     3.052e-05     Refine Mesh
+   24          65       0.075561     1.526e-05     Refine Mesh
+   25          68       0.075561     7.629e-06     Refine Mesh
+   26          71       0.075561     3.815e-06     Refine Mesh
+   27          74       0.075561     1.907e-06     Refine Mesh
+   28          77       0.075561     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 21749.259993 seconds.
+20100804
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0800224             1      
+    1           2      0.0795109             2     Successful Poll
+    2           4      0.0795109             1     Refine Mesh
+    3           6       0.065986             2     Successful Poll
+    4           8       0.065986             1     Refine Mesh
+    5          10       0.065986           0.5     Refine Mesh
+    6          13       0.065986          0.25     Refine Mesh
+    7          14      0.0640045           0.5     Successful Poll
+    8          17      0.0640045          0.25     Refine Mesh
+    9          20      0.0640045         0.125     Refine Mesh
+   10          23      0.0640045        0.0625     Refine Mesh
+   11          26      0.0640045       0.03125     Refine Mesh
+   12          29      0.0639912        0.0625     Successful Poll
+   13          33      0.0639912       0.03125     Refine Mesh
+   14          37      0.0639912       0.01563     Refine Mesh
+   15          38      0.0639305       0.03125     Successful Poll
+   16          39      0.0637746        0.0625     Successful Poll
+   17          42      0.0637746       0.03125     Refine Mesh
+   18          45      0.0637746       0.01563     Refine Mesh
+   19          49      0.0637746      0.007813     Refine Mesh
+   20          53      0.0637746      0.003906     Refine Mesh
+   21          56      0.0636904      0.007813     Successful Poll
+   22          60      0.0636904      0.003906     Refine Mesh
+   23          64      0.0636904      0.001953     Refine Mesh
+   24          68      0.0636904     0.0009766     Refine Mesh
+   25          72      0.0634811      0.001953     Successful Poll
+   26          76      0.0634811     0.0009766     Refine Mesh
+   27          80      0.0634811     0.0004883     Refine Mesh
+   28          84      0.0634811     0.0002441     Refine Mesh
+   29          85      0.0634611     0.0004883     Successful Poll
+   30          88      0.0633782     0.0009766     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          92      0.0633782     0.0004883     Refine Mesh
+   32          96      0.0633782     0.0002441     Refine Mesh
+   33         100      0.0633782     0.0001221     Refine Mesh
+   34         104      0.0633782     6.104e-05     Refine Mesh
+   35         108      0.0633782     3.052e-05     Refine Mesh
+   36         112      0.0633782     1.526e-05     Refine Mesh
+   37         116      0.0633782     7.629e-06     Refine Mesh
+   38         120      0.0633782     3.815e-06     Refine Mesh
+   39         124      0.0633782     1.907e-06     Refine Mesh
+   40         128      0.0633782     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 24989.421135 seconds.
+20100714
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.072923             1      
+    1           2       0.072923           0.5     Refine Mesh
+    2           3      0.0723076             1     Successful Poll
+    3           4      0.0723076           0.5     Refine Mesh
+    4           8      0.0723076          0.25     Refine Mesh
+    5          11      0.0719351           0.5     Successful Poll
+    6          15      0.0719351          0.25     Refine Mesh
+    7          19      0.0650536           0.5     Successful Poll
+    8          22      0.0648282             1     Successful Poll
+    9          24      0.0648282           0.5     Refine Mesh
+   10          27      0.0648282          0.25     Refine Mesh
+   11          30      0.0648093           0.5     Successful Poll
+   12          33      0.0648093          0.25     Refine Mesh
+   13          36      0.0648093         0.125     Refine Mesh
+   14          37      0.0647008          0.25     Successful Poll
+   15          40      0.0647008         0.125     Refine Mesh
+   16          44      0.0647008        0.0625     Refine Mesh
+   17          48      0.0647008       0.03125     Refine Mesh
+   18          52      0.0646687        0.0625     Successful Poll
+   19          53      0.0644009         0.125     Successful Poll
+   20          57      0.0644009        0.0625     Refine Mesh
+   21          61      0.0644009       0.03125     Refine Mesh
+   22          65      0.0644009       0.01563     Refine Mesh
+   23          69      0.0644009      0.007813     Refine Mesh
+   24          73      0.0644009      0.003906     Refine Mesh
+   25          77      0.0644009      0.001953     Refine Mesh
+   26          81      0.0644009     0.0009766     Refine Mesh
+   27          85      0.0644009     0.0004883     Refine Mesh
+   28          89      0.0644009     0.0002441     Refine Mesh
+   29          93      0.0644009     0.0001221     Refine Mesh
+   30          97      0.0644009     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         101      0.0644009     3.052e-05     Refine Mesh
+   32         105      0.0644009     1.526e-05     Refine Mesh
+   33         109      0.0643916     3.052e-05     Successful Poll
+   34         113      0.0643916     1.526e-05     Refine Mesh
+   35         117      0.0643916     7.629e-06     Refine Mesh
+   36         121      0.0643916     3.815e-06     Refine Mesh
+   37         125      0.0643916     1.907e-06     Refine Mesh
+   38         129      0.0643916     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 28238.737909 seconds.
+20100805
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0704975             1      
+    1           2       0.067644             2     Successful Poll
+    2           4       0.067644             1     Refine Mesh
+    3           6      0.0646254             2     Successful Poll
+    4           8      0.0646254             1     Refine Mesh
+    5          10      0.0646254           0.5     Refine Mesh
+    6          11      0.0611095             1     Successful Poll
+    7          13      0.0611095           0.5     Refine Mesh
+    8          16      0.0611095          0.25     Refine Mesh
+    9          18      0.0600315           0.5     Successful Poll
+   10          21      0.0600315          0.25     Refine Mesh
+   11          24      0.0600315         0.125     Refine Mesh
+   12          27      0.0598977          0.25     Successful Poll
+   13          31      0.0598977         0.125     Refine Mesh
+   14          32      0.0598403          0.25     Successful Poll
+   15          35      0.0598403         0.125     Refine Mesh
+   16          39      0.0598403        0.0625     Refine Mesh
+   17          43      0.0598403       0.03125     Refine Mesh
+   18          44      0.0598279        0.0625     Successful Poll
+   19          47      0.0597841         0.125     Successful Poll
+   20          51      0.0597841        0.0625     Refine Mesh
+   21          55      0.0597841       0.03125     Refine Mesh
+   22          59      0.0597841       0.01563     Refine Mesh
+   23          63      0.0597841      0.007813     Refine Mesh
+   24          67      0.0597841      0.003906     Refine Mesh
+   25          71      0.0597841      0.001953     Refine Mesh
+   26          74      0.0597644      0.003906     Successful Poll
+   27          77      0.0596863      0.007813     Successful Poll
+   28          81      0.0596863      0.003906     Refine Mesh
+   29          85      0.0596863      0.001953     Refine Mesh
+   30          87      0.0596522      0.003906     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          91      0.0596522      0.001953     Refine Mesh
+   32          95      0.0596522     0.0009766     Refine Mesh
+   33          99      0.0596522     0.0004883     Refine Mesh
+   34         103      0.0596522     0.0002441     Refine Mesh
+   35         104      0.0596287     0.0004883     Successful Poll
+   36         108      0.0596287     0.0002441     Refine Mesh
+   37         112      0.0596287     0.0001221     Refine Mesh
+   38         116      0.0596287     6.104e-05     Refine Mesh
+   39         119       0.059622     0.0001221     Successful Poll
+   40         123       0.059622     6.104e-05     Refine Mesh
+   41         127       0.059622     3.052e-05     Refine Mesh
+   42         131       0.059622     1.526e-05     Refine Mesh
+   43         135       0.059622     7.629e-06     Refine Mesh
+   44         139       0.059622     3.815e-06     Refine Mesh
+   45         142      0.0595746     7.629e-06     Successful Poll
+   46         145      0.0595517     1.526e-05     Successful Poll
+   47         149      0.0595517     7.629e-06     Refine Mesh
+   48         153      0.0595517     3.815e-06     Refine Mesh
+   49         157      0.0595517     1.907e-06     Refine Mesh
+   50         161      0.0595517     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 32329.289011 seconds.
+20100726
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0629535             1      
+    1           2      0.0629535           0.5     Refine Mesh
+    2           5      0.0615688             1     Successful Poll
+    3           6      0.0615688           0.5     Refine Mesh
+    4           9      0.0615688          0.25     Refine Mesh
+    5          10      0.0609155           0.5     Successful Poll
+    6          13      0.0609155          0.25     Refine Mesh
+    7          17      0.0605984           0.5     Successful Poll
+    8          20      0.0605984          0.25     Refine Mesh
+    9          23      0.0601937           0.5     Successful Poll
+   10          26      0.0601937          0.25     Refine Mesh
+   11          29      0.0601937         0.125     Refine Mesh
+   12          32      0.0601937        0.0625     Refine Mesh
+   13          33      0.0601579         0.125     Successful Poll
+   14          35      0.0600379          0.25     Successful Poll
+   15          36      0.0591515           0.5     Successful Poll
+   16          37       0.058605             1     Successful Poll
+   17          37       0.058605           0.5     Refine Mesh
+   18          41       0.058605          0.25     Refine Mesh
+   19          45       0.058605         0.125     Refine Mesh
+   20          48      0.0584081          0.25     Successful Poll
+   21          52      0.0584081         0.125     Refine Mesh
+   22          56      0.0584081        0.0625     Refine Mesh
+   23          60      0.0584081       0.03125     Refine Mesh
+   24          61      0.0582742        0.0625     Successful Poll
+   25          65      0.0582742       0.03125     Refine Mesh
+   26          69      0.0582742       0.01563     Refine Mesh
+   27          72      0.0582105       0.03125     Successful Poll
+   28          76      0.0582105       0.01563     Refine Mesh
+   29          80      0.0582105      0.007813     Refine Mesh
+   30          82      0.0579469       0.01563     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          86      0.0579469      0.007813     Refine Mesh
+   32          90      0.0579469      0.003906     Refine Mesh
+   33          91      0.0578895      0.007813     Successful Poll
+   34          95      0.0578895      0.003906     Refine Mesh
+   35          99      0.0578895      0.001953     Refine Mesh
+   36         103      0.0578895     0.0009766     Refine Mesh
+   37         104      0.0577837      0.001953     Successful Poll
+   38         108      0.0577837     0.0009766     Refine Mesh
+   39         112      0.0577837     0.0004883     Refine Mesh
+   40         116      0.0577837     0.0002441     Refine Mesh
+   41         120      0.0577837     0.0001221     Refine Mesh
+   42         124      0.0577837     6.104e-05     Refine Mesh
+   43         128      0.0577837     3.052e-05     Refine Mesh
+   44         132      0.0577837     1.526e-05     Refine Mesh
+   45         136      0.0577837     7.629e-06     Refine Mesh
+   46         140      0.0577837     3.815e-06     Refine Mesh
+   47         144      0.0577837     1.907e-06     Refine Mesh
+   48         148      0.0577837     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 36080.957119 seconds.
+20100806
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0816592             1      
+    1           2      0.0804568             2     Successful Poll
+    2           4      0.0804568             1     Refine Mesh
+    3           6      0.0716714             2     Successful Poll
+    4           8      0.0716714             1     Refine Mesh
+    5          10      0.0716714           0.5     Refine Mesh
+    6          13      0.0679756             1     Successful Poll
+    7          15      0.0679756           0.5     Refine Mesh
+    8          18      0.0657286             1     Successful Poll
+    9          20      0.0657286           0.5     Refine Mesh
+   10          23      0.0657286          0.25     Refine Mesh
+   11          26      0.0657286         0.125     Refine Mesh
+   12          27      0.0655358          0.25     Successful Poll
+   13          30      0.0655358         0.125     Refine Mesh
+   14          34      0.0655358        0.0625     Refine Mesh
+   15          38      0.0650287         0.125     Successful Poll
+   16          42      0.0650287        0.0625     Refine Mesh
+   17          46      0.0650287       0.03125     Refine Mesh
+   18          50      0.0650287       0.01563     Refine Mesh
+   19          54      0.0650287      0.007813     Refine Mesh
+   20          55      0.0649841       0.01563     Successful Poll
+   21          59      0.0649841      0.007813     Refine Mesh
+   22          63      0.0649841      0.003906     Refine Mesh
+   23          67      0.0649841      0.001953     Refine Mesh
+   24          71      0.0649841     0.0009766     Refine Mesh
+   25          75      0.0649841     0.0004883     Refine Mesh
+   26          78      0.0649765     0.0009766     Successful Poll
+   27          82      0.0649765     0.0004883     Refine Mesh
+   28          86      0.0649765     0.0002441     Refine Mesh
+   29          90      0.0649015     0.0004883     Successful Poll
+   30          94      0.0649015     0.0002441     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          98      0.0649015     0.0001221     Refine Mesh
+   32         102      0.0649015     6.104e-05     Refine Mesh
+   33         106      0.0649015     3.052e-05     Refine Mesh
+   34         110      0.0649015     1.526e-05     Refine Mesh
+   35         113      0.0648924     3.052e-05     Successful Poll
+   36         117      0.0648924     1.526e-05     Refine Mesh
+   37         121      0.0648924     7.629e-06     Refine Mesh
+   38         125      0.0648924     3.815e-06     Refine Mesh
+   39         129      0.0648924     1.907e-06     Refine Mesh
+   40         132      0.0648607     3.815e-06     Successful Poll
+   41         136      0.0648607     1.907e-06     Refine Mesh
+   42         140      0.0648607     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 39638.984197 seconds.
+20100716
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0730622             1      
+    1           2      0.0730622           0.5     Refine Mesh
+    2           5      0.0721167             1     Successful Poll
+    3           6      0.0721167           0.5     Refine Mesh
+    4           9      0.0721167          0.25     Refine Mesh
+    5          10      0.0718739           0.5     Successful Poll
+    6          13      0.0718739          0.25     Refine Mesh
+    7          17      0.0656848           0.5     Successful Poll
+    8          20      0.0656848          0.25     Refine Mesh
+    9          24      0.0656848         0.125     Refine Mesh
+   10          28      0.0656848        0.0625     Refine Mesh
+   11          32      0.0656848       0.03125     Refine Mesh
+   12          36      0.0656848       0.01563     Refine Mesh
+   13          40      0.0656848      0.007813     Refine Mesh
+   14          44      0.0656848      0.003906     Refine Mesh
+   15          48      0.0656848      0.001953     Refine Mesh
+   16          52      0.0656848     0.0009766     Refine Mesh
+   17          56      0.0656848     0.0004883     Refine Mesh
+   18          60      0.0656848     0.0002441     Refine Mesh
+   19          64      0.0656848     0.0001221     Refine Mesh
+   20          68      0.0656848     6.104e-05     Refine Mesh
+   21          69      0.0656804     0.0001221     Successful Poll
+   22          73      0.0656804     6.104e-05     Refine Mesh
+   23          77      0.0656804     3.052e-05     Refine Mesh
+   24          81      0.0656804     1.526e-05     Refine Mesh
+   25          85      0.0656804     7.629e-06     Refine Mesh
+   26          88      0.0655931     1.526e-05     Successful Poll
+   27          92      0.0655931     7.629e-06     Refine Mesh
+   28          96      0.0655931     3.815e-06     Refine Mesh
+   29         100      0.0655931     1.907e-06     Refine Mesh
+   30         104      0.0655931     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 42262.673445 seconds.
+20100713
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.058438             1      
+    1           2      0.0576012             2     Successful Poll
+    2           4      0.0576012             1     Refine Mesh
+    3           6      0.0576012           0.5     Refine Mesh
+    4           9      0.0576012          0.25     Refine Mesh
+    5          12      0.0576012         0.125     Refine Mesh
+    6          13      0.0567807          0.25     Successful Poll
+    7          16      0.0567807         0.125     Refine Mesh
+    8          19      0.0567807        0.0625     Refine Mesh
+    9          20      0.0566306         0.125     Successful Poll
+   10          23      0.0566306        0.0625     Refine Mesh
+   11          26      0.0566306       0.03125     Refine Mesh
+   12          29      0.0566306       0.01563     Refine Mesh
+   13          32      0.0566306      0.007813     Refine Mesh
+   14          35      0.0566306      0.003906     Refine Mesh
+   15          38      0.0566306      0.001953     Refine Mesh
+   16          41      0.0566306     0.0009766     Refine Mesh
+   17          43      0.0566301      0.001953     Successful Poll
+   18          46      0.0566301     0.0009766     Refine Mesh
+   19          49      0.0566301     0.0004883     Refine Mesh
+   20          52      0.0566301     0.0002441     Refine Mesh
+   21          55      0.0566301     0.0001221     Refine Mesh
+   22          58      0.0566301     6.104e-05     Refine Mesh
+   23          61      0.0566301     3.052e-05     Refine Mesh
+   24          64      0.0566301     1.526e-05     Refine Mesh
+   25          67      0.0566301     7.629e-06     Refine Mesh
+   26          70      0.0566301     3.815e-06     Refine Mesh
+   27          73      0.0566301     1.907e-06     Refine Mesh
+   28          76      0.0566301     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 44180.278524 seconds.
+20100722
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0941721             1      
+    1           2      0.0941721           0.5     Refine Mesh
+    2           6      0.0941721          0.25     Refine Mesh
+    3           7      0.0938343           0.5     Successful Poll
+    4          11      0.0938343          0.25     Refine Mesh
+    5          15      0.0912233           0.5     Successful Poll
+    6          18      0.0892855             1     Successful Poll
+    7          20      0.0892855           0.5     Refine Mesh
+    8          23      0.0892855          0.25     Refine Mesh
+    9          24      0.0888805           0.5     Successful Poll
+   10          28      0.0888805          0.25     Refine Mesh
+   11          32      0.0888805         0.125     Refine Mesh
+   12          36      0.0888805        0.0625     Refine Mesh
+   13          38      0.0882152         0.125     Successful Poll
+   14          39      0.0881986          0.25     Successful Poll
+   15          40      0.0865669           0.5     Successful Poll
+   16          44      0.0865669          0.25     Refine Mesh
+   17          48      0.0865669         0.125     Refine Mesh
+   18          52      0.0865669        0.0625     Refine Mesh
+   19          56      0.0865669       0.03125     Refine Mesh
+   20          60      0.0865669       0.01563     Refine Mesh
+   21          64      0.0865669      0.007813     Refine Mesh
+   22          68      0.0865669      0.003906     Refine Mesh
+   23          72      0.0865669      0.001953     Refine Mesh
+   24          76      0.0865669     0.0009766     Refine Mesh
+   25          80      0.0858187      0.001953     Successful Poll
+   26          84      0.0858187     0.0009766     Refine Mesh
+   27          88      0.0858187     0.0004883     Refine Mesh
+   28          92      0.0858187     0.0002441     Refine Mesh
+   29          96      0.0858187     0.0001221     Refine Mesh
+   30         100      0.0858187     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         104      0.0858187     3.052e-05     Refine Mesh
+   32         108      0.0858187     1.526e-05     Refine Mesh
+   33         112      0.0858187     7.629e-06     Refine Mesh
+   34         116      0.0858187     3.815e-06     Refine Mesh
+   35         120      0.0858187     1.907e-06     Refine Mesh
+   36         124      0.0858187     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 47305.073972 seconds.
+20110121
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.102811             1      
+    1           2       0.102811           0.5     Refine Mesh
+    2           5       0.101707             1     Successful Poll
+    3           6       0.101707           0.5     Refine Mesh
+    4           9       0.101707          0.25     Refine Mesh
+    5          12      0.0952915           0.5     Successful Poll
+    6          15      0.0952915          0.25     Refine Mesh
+    7          18      0.0952915         0.125     Refine Mesh
+    8          19      0.0947543          0.25     Successful Poll
+    9          22      0.0947543         0.125     Refine Mesh
+   10          26      0.0947543        0.0625     Refine Mesh
+   11          28      0.0941463         0.125     Successful Poll
+   12          32      0.0941463        0.0625     Refine Mesh
+   13          35      0.0940312         0.125     Successful Poll
+   14          39      0.0940312        0.0625     Refine Mesh
+   15          43      0.0940312       0.03125     Refine Mesh
+   16          46      0.0937562        0.0625     Successful Poll
+   17          50      0.0937562       0.03125     Refine Mesh
+   18          54      0.0931142        0.0625     Successful Poll
+   19          57      0.0929724         0.125     Successful Poll
+   20          60      0.0929724        0.0625     Refine Mesh
+   21          64      0.0929724       0.03125     Refine Mesh
+   22          68      0.0929724       0.01563     Refine Mesh
+   23          72      0.0929724      0.007813     Refine Mesh
+   24          74      0.0926584       0.01563     Successful Poll
+   25          78      0.0926584      0.007813     Refine Mesh
+   26          82      0.0926584      0.003906     Refine Mesh
+   27          86      0.0926584      0.001953     Refine Mesh
+   28          90      0.0926584     0.0009766     Refine Mesh
+   29          94      0.0926584     0.0004883     Refine Mesh
+   30          98      0.0926584     0.0002441     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         102      0.0926584     0.0001221     Refine Mesh
+   32         106      0.0926584     6.104e-05     Refine Mesh
+   33         110      0.0926584     3.052e-05     Refine Mesh
+   34         114      0.0926584     1.526e-05     Refine Mesh
+   35         118      0.0926584     7.629e-06     Refine Mesh
+   36         122      0.0926584     3.815e-06     Refine Mesh
+   37         126      0.0926584     1.907e-06     Refine Mesh
+   38         130      0.0926584     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 50592.134930 seconds.
+20110208
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0734645             1      
+    1           2      0.0734645           0.5     Refine Mesh
+    2           5      0.0711889             1     Successful Poll
+    3           6      0.0711889           0.5     Refine Mesh
+    4           9      0.0711889          0.25     Refine Mesh
+    5          12      0.0711889         0.125     Refine Mesh
+    6          15      0.0711889        0.0625     Refine Mesh
+    7          18      0.0711646         0.125     Successful Poll
+    8          21      0.0711646        0.0625     Refine Mesh
+    9          24      0.0711646       0.03125     Refine Mesh
+   10          28      0.0711646       0.01563     Refine Mesh
+   11          32      0.0711646      0.007813     Refine Mesh
+   12          36      0.0711646      0.003906     Refine Mesh
+   13          40      0.0711646      0.001953     Refine Mesh
+   14          44      0.0711646     0.0009766     Refine Mesh
+   15          48      0.0711646     0.0004883     Refine Mesh
+   16          52      0.0711475     0.0009766     Successful Poll
+   17          56      0.0711475     0.0004883     Refine Mesh
+   18          60      0.0711475     0.0002441     Refine Mesh
+   19          64      0.0711475     0.0001221     Refine Mesh
+   20          68      0.0711475     6.104e-05     Refine Mesh
+   21          69      0.0710933     0.0001221     Successful Poll
+   22          73      0.0710933     6.104e-05     Refine Mesh
+   23          77      0.0710933     3.052e-05     Refine Mesh
+   24          81      0.0710933     1.526e-05     Refine Mesh
+   25          85      0.0710933     7.629e-06     Refine Mesh
+   26          89      0.0710933     3.815e-06     Refine Mesh
+   27          93      0.0710933     1.907e-06     Refine Mesh
+   28          97      0.0710933     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 53068.992866 seconds.
+20110212
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.170832             1      
+    1           2       0.168762             2     Successful Poll
+    2           4       0.168762             1     Refine Mesh
+    3           6       0.110633             2     Successful Poll
+    4           8       0.110633             1     Refine Mesh
+    5          10       0.110633           0.5     Refine Mesh
+    6          13       0.109349             1     Successful Poll
+    7          15       0.109349           0.5     Refine Mesh
+    8          19       0.109349          0.25     Refine Mesh
+    9          23       0.109349         0.125     Refine Mesh
+   10          27       0.109349        0.0625     Refine Mesh
+   11          31       0.109349       0.03125     Refine Mesh
+   12          35       0.108932        0.0625     Successful Poll
+   13          39       0.108932       0.03125     Refine Mesh
+   14          42       0.108538        0.0625     Successful Poll
+   15          45       0.106916         0.125     Successful Poll
+   16          49       0.106916        0.0625     Refine Mesh
+   17          53       0.106916       0.03125     Refine Mesh
+   18          57       0.106916       0.01563     Refine Mesh
+   19          61       0.106916      0.007813     Refine Mesh
+   20          65       0.106916      0.003906     Refine Mesh
+   21          69       0.106916      0.001953     Refine Mesh
+   22          73       0.106916     0.0009766     Refine Mesh
+   23          77       0.106916     0.0004883     Refine Mesh
+   24          79       0.106901     0.0009766     Successful Poll
+   25          83       0.106901     0.0004883     Refine Mesh
+   26          87       0.106901     0.0002441     Refine Mesh
+   27          91       0.106901     0.0001221     Refine Mesh
+   28          95       0.106901     6.104e-05     Refine Mesh
+   29          97       0.106555     0.0001221     Successful Poll
+   30         101       0.106555     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         105       0.106555     3.052e-05     Refine Mesh
+   32         109       0.106555     1.526e-05     Refine Mesh
+   33         113       0.106555     7.629e-06     Refine Mesh
+   34         117       0.106555     3.815e-06     Refine Mesh
+   35         121       0.106555     1.907e-06     Refine Mesh
+   36         125       0.106555     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 56222.814849 seconds.
+20110216
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.142145             1      
+    1           2       0.142145           0.5     Refine Mesh
+    2           3        0.14078             1     Successful Poll
+    3           4        0.14078           0.5     Refine Mesh
+    4           8        0.14078          0.25     Refine Mesh
+    5           9        0.13906           0.5     Successful Poll
+    6          11       0.138545             1     Successful Poll
+    7          11       0.138545           0.5     Refine Mesh
+    8          15       0.138545          0.25     Refine Mesh
+    9          19       0.102584           0.5     Successful Poll
+   10          20       0.100361             1     Successful Poll
+   11          22       0.100361           0.5     Refine Mesh
+   12          25       0.100361          0.25     Refine Mesh
+   13          26       0.100289           0.5     Successful Poll
+   14          29       0.100289          0.25     Refine Mesh
+   15          32       0.100289         0.125     Refine Mesh
+   16          35       0.100289        0.0625     Refine Mesh
+   17          38       0.100289       0.03125     Refine Mesh
+   18          41       0.100289       0.01563     Refine Mesh
+   19          42       0.100025       0.03125     Successful Poll
+   20          45       0.100025       0.01563     Refine Mesh
+   21          48       0.100025      0.007813     Refine Mesh
+   22          51       0.100025      0.003906     Refine Mesh
+   23          54       0.100025      0.001953     Refine Mesh
+   24          57       0.100025     0.0009766     Refine Mesh
+   25          58      0.0996626      0.001953     Successful Poll
+   26          61      0.0996626     0.0009766     Refine Mesh
+   27          64       0.099634      0.001953     Successful Poll
+   28          67       0.099634     0.0009766     Refine Mesh
+   29          71       0.099634     0.0004883     Refine Mesh
+   30          72      0.0995487     0.0009766     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          74      0.0994434      0.001953     Successful Poll
+   32          77      0.0994434     0.0009766     Refine Mesh
+   33          81      0.0994434     0.0004883     Refine Mesh
+   34          84      0.0992741     0.0009766     Successful Poll
+   35          87      0.0992741     0.0004883     Refine Mesh
+   36          91      0.0992741     0.0002441     Refine Mesh
+   37          95      0.0992741     0.0001221     Refine Mesh
+   38          99      0.0992741     6.104e-05     Refine Mesh
+   39         103      0.0992741     3.052e-05     Refine Mesh
+   40         107      0.0992741     1.526e-05     Refine Mesh
+   41         111      0.0992741     7.629e-06     Refine Mesh
+   42         115      0.0992741     3.815e-06     Refine Mesh
+   43         119      0.0992741     1.907e-06     Refine Mesh
+   44         123      0.0992741     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 59324.807353 seconds.
+20110201
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0817188             1      
+    1           2      0.0817188           0.5     Refine Mesh
+    2           6      0.0817188          0.25     Refine Mesh
+    3          10      0.0782938           0.5     Successful Poll
+    4          13      0.0776421             1     Successful Poll
+    5          15      0.0776421           0.5     Refine Mesh
+    6          18      0.0776421          0.25     Refine Mesh
+    7          21      0.0776421         0.125     Refine Mesh
+    8          22      0.0776392          0.25     Successful Poll
+    9          25      0.0776392         0.125     Refine Mesh
+   10          29      0.0776392        0.0625     Refine Mesh
+   11          31      0.0773367         0.125     Successful Poll
+   12          35      0.0773367        0.0625     Refine Mesh
+   13          39      0.0773367       0.03125     Refine Mesh
+   14          42      0.0771465        0.0625     Successful Poll
+   15          46      0.0771465       0.03125     Refine Mesh
+   16          50      0.0771125        0.0625     Successful Poll
+   17          51      0.0770704         0.125     Successful Poll
+   18          55      0.0770704        0.0625     Refine Mesh
+   19          56      0.0769603         0.125     Successful Poll
+   20          60      0.0769603        0.0625     Refine Mesh
+   21          64      0.0769603       0.03125     Refine Mesh
+   22          68      0.0769603       0.01563     Refine Mesh
+   23          72      0.0769603      0.007813     Refine Mesh
+   24          76      0.0769603      0.003906     Refine Mesh
+   25          80      0.0769603      0.001953     Refine Mesh
+   26          84      0.0769603     0.0009766     Refine Mesh
+   27          88      0.0769603     0.0004883     Refine Mesh
+   28          92      0.0769603     0.0002441     Refine Mesh
+   29          96      0.0769603     0.0001221     Refine Mesh
+   30         100      0.0769603     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         104      0.0769603     3.052e-05     Refine Mesh
+   32         108      0.0769603     1.526e-05     Refine Mesh
+   33         112      0.0769603     7.629e-06     Refine Mesh
+   34         116      0.0769603     3.815e-06     Refine Mesh
+   35         120      0.0769603     1.907e-06     Refine Mesh
+   36         124      0.0769603     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 62451.762733 seconds.
+20110126
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0708976             1      
+    1           2      0.0708976           0.5     Refine Mesh
+    2           3      0.0705307             1     Successful Poll
+    3           4      0.0690226             2     Successful Poll
+    4           4      0.0690226             1     Refine Mesh
+    5           5      0.0690226           0.5     Refine Mesh
+    6           8      0.0690226          0.25     Refine Mesh
+    7          11      0.0690226         0.125     Refine Mesh
+    8          14      0.0682709          0.25     Successful Poll
+    9          17      0.0682709         0.125     Refine Mesh
+   10          20      0.0682709        0.0625     Refine Mesh
+   11          24      0.0682709       0.03125     Refine Mesh
+   12          28      0.0682709       0.01563     Refine Mesh
+   13          32      0.0682709      0.007813     Refine Mesh
+   14          36      0.0682709      0.003906     Refine Mesh
+   15          40      0.0682709      0.001953     Refine Mesh
+   16          44      0.0682709     0.0009766     Refine Mesh
+   17          48      0.0682709     0.0004883     Refine Mesh
+   18          52      0.0682709     0.0002441     Refine Mesh
+   19          56      0.0682709     0.0001221     Refine Mesh
+   20          60      0.0682709     6.104e-05     Refine Mesh
+   21          64      0.0682709     3.052e-05     Refine Mesh
+   22          68      0.0682709     1.526e-05     Refine Mesh
+   23          72      0.0682709     7.629e-06     Refine Mesh
+   24          76      0.0682709     3.815e-06     Refine Mesh
+   25          80      0.0682709     1.907e-06     Refine Mesh
+   26          84      0.0682709     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 64588.999553 seconds.
+20110213
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.130607             1      
+    1           2       0.130067             2     Successful Poll
+    2           4       0.130067             1     Refine Mesh
+    3           6       0.110227             2     Successful Poll
+    4           8       0.110227             1     Refine Mesh
+    5          10       0.110227           0.5     Refine Mesh
+    6          13       0.106457             1     Successful Poll
+    7          15       0.106457           0.5     Refine Mesh
+    8          18       0.106422             1     Successful Poll
+    9          20       0.106422           0.5     Refine Mesh
+   10          23       0.106422          0.25     Refine Mesh
+   11          26       0.106422         0.125     Refine Mesh
+   12          27       0.106392          0.25     Successful Poll
+   13          30       0.106392         0.125     Refine Mesh
+   14          34       0.106392        0.0625     Refine Mesh
+   15          37       0.106156         0.125     Successful Poll
+   16          41       0.106156        0.0625     Refine Mesh
+   17          45       0.105508         0.125     Successful Poll
+   18          46        0.10475          0.25     Successful Poll
+   19          50        0.10475         0.125     Refine Mesh
+   20          54        0.10475        0.0625     Refine Mesh
+   21          58        0.10475       0.03125     Refine Mesh
+   22          62        0.10475       0.01563     Refine Mesh
+   23          66        0.10475      0.007813     Refine Mesh
+   24          70        0.10475      0.003906     Refine Mesh
+   25          71       0.104697      0.007813     Successful Poll
+   26          72       0.104612       0.01563     Successful Poll
+   27          74       0.104398       0.03125     Successful Poll
+   28          78       0.104398       0.01563     Refine Mesh
+   29          81       0.104177       0.03125     Successful Poll
+   30          85       0.104177       0.01563     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          89       0.104177      0.007813     Refine Mesh
+   32          92        0.10389       0.01563     Successful Poll
+   33          96        0.10389      0.007813     Refine Mesh
+   34         100        0.10389      0.003906     Refine Mesh
+   35         104        0.10389      0.001953     Refine Mesh
+   36         108        0.10389     0.0009766     Refine Mesh
+   37         112        0.10389     0.0004883     Refine Mesh
+   38         114       0.103398     0.0009766     Successful Poll
+   39         118       0.103398     0.0004883     Refine Mesh
+   40         119       0.103279     0.0009766     Successful Poll
+   41         123       0.103279     0.0004883     Refine Mesh
+   42         127       0.103279     0.0002441     Refine Mesh
+   43         131       0.103279     0.0001221     Refine Mesh
+   44         135       0.103279     6.104e-05     Refine Mesh
+   45         139       0.103279     3.052e-05     Refine Mesh
+   46         143       0.103279     1.526e-05     Refine Mesh
+   47         147       0.103279     7.629e-06     Refine Mesh
+   48         151       0.103279     3.815e-06     Refine Mesh
+   49         155       0.103279     1.907e-06     Refine Mesh
+   50         159       0.103279     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 68610.847278 seconds.
+20110214
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.086963             1      
+    1           2      0.0848873             2     Successful Poll
+    2           4      0.0848873             1     Refine Mesh
+    3           6      0.0673694             2     Successful Poll
+    4           8      0.0673694             1     Refine Mesh
+    5          10      0.0673694           0.5     Refine Mesh
+    6          13      0.0645088             1     Successful Poll
+    7          15      0.0645088           0.5     Refine Mesh
+    8          19      0.0645088          0.25     Refine Mesh
+    9          23      0.0645088         0.125     Refine Mesh
+   10          24      0.0642272          0.25     Successful Poll
+   11          28      0.0642272         0.125     Refine Mesh
+   12          32      0.0642272        0.0625     Refine Mesh
+   13          36      0.0642272       0.03125     Refine Mesh
+   14          40      0.0642272       0.01563     Refine Mesh
+   15          44      0.0642272      0.007813     Refine Mesh
+   16          45      0.0641081       0.01563     Successful Poll
+   17          48      0.0637235       0.03125     Successful Poll
+   18          52      0.0637235       0.01563     Refine Mesh
+   19          56      0.0637235      0.007813     Refine Mesh
+   20          60      0.0637235      0.003906     Refine Mesh
+   21          62      0.0635822      0.007813     Successful Poll
+   22          66      0.0635822      0.003906     Refine Mesh
+   23          70      0.0635822      0.001953     Refine Mesh
+   24          74      0.0635822     0.0009766     Refine Mesh
+   25          78      0.0635822     0.0004883     Refine Mesh
+   26          82      0.0635822     0.0002441     Refine Mesh
+   27          86      0.0635822     0.0001221     Refine Mesh
+   28          90      0.0635822     6.104e-05     Refine Mesh
+   29          94      0.0635822     3.052e-05     Refine Mesh
+   30          98      0.0635822     1.526e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         102      0.0635822     7.629e-06     Refine Mesh
+   32         106      0.0635822     3.815e-06     Refine Mesh
+   33         110      0.0635822     1.907e-06     Refine Mesh
+   34         114      0.0635822     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 71490.083850 seconds.
+20110206
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0723214             1      
+    1           2      0.0723214           0.5     Refine Mesh
+    2           5      0.0717672             1     Successful Poll
+    3           6      0.0717672           0.5     Refine Mesh
+    4           9      0.0717672          0.25     Refine Mesh
+    5          12      0.0717672         0.125     Refine Mesh
+    6          15      0.0717672        0.0625     Refine Mesh
+    7          17      0.0707125         0.125     Successful Poll
+    8          20      0.0707125        0.0625     Refine Mesh
+    9          24      0.0707125       0.03125     Refine Mesh
+   10          28      0.0707125       0.01563     Refine Mesh
+   11          32      0.0707125      0.007813     Refine Mesh
+   12          36      0.0707125      0.003906     Refine Mesh
+   13          40      0.0707125      0.001953     Refine Mesh
+   14          44      0.0707125     0.0009766     Refine Mesh
+   15          48      0.0707125     0.0004883     Refine Mesh
+   16          52      0.0707125     0.0002441     Refine Mesh
+   17          56      0.0707125     0.0001221     Refine Mesh
+   18          60      0.0707125     6.104e-05     Refine Mesh
+   19          64      0.0707125     3.052e-05     Refine Mesh
+   20          68      0.0707125     1.526e-05     Refine Mesh
+   21          72      0.0707125     7.629e-06     Refine Mesh
+   22          74      0.0706832     1.526e-05     Successful Poll
+   23          76      0.0705202     3.052e-05     Successful Poll
+   24          80      0.0705202     1.526e-05     Refine Mesh
+   25          84      0.0705202     7.629e-06     Refine Mesh
+   26          88      0.0705202     3.815e-06     Refine Mesh
+   27          92      0.0705202     1.907e-06     Refine Mesh
+   28          96      0.0705202     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 73927.881975 seconds.
+20110205
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0736202             1      
+    1           2      0.0736202           0.5     Refine Mesh
+    2           5      0.0732588             1     Successful Poll
+    3           6      0.0732588           0.5     Refine Mesh
+    4           9      0.0732588          0.25     Refine Mesh
+    5          12      0.0719901           0.5     Successful Poll
+    6          13       0.071762             1     Successful Poll
+    7          15       0.071762           0.5     Refine Mesh
+    8          19       0.071762          0.25     Refine Mesh
+    9          20      0.0715961           0.5     Successful Poll
+   10          23       0.071224             1     Successful Poll
+   11          25       0.071224           0.5     Refine Mesh
+   12          28       0.071224          0.25     Refine Mesh
+   13          32       0.071224         0.125     Refine Mesh
+   14          34      0.0710455          0.25     Successful Poll
+   15          37      0.0709344           0.5     Successful Poll
+   16          40      0.0709344          0.25     Refine Mesh
+   17          43      0.0709344         0.125     Refine Mesh
+   18          46      0.0709344        0.0625     Refine Mesh
+   19          47      0.0709321         0.125     Successful Poll
+   20          51      0.0709321        0.0625     Refine Mesh
+   21          55      0.0706881         0.125     Successful Poll
+   22          56      0.0700067          0.25     Successful Poll
+   23          60      0.0700067         0.125     Refine Mesh
+   24          61      0.0699643          0.25     Successful Poll
+   25          65      0.0699643         0.125     Refine Mesh
+   26          69      0.0699643        0.0625     Refine Mesh
+   27          73      0.0699643       0.03125     Refine Mesh
+   28          77      0.0699643       0.01563     Refine Mesh
+   29          81      0.0699643      0.007813     Refine Mesh
+   30          85      0.0699643      0.003906     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          88      0.0694644      0.007813     Successful Poll
+   32          90      0.0691026       0.01563     Successful Poll
+   33          94      0.0691026      0.007813     Refine Mesh
+   34          98      0.0691026      0.003906     Refine Mesh
+   35         102      0.0691026      0.001953     Refine Mesh
+   36         106      0.0691026     0.0009766     Refine Mesh
+   37         110      0.0691026     0.0004883     Refine Mesh
+   38         114      0.0691026     0.0002441     Refine Mesh
+   39         118      0.0691026     0.0001221     Refine Mesh
+   40         122      0.0691026     6.104e-05     Refine Mesh
+   41         126      0.0691026     3.052e-05     Refine Mesh
+   42         130      0.0691026     1.526e-05     Refine Mesh
+   43         134      0.0691026     7.629e-06     Refine Mesh
+   44         138      0.0691026     3.815e-06     Refine Mesh
+   45         140      0.0689342     7.629e-06     Successful Poll
+   46         144      0.0689342     3.815e-06     Refine Mesh
+   47         148      0.0689342     1.907e-06     Refine Mesh
+   48         152      0.0689342     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 77791.455011 seconds.
+20110128
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0800682             1      
+    1           2      0.0800682           0.5     Refine Mesh
+    2           6      0.0800682          0.25     Refine Mesh
+    3          10      0.0731572           0.5     Successful Poll
+    4          14      0.0731572          0.25     Refine Mesh
+    5          15      0.0721556           0.5     Successful Poll
+    6          18      0.0720204             1     Successful Poll
+    7          20      0.0720204           0.5     Refine Mesh
+    8          23      0.0720204          0.25     Refine Mesh
+    9          27      0.0720204         0.125     Refine Mesh
+   10          31      0.0720204        0.0625     Refine Mesh
+   11          35      0.0720204       0.03125     Refine Mesh
+   12          39      0.0720204       0.01563     Refine Mesh
+   13          43      0.0718755       0.03125     Successful Poll
+   14          47      0.0718755       0.01563     Refine Mesh
+   15          48      0.0715945       0.03125     Successful Poll
+   16          52      0.0715945       0.01563     Refine Mesh
+   17          56      0.0715532       0.03125     Successful Poll
+   18          57      0.0710668        0.0625     Successful Poll
+   19          61      0.0710668       0.03125     Refine Mesh
+   20          65      0.0710668       0.01563     Refine Mesh
+   21          69      0.0710668      0.007813     Refine Mesh
+   22          70      0.0710138       0.01563     Successful Poll
+   23          73      0.0708325       0.03125     Successful Poll
+   24          77      0.0708325       0.01563     Refine Mesh
+   25          81      0.0708325      0.007813     Refine Mesh
+   26          85      0.0708325      0.003906     Refine Mesh
+   27          89      0.0708325      0.001953     Refine Mesh
+   28          92      0.0705999      0.003906     Successful Poll
+   29          96      0.0705999      0.001953     Refine Mesh
+   30         100      0.0705999     0.0009766     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         103      0.0705258      0.001953     Successful Poll
+   32         107      0.0705258     0.0009766     Refine Mesh
+   33         111      0.0705258     0.0004883     Refine Mesh
+   34         115      0.0705258     0.0002441     Refine Mesh
+   35         119      0.0705258     0.0001221     Refine Mesh
+   36         122      0.0704338     0.0002441     Successful Poll
+   37         125      0.0704231     0.0004883     Successful Poll
+   38         129      0.0704231     0.0002441     Refine Mesh
+   39         133      0.0704231     0.0001221     Refine Mesh
+   40         137      0.0704231     6.104e-05     Refine Mesh
+   41         141      0.0704231     3.052e-05     Refine Mesh
+   42         145      0.0704231     1.526e-05     Refine Mesh
+   43         149      0.0704231     7.629e-06     Refine Mesh
+   44         152      0.0702794     1.526e-05     Successful Poll
+   45         156      0.0702794     7.629e-06     Refine Mesh
+   46         160      0.0702794     3.815e-06     Refine Mesh
+   47         164      0.0702794     1.907e-06     Refine Mesh
+   48         168      0.0702794     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 82057.475716 seconds.
+20110124
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0484626             1      
+    1           2      0.0484626           0.5     Refine Mesh
+    2           5      0.0483978             1     Successful Poll
+    3           6      0.0483978           0.5     Refine Mesh
+    4           9      0.0483978          0.25     Refine Mesh
+    5          12      0.0468908           0.5     Successful Poll
+    6          15      0.0468908          0.25     Refine Mesh
+    7          18      0.0468908         0.125     Refine Mesh
+    8          20      0.0466225          0.25     Successful Poll
+    9          21       0.046416           0.5     Successful Poll
+   10          24       0.046416          0.25     Refine Mesh
+   11          25      0.0463973           0.5     Successful Poll
+   12          29      0.0463973          0.25     Refine Mesh
+   13          33      0.0463973         0.125     Refine Mesh
+   14          37      0.0463973        0.0625     Refine Mesh
+   15          41      0.0463973       0.03125     Refine Mesh
+   16          45      0.0463973       0.01563     Refine Mesh
+   17          49      0.0463973      0.007813     Refine Mesh
+   18          53      0.0463973      0.003906     Refine Mesh
+   19          56      0.0463198      0.007813     Successful Poll
+   20          60      0.0463198      0.003906     Refine Mesh
+   21          64      0.0463198      0.001953     Refine Mesh
+   22          68      0.0463198     0.0009766     Refine Mesh
+   23          72      0.0463198     0.0004883     Refine Mesh
+   24          73      0.0462865     0.0009766     Successful Poll
+   25          77      0.0462865     0.0004883     Refine Mesh
+   26          81      0.0462005     0.0009766     Successful Poll
+   27          85      0.0462005     0.0004883     Refine Mesh
+   28          89      0.0462005     0.0002441     Refine Mesh
+   29          93      0.0462005     0.0001221     Refine Mesh
+   30          97      0.0462005     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         101      0.0462005     3.052e-05     Refine Mesh
+   32         105      0.0462005     1.526e-05     Refine Mesh
+   33         109      0.0462005     7.629e-06     Refine Mesh
+   34         113      0.0462005     3.815e-06     Refine Mesh
+   35         117      0.0462005     1.907e-06     Refine Mesh
+   36         121      0.0462005     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 85115.753425 seconds.
+20110202
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.114423             1      
+    1           2       0.114423           0.5     Refine Mesh
+    2           5       0.113515             1     Successful Poll
+    3           6       0.113515           0.5     Refine Mesh
+    4           9       0.113515          0.25     Refine Mesh
+    5          10       0.113094           0.5     Successful Poll
+    6          13       0.113094          0.25     Refine Mesh
+    7          17      0.0875232           0.5     Successful Poll
+    8          20      0.0875232          0.25     Refine Mesh
+    9          21      0.0872479           0.5     Successful Poll
+   10          22      0.0863306             1     Successful Poll
+   11          24      0.0863306           0.5     Refine Mesh
+   12          28      0.0863306          0.25     Refine Mesh
+   13          32      0.0863306         0.125     Refine Mesh
+   14          36      0.0863306        0.0625     Refine Mesh
+   15          40      0.0863306       0.03125     Refine Mesh
+   16          44      0.0863306       0.01563     Refine Mesh
+   17          48      0.0863306      0.007813     Refine Mesh
+   18          52      0.0862804       0.01563     Successful Poll
+   19          55       0.086083       0.03125     Successful Poll
+   20          59       0.086083       0.01563     Refine Mesh
+   21          63       0.086083      0.007813     Refine Mesh
+   22          64      0.0859552       0.01563     Successful Poll
+   23          68      0.0859552      0.007813     Refine Mesh
+   24          72      0.0859552      0.003906     Refine Mesh
+   25          76      0.0859552      0.001953     Refine Mesh
+   26          80      0.0859552     0.0009766     Refine Mesh
+   27          84      0.0859552     0.0004883     Refine Mesh
+   28          88      0.0859552     0.0002441     Refine Mesh
+   29          92      0.0859552     0.0001221     Refine Mesh
+   30          96      0.0859552     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         100      0.0859552     3.052e-05     Refine Mesh
+   32         104      0.0859552     1.526e-05     Refine Mesh
+   33         108      0.0859552     7.629e-06     Refine Mesh
+   34         112      0.0859552     3.815e-06     Refine Mesh
+   35         116      0.0859552     1.907e-06     Refine Mesh
+   36         120      0.0859552     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 88154.925556 seconds.
+20110131
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.135231             1      
+    1           2       0.135231           0.5     Refine Mesh
+    2           5       0.132108             1     Successful Poll
+    3           6       0.132108           0.5     Refine Mesh
+    4           9       0.132108          0.25     Refine Mesh
+    5          12       0.115307           0.5     Successful Poll
+    6          13       0.114004             1     Successful Poll
+    7          15       0.114004           0.5     Refine Mesh
+    8          16        0.11143             1     Successful Poll
+    9          18        0.11143           0.5     Refine Mesh
+   10          22        0.11143          0.25     Refine Mesh
+   11          26        0.11143         0.125     Refine Mesh
+   12          29       0.110802          0.25     Successful Poll
+   13          32       0.108638           0.5     Successful Poll
+   14          36       0.108638          0.25     Refine Mesh
+   15          40       0.108638         0.125     Refine Mesh
+   16          44       0.108638        0.0625     Refine Mesh
+   17          48       0.108638       0.03125     Refine Mesh
+   18          52       0.108638       0.01563     Refine Mesh
+   19          56       0.108638      0.007813     Refine Mesh
+   20          60       0.108638      0.003906     Refine Mesh
+   21          61       0.108412      0.007813     Successful Poll
+   22          65       0.108412      0.003906     Refine Mesh
+   23          69       0.108412      0.001953     Refine Mesh
+   24          73       0.108412     0.0009766     Refine Mesh
+   25          75       0.107896      0.001953     Successful Poll
+   26          79       0.107896     0.0009766     Refine Mesh
+   27          83       0.107896     0.0004883     Refine Mesh
+   28          87       0.107896     0.0002441     Refine Mesh
+   29          88       0.107604     0.0004883     Successful Poll
+   30          91       0.107088     0.0009766     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          95       0.107088     0.0004883     Refine Mesh
+   32          99       0.107088     0.0002441     Refine Mesh
+   33         103       0.107088     0.0001221     Refine Mesh
+   34         107       0.107088     6.104e-05     Refine Mesh
+   35         111       0.107088     3.052e-05     Refine Mesh
+   36         115       0.107088     1.526e-05     Refine Mesh
+   37         119       0.107088     7.629e-06     Refine Mesh
+   38         123       0.107088     3.815e-06     Refine Mesh
+   39         127       0.107088     1.907e-06     Refine Mesh
+   40         131       0.107088     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 91495.145579 seconds.
+20110130
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1        0.10205             1      
+    1           2        0.10205           0.5     Refine Mesh
+    2           5      0.0999564             1     Successful Poll
+    3           6      0.0999564           0.5     Refine Mesh
+    4           9      0.0999564          0.25     Refine Mesh
+    5          12      0.0855587           0.5     Successful Poll
+    6          13      0.0833491             1     Successful Poll
+    7          14      0.0819143             2     Successful Poll
+    8          16      0.0819143             1     Refine Mesh
+    9          18      0.0819143           0.5     Refine Mesh
+   10          21      0.0819143          0.25     Refine Mesh
+   11          22       0.080728           0.5     Successful Poll
+   12          25       0.080728          0.25     Refine Mesh
+   13          28       0.080728         0.125     Refine Mesh
+   14          31       0.080728        0.0625     Refine Mesh
+   15          34       0.080728       0.03125     Refine Mesh
+   16          37       0.080728       0.01563     Refine Mesh
+   17          40       0.080728      0.007813     Refine Mesh
+   18          43       0.080728      0.003906     Refine Mesh
+   19          46       0.080728      0.001953     Refine Mesh
+   20          49       0.080728     0.0009766     Refine Mesh
+   21          52       0.080728     0.0004883     Refine Mesh
+   22          55       0.080728     0.0002441     Refine Mesh
+   23          58       0.080728     0.0001221     Refine Mesh
+   24          61       0.080728     6.104e-05     Refine Mesh
+   25          64       0.080728     3.052e-05     Refine Mesh
+   26          67       0.080728     1.526e-05     Refine Mesh
+   27          70       0.080728     7.629e-06     Refine Mesh
+   28          73       0.080728     3.815e-06     Refine Mesh
+   29          76       0.080728     1.907e-06     Refine Mesh
+   30          79       0.080728     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 93497.153591 seconds.
+20110125
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0822539             1      
+    1           2      0.0822539           0.5     Refine Mesh
+    2           6      0.0822539          0.25     Refine Mesh
+    3          10      0.0733273           0.5     Successful Poll
+    4          14      0.0733273          0.25     Refine Mesh
+    5          17      0.0728856           0.5     Successful Poll
+    6          20      0.0728856          0.25     Refine Mesh
+    7          24      0.0728856         0.125     Refine Mesh
+    8          28      0.0728856        0.0625     Refine Mesh
+    9          32      0.0728856       0.03125     Refine Mesh
+   10          36      0.0728856       0.01563     Refine Mesh
+   11          40      0.0728856      0.007813     Refine Mesh
+   12          44      0.0728856      0.003906     Refine Mesh
+   13          48      0.0728856      0.001953     Refine Mesh
+   14          52      0.0728856     0.0009766     Refine Mesh
+   15          56      0.0728856     0.0004883     Refine Mesh
+   16          60      0.0728856     0.0002441     Refine Mesh
+   17          64      0.0728856     0.0001221     Refine Mesh
+   18          68      0.0728856     6.104e-05     Refine Mesh
+   19          72      0.0728856     3.052e-05     Refine Mesh
+   20          76      0.0728856     1.526e-05     Refine Mesh
+   21          80      0.0728856     7.629e-06     Refine Mesh
+   22          84      0.0728856     3.815e-06     Refine Mesh
+   23          88      0.0728856     1.907e-06     Refine Mesh
+   24          92      0.0728856     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 95822.592308 seconds.
+20110203
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0687375             1      
+    1           2      0.0687375           0.5     Refine Mesh
+    2           5      0.0673492             1     Successful Poll
+    3           6      0.0673492           0.5     Refine Mesh
+    4           9      0.0673492          0.25     Refine Mesh
+    5          10      0.0671521           0.5     Successful Poll
+    6          13      0.0671521          0.25     Refine Mesh
+    7          17      0.0638124           0.5     Successful Poll
+    8          20      0.0638124          0.25     Refine Mesh
+    9          23      0.0630856           0.5     Successful Poll
+   10          26      0.0630856          0.25     Refine Mesh
+   11          29      0.0630856         0.125     Refine Mesh
+   12          31      0.0629733          0.25     Successful Poll
+   13          34      0.0629733         0.125     Refine Mesh
+   14          37      0.0629733        0.0625     Refine Mesh
+   15          38      0.0625764         0.125     Successful Poll
+   16          42      0.0625764        0.0625     Refine Mesh
+   17          46      0.0625764       0.03125     Refine Mesh
+   18          50      0.0625764       0.01563     Refine Mesh
+   19          54      0.0625764      0.007813     Refine Mesh
+   20          58      0.0625764      0.003906     Refine Mesh
+   21          59      0.0625238      0.007813     Successful Poll
+   22          63      0.0625238      0.003906     Refine Mesh
+   23          67      0.0625238      0.001953     Refine Mesh
+   24          71      0.0625238     0.0009766     Refine Mesh
+   25          75      0.0625238     0.0004883     Refine Mesh
+   26          79      0.0625238     0.0002441     Refine Mesh
+   27          83      0.0625238     0.0001221     Refine Mesh
+   28          87       0.062491     0.0002441     Successful Poll
+   29          91       0.062491     0.0001221     Refine Mesh
+   30          95       0.062491     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          99      0.0624805     0.0001221     Successful Poll
+   32         103      0.0624805     6.104e-05     Refine Mesh
+   33         107      0.0624805     3.052e-05     Refine Mesh
+   34         111      0.0624805     1.526e-05     Refine Mesh
+   35         113      0.0624374     3.052e-05     Successful Poll
+   36         117      0.0624374     1.526e-05     Refine Mesh
+   37         121      0.0624374     7.629e-06     Refine Mesh
+   38         125      0.0624374     3.815e-06     Refine Mesh
+   39         129      0.0624374     1.907e-06     Refine Mesh
+   40         133      0.0624374     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 99206.057818 seconds.
+20110204
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1      0.0765786             1      
+    1           2      0.0742719             2     Successful Poll
+    2           4      0.0742719             1     Refine Mesh
+    3           6      0.0742719           0.5     Refine Mesh
+    4           8      0.0722717             1     Successful Poll
+    5          10      0.0722717           0.5     Refine Mesh
+    6          13      0.0722717          0.25     Refine Mesh
+    7          14      0.0718296           0.5     Successful Poll
+    8          17      0.0718296          0.25     Refine Mesh
+    9          20      0.0718296         0.125     Refine Mesh
+   10          23      0.0718296        0.0625     Refine Mesh
+   11          26      0.0718296       0.03125     Refine Mesh
+   12          28      0.0709662        0.0625     Successful Poll
+   13          31      0.0709662       0.03125     Refine Mesh
+   14          34      0.0709662       0.01563     Refine Mesh
+   15          37      0.0709662      0.007813     Refine Mesh
+   16          39      0.0709509       0.01563     Successful Poll
+   17          42      0.0709509      0.007813     Refine Mesh
+   18          45      0.0709509      0.003906     Refine Mesh
+   19          47      0.0706739      0.007813     Successful Poll
+   20          50      0.0706739      0.003906     Refine Mesh
+   21          53      0.0706739      0.001953     Refine Mesh
+   22          56      0.0706739     0.0009766     Refine Mesh
+   23          59      0.0706739     0.0004883     Refine Mesh
+   24          62      0.0706739     0.0002441     Refine Mesh
+   25          65      0.0706739     0.0001221     Refine Mesh
+   26          68      0.0706739     6.104e-05     Refine Mesh
+   27          71      0.0706739     3.052e-05     Refine Mesh
+   28          74      0.0706739     1.526e-05     Refine Mesh
+   29          77      0.0706739     7.629e-06     Refine Mesh
+   30          80      0.0706739     3.815e-06     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          81      0.0706397     7.629e-06     Successful Poll
+   32          84      0.0706397     3.815e-06     Refine Mesh
+   33          87      0.0706283     7.629e-06     Successful Poll
+   34          90      0.0706283     3.815e-06     Refine Mesh
+   35          94      0.0706283     1.907e-06     Refine Mesh
+   36          98      0.0706283     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 101706.818814 seconds.
+20110215
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.126872             1      
+    1           2       0.126872           0.5     Refine Mesh
+    2           5       0.124495             1     Successful Poll
+    3           6       0.124495           0.5     Refine Mesh
+    4           9       0.108335             1     Successful Poll
+    5          11       0.108335           0.5     Refine Mesh
+    6          13       0.108335          0.25     Refine Mesh
+    7          15      0.0886803           0.5     Successful Poll
+    8          18      0.0886803          0.25     Refine Mesh
+    9          21      0.0886803         0.125     Refine Mesh
+   10          22      0.0877934          0.25     Successful Poll
+   11          25      0.0877934         0.125     Refine Mesh
+   12          29      0.0869488          0.25     Successful Poll
+   13          32      0.0869488         0.125     Refine Mesh
+   14          33      0.0860866          0.25     Successful Poll
+   15          36        0.08578           0.5     Successful Poll
+   16          38        0.08578          0.25     Refine Mesh
+   17          41        0.08578         0.125     Refine Mesh
+   18          44        0.08578        0.0625     Refine Mesh
+   19          46      0.0771623         0.125     Successful Poll
+   20          49      0.0771623        0.0625     Refine Mesh
+   21          53      0.0771623       0.03125     Refine Mesh
+   22          57      0.0771623       0.01563     Refine Mesh
+   23          61      0.0771623      0.007813     Refine Mesh
+   24          65      0.0771623      0.003906     Refine Mesh
+   25          69      0.0771623      0.001953     Refine Mesh
+   26          73      0.0771623     0.0009766     Refine Mesh
+   27          77      0.0771623     0.0004883     Refine Mesh
+   28          81      0.0771623     0.0002441     Refine Mesh
+   29          85      0.0771623     0.0001221     Refine Mesh
+   30          89      0.0771623     6.104e-05     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31          93      0.0771623     3.052e-05     Refine Mesh
+   32          97      0.0771623     1.526e-05     Refine Mesh
+   33         101      0.0771623     7.629e-06     Refine Mesh
+   34         105      0.0771623     3.815e-06     Refine Mesh
+   35         109      0.0771623     1.907e-06     Refine Mesh
+   36         113      0.0771623     9.537e-07     Refine Mesh
+Optimization terminated: mesh size less than options.MeshTolerance.
+Elapsed time is 104590.956063 seconds.
+Elapsed time is 104590.956692 seconds.

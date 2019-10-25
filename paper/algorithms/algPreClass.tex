@@ -1,0 +1,32 @@
+      \begin{figure}[t!]
+        \begin{algorithmic}[1]  
+                \Function{pre\_process}{{\tt map}}\\
+                \COMMENT{{\textbf Input:} \hspace{0.2cm} {\tt map} to process.}\\
+                \COMMENT{{\textbf Output:}}   {\tt map$_{\{+,-\}}$} contains separate coronal hole 
+                \Statex  \hspace{1.4cm} for positively and negatively charged coronal 
+                \Statex  \hspace{1.4cm} holes of the same size as the magnetic images,
+                \Statex  \hspace{1.4cm} with polar regions removed.
+                \Statex
+                \State \COMMENT{Extract reference and model maps}
+                \State {\tt map} $\gets$ {\small \textbf{extract\_coronal\_hole\_maps}} ({\tt map})
+                \State
+                \State \COMMENT{Remove small gaps in the maps}
+                \State {\tt map} $\gets$ {\bf binary\_close~}({\tt map})
+                \Statex
+                \State \COMMENT{Resize maps to photomap image size}
+                \State {\tt map} $\gets$ {\bf resize~}({\tt ref\_map})
+                \Statex
+                \State \COMMENT{Separate the positive from the negatively charged}
+                \Statex \hspace{1cm} {coronal holes}
+                \State {\tt map$_{\{+,-\}}$} $\gets$ {\bf extract\_polarity\_maps~}({\tt map})     
+                \Statex
+                \State  \COMMENT{Remove regions where there are no observations,}
+                \Statex \hspace{0.8cm} and regions with latitude 0 to 30 degrees, and 
+                \Statex \hspace{0.8cm} 150 to 180 degrees
+                \State {\tt map$_{\{+,-\}}$}  $\gets$  {\bf remove\_regions} ({\tt map$_{\{+,-\}}$})
+                \Statex
+                \State \Return {\tt map$_{\{+,-\}}$}
+                \EndFunction
+        \end{algorithmic}  
+        \caption{\label{fig:preProcessing}Pre-processing steps for cluster matching.}
+\end{figure} 

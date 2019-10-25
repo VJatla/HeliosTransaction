@@ -1,0 +1,14 @@
+\begin{table}
+  \caption{Matching confusion matrix}
+  \label{tab:matchingConfusionMatrix}
+  \begin{tabular}{l |l l l|l }
+    &\multicolumn{3}{l|}{\bf ?????? Manual Vs Automatic matching} & \\
+    & New & Missing & Matched & Total \\
+    \hline
+    New & \textbf{1958} & 0 & 22 & 1980\\    
+    Missing & 0 & \textbf{868} & 3 & 871\\
+    Matched & 416 & 360 & \textbf{7522} & 8298\\
+    \hline 
+    Total & 2374 & 1228 & 7547 & 11149\\
+  \end{tabular}
+\end{table}

@@ -1,0 +1,162 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{comment}
+
+\pagestyle{plain}                                                      
+%%%%%%%%%% EXACT 1in MARGINS %%%%
+\setlength{\textwidth}{6.5in}         %%                                  
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you      
+\setlength{\evensidemargin}{0in}  %%  not change these parameters, 
+\setlength{\textheight}{8.5in}         %%  at the risk of having your
+\setlength{\topmargin}{0in}            %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}          %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}              %%                                   %%
+\setlength{\footskip}{.5in}               %%                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                            
+\newcommand{\required}[1]{\section*{#1}}                    %%
+\renewcommand{\refname}{\hfil References Cited\hfil}                   %%
+\bibliographystyle{plain}                                             
+%%%%%%%%%%%%%%%%%%%%%%
+
+%PUT YOUR MACROS HERE
+%\usepackage{xcolor}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{textcomp}  % For apostrophe
+
+\usepackage{graphicx} % Activated by CCD to be able to insert figures
+% declare the path(s) where your graphic files are
+\graphicspath{{./figures/}} % Activated by CCD, to set the default figures directory
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+\DeclareGraphicsExtensions{.pdf} % Activated by CCD for using PDFs only
+\usepackage{algpseudocode}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Diagrams 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc, fit, backgrounds} %graphs, graphs.standard} 
+
+% Figures with side captions
+\usepackage[capbesideposition=inside, facing=yes,capbesidesep=quad]{floatrow}
+
+% Control figure placement: 
+\usepackage[verbose]{placeins}
+
+% Gantt chart
+\usepackage{pgfgantt}
+
+% Figures extra
+\usepackage[indention=10pt, singlelinecheck=false]{subfig}
+
+% Support for multiple figures within one:
+%\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{arydshln}
+
+% Restore when done
+% Must have
+
+\pagenumbering{arabic}
+
+\input{DiagramDefs.tex}
+
+% Space saving commands:
+\usepackage[compact]{titlesec}  % Saves a lot of space in sections
+\usepackage{cite}  % Combine citations nicely together
+
+% Allow figure wrap-arounds:
+\usepackage{wrapfig}
+\begin{document}
+   
+
+% [28] is the number of lines to occupy. This has to be done manually.
+\begin{wrapfigure}[28]{r}{0.45\textwidth}
+	\caption{\label{fig:IntroBlkDiag}
+	???}
+	\centering         
+	\resizebox{\textwidth}{!}{%
+		\begin{tikzpicture}[node distance=2cm]
+		
+		% Solar Model simulation
+		\node (obs) [BOXL, line width=2pt,
+		minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Solar model\\
+			generation
+		%Solar Model \\ Simulation
+		};
+		
+		\node (sim)[BOXL, right of = obs, node distance = 5cm,line width=2pt,
+		minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+		{
+			Coronal hole\\
+			maps\\extraction
+%			Pred. Coronal Hole Maps.
+		};
+	
+	% Input
+	\node(syn)[draw=none, text width=2.5cm, text centered,below of =obs, node distance = 2.5cm,
+	rounded corners, draw=black!50, dashed,
+	minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	{
+		Synoptic\\maps
+	};
+	\node(mag)[draw=none, text width=2.5cm, text centered,below of =syn, node distance = 2.5cm,
+	rounded corners, draw=black!50, dashed,
+	minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	{
+		Magnetic\\maps
+	};
+	\node(seg)[BOXL, node distance = 4 cm, line width=2pt,below of =sim, minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	{
+		Coronal hole \\Segmentation
+	};
+
+	% Matching
+	\node(bigBox)[BOXL, 
+	right of = seg, node distance = 6.5cm,line width=2pt,
+	minimum width = 4cm, minimum height = 2cm, scale=1.3
+	]
+	{
+		Clustering and Matching	
+	};
+
+
+	%Classification
+	\node(class)[BOXL, right of = bigBox, node distance = 5.5cm,
+	minimum width = 1.5cm, minimum height = 1.5cm, scale=1.3]
+	{
+		Classification
+	};
+
+% Connecting boxes
+%	\draw [ARROW, line width=2pt] (sim.east) to (pred.west);
+%	\draw [ARROW, line width=2pt] (predicted.east)   to (match.west);
+%	\draw [ARROW, line width=2pt] (pred.east) 	to[-|-] (match.172	);
+%	\draw [ARROW, line width=2pt] (match.east) to(class.west);
+%	\draw [DARROW, line width=2pt] (class.east) to(output.west);
+	\draw[ARROW, line width=3pt] (syn.east) to[-|-] (seg.172);
+	\draw[ARROW, line width=3pt] (mag.east) to[-|-] (seg.188);
+	\draw[ARROW, line width=3pt] (obs.east) to (sim.west);
+	\draw[ARROW, line width=3pt] (seg.east) to  (bigBox.west);
+	\draw[ARROW, line width=3pt] (bigBox.east) to (class.west);
+	\draw[ARROW, line width=3pt] (sim.east) to[-|-] (bigBox.172);
+
+		
+		
+		\end{tikzpicture}
+	}
+\end{wrapfigure}
+
+
+
+
+
+
+\end{document}

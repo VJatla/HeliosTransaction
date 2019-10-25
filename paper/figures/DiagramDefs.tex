@@ -1,0 +1,141 @@
+% This file contains all of the definitions for
+% use with the diagrams.
+
+
+% Use the following rules for MIXED horizontal/vertical paths.
+% from: http://tex.stackexchange.com/questions/45347/vertical-and-horizontal-lines-in-pgf-tikz               
+% Modified by adding the two top styles!
+% Example use:  \draw[->,red] (2.1,1.1) to[|-|=.2] (1.1,0.1);
+\tikzset{
+	%
+	% Added: Right angle connection.
+	%
+	|-/.style={   
+		to path={ (\tikztostart) |- (\tikztotarget) \tikztonodes }
+	},
+	%
+	% Horizontal -> vertical -> horizontal line
+	%
+	-|-/.style={  % .
+		to path={
+			(\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
+			\tikztonodes
+		}
+	},
+	-|-/.default=0.5, % default at mid-point.
+	%
+	% Vertical -> horizontal -> horizontal line.
+	%
+	|-|/.style={   
+		to path={
+			(\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
+			\tikztonodes
+		}
+	},
+	|-|/.default=0.5,  % This is the mid-point default. It is argument #1.
+}
+
+
+% Default text=left aligned.
+% Define styles for the different diagram components:
+
+% Database style. Produces a video database for connections.
+\tikzstyle{DB}     = [cylinder, line width=0.5mm, text width=2cm, text centered, 
+                      %cylinder uses custom fill, cylinder body fill=yellow!50, cylinder end fill=yellow!50, 
+                      shape border rotate=90, aspect=0.25, draw]
+
+% Empty shape. Use this for passing arguments to the code.
+\tikzstyle{EMPTY} = [draw=none, text width=2.5cm, text centered, font=\fontsize{15}{0}\selectfont] 
+
+% Red box. This is the default box processing.
+\tikzstyle{BOX}   = [draw=red,         % color for LINES
+                     ultra thick,   % control line width.
+                     %fill=blue!50,    % Fill-in the box.
+                     text centered,
+                     rectangle,        % Box shape
+                     text width=2.5cm] % Controls how much text we are putting inside. 
+
+% Red box. This is the default box processing.
+\tikzstyle{BOXL}   = [draw=red,         % color for LINES
+                     line width=3pt,   % control line width.
+                     %fill=blue!50,    % Fill-in the box.
+                     text centered,
+                     rectangle,        % Box shape
+                     text width=2.5cm] % Controls how much text we are putting inside. 
+                     
+\tikzstyle{BOXL2}   = [	draw=red,         % color for LINES
+						line width=2pt,   % control line width.
+						%fill=blue!50,    % Fill-in the box.
+						text centered,
+						rectangle,        % Box shape
+						text width=3cm,
+						font=\fontsize{15}{0}\selectfont] % Controls how much text we are putting inside. 
+						
+\tikzstyle{BOXL3}   = [	draw=red,         % color for LINES
+line width=1pt,   % control line width.
+%fill=blue!50,    % Fill-in the box.
+text centered,
+rectangle,        % Box shape
+text width=3cm,
+font=\fontsize{15}{0}\selectfont] % Controls how much text we are putting inside. 
+
+                     
+\tikzstyle{BOXLD}   = [	draw=red,         % color for LINES
+						line width=3pt,   % control line width.
+						dashed,			  % Dashed box
+						%fill=blue!50,    % Fill-in the box.
+						text centered,
+						rectangle,        % Box shape
+						text width=2.5cm] % Controls how much text we are putting inside.
+						
+\tikzstyle{BOXLD2}   = [	draw=red,         % color for LINES
+line width=2pt,   % control line width.
+dashed,			  % Dashed box
+%fill=blue!50,    % Fill-in the box.
+text centered,
+rectangle,        % Box shape
+text width=2.5cm,
+font=\fontsize{30}{0}\selectfont] % Controls how much text we are putting inside. 
+
+
+ \tikzstyle{BOXB}   = [draw=black,         % color for LINES  --> Added by vj
+					 line width=3pt,   % control line width.
+					 %fill=blue!50,    % Fill-in the box.
+					 text centered,
+					 rectangle,        % Box shape
+					 text width=2.5cm] % Controls how much text we are putting inside. 
+
+% Red smaller box. Use this to fit more boxes.
+\tikzstyle{BOXs} = [draw=red,         % color for LINES
+                     ultra thick,   % control line width.
+                     %fill=blue!50,    % Fill-in the box.
+                     text centered,
+                     rectangle,        % Box shape
+                     text width=2cm] % Controls how much text we are putting inside.
+
+% Communications box. Use for exporting data.
+\tikzstyle{BOXC}  = [draw=red,       % color for LINES
+                     ultra thick, % control line width.
+                     text centered,  
+                     %fill=blue!50,   % Fill-in the box.
+                     rectangle,      % Box shape
+                     text width=3cm] % Controls how much text we are putting inside. 
+
+% Background styles for communications:
+\tikzstyle{queryComm}   = [fill=yellow!20,rounded corners, draw=black!50, dashed]
+\tikzstyle{designComm} = [fill=blue!20,rounded corners, draw=black!50, dashed]
+
+% ARROWs should never use hard-coded dimensions! See the top for connections.  
+\tikzstyle{ARROW}  = [ultra thick, ->, >=stealth]             % regular black arrow
+\tikzstyle{DARROW} = [dashed, ultra thick, ->, >=stealth]     % dashed arrow for communications
+\tikzstyle{IARROW} = [draw=blue, fill=blue, ultra thick, ->]  % input arrow (blue)
+\tikzstyle{OARROW} = [draw=red, ultra thick, ->] % output arrow (green)
+
+
+% Small version of the BOX. It supports smaller boxes.
+\tikzstyle{SBOX}   = [draw=blue, % color for LINES
+              ultra thick,       % control line width.
+              %fill=blue!50,     % Fill-in the box.
+              text centered,
+              rectangle,         % Box shape
+              text width=1.6cm]  % Controls how much text we are putting inside. 

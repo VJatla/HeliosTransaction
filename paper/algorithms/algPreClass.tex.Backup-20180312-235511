@@ -1,0 +1,43 @@
+      \begin{figure}[t!]
+	\begin{algorithmic}[1]  
+		\Function{pre\_process}{{\tt maps}}
+		\State \COMMENT{Pre-process maps to remove regions of no 
+		\Statex \hspace{0.78cm} observations, polar regions, and} 
+		\State \COMMENT{ split them based on polarity.}
+		\Statex
+		\State \COMMENT{Extract reference and model maps}
+		\State [{\tt ref\_map}, {\tt model\_map}] 
+		\Statex \hspace{2.3cm}$\gets$ {\small \textbf{extract\_coronal\_hole\_maps}} ({\tt maps})
+		\State
+		\State \COMMENT{Remove small gaps in the maps}
+		\State [{\tt ref\_map}, {\tt model\_map}] 
+		\Statex \hspace{2.3cm}$\gets$ {\bf binary\_close~}({\tt ref\_map},
+		\Statex \hspace{4.3cm} {\tt model\_map})
+		\Statex
+		\State \COMMENT{Resize maps to photomap image size}
+		\State [{\tt ref\_map}, {\tt model\_map}] 
+		\Statex \hspace{2.3cm}$\gets$ {\bf resize\_to\_same\_size~}({\tt ref\_map},
+		\Statex \hspace{5.3cm} {\tt model\_map})
+		~\Statex
+		\State \COMMENT{Extract regions based on polarity in magnetic images}
+		\State [{\tt ref\_magnetic}, {\tt model\_magnetic}]
+		\Statex \hspace{2.5cm} $\gets$ {\small \textbf{extract\_magnetic\_maps}} ({\tt maps})
+		
+		\State {\tt ref\_map$_{+,-}$} $\gets$ {\bf extract\_polarity\_maps~}({\tt ref\_map},
+		\Statex \hspace{5.6cm} {\tt ref\_magnetic})
+		\State {\tt model\_map$_{+,-}$} $\gets$ {\bf split\_coronal\_maps~}({\tt model\_map},
+		\Statex \hspace{5.6cm} {\tt model\_magnetic})
+		\Statex
+		\State \COMMENT{Remove regions where there are no observations,}
+		\State \COMMENT{ latitude 0 to 30 degrees, and 150 to 180 degrees}
+		\State {\tt no\_data\_map} $\gets$  {\bf set\_no\_obs\_regions~}({\tt maps})
+		\Statex
+		\State \COMMENT{Remove no data regions from all maps}
+		\State {\tt ref\_map$_{+,-}$}  $\gets$  {\bf remove\_no\_data} ({\tt ref\_map$_{+-}$},
+		\Statex \hspace{5.6cm} {\tt no\_data\_map})
+		\State {\tt model\_map$_{+,-}$} $\gets$ {\bf remove\_no\_data} ({\tt mod\_map$_{+,1}$},
+		\Statex \hspace{5.6cm} {\tt no\_data\_map})
+		\EndFunction
+	\end{algorithmic}  
+	\caption{\label{fig:preProcessing}Pre-processing reference maps and model maps prior to analysis.}
+\end{figure} 

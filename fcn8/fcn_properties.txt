@@ -1,0 +1,304 @@
+ ====================================
+Layer 1
+	 Name =	input
+	 Type =	ImageInputLayer
+ ====================================
+Layer 2
+	 Name =	conv1_1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	1728
+	 Number of weights changed = 	576
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 3
+	 Name =	relu1_1
+	 Type =	ReLULayer
+ ====================================
+Layer 4
+	 Name =	conv1_2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36863
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 5
+	 Name =	relu1_2
+	 Type =	ReLULayer
+ ====================================
+Layer 6
+	 Name =	pool1
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 7
+	 Name =	conv2_1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	73728
+	 Number of weights changed = 	72570
+	 Number of Bias = 	128
+	 Number of Bias changed = 	126
+ ====================================
+Layer 8
+	 Name =	relu2_1
+	 Type =	ReLULayer
+ ====================================
+Layer 9
+	 Name =	conv2_2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	147456
+	 Number of weights changed = 	145114
+	 Number of Bias = 	128
+	 Number of Bias changed = 	128
+ ====================================
+Layer 10
+	 Name =	relu2_2
+	 Type =	ReLULayer
+ ====================================
+Layer 11
+	 Name =	pool2
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 12
+	 Name =	conv3_1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	294912
+	 Number of weights changed = 	294912
+	 Number of Bias = 	256
+	 Number of Bias changed = 	254
+ ====================================
+Layer 13
+	 Name =	relu3_1
+	 Type =	ReLULayer
+ ====================================
+Layer 14
+	 Name =	conv3_2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	589824
+	 Number of weights changed = 	589782
+	 Number of Bias = 	256
+	 Number of Bias changed = 	254
+ ====================================
+Layer 15
+	 Name =	relu3_2
+	 Type =	ReLULayer
+ ====================================
+Layer 16
+	 Name =	conv3_3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	589824
+	 Number of weights changed = 	589776
+	 Number of Bias = 	256
+	 Number of Bias changed = 	256
+ ====================================
+Layer 17
+	 Name =	relu3_3
+	 Type =	ReLULayer
+ ====================================
+Layer 18
+	 Name =	pool3
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 19
+	 Name =	conv4_1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	1179648
+	 Number of weights changed = 	1179425
+	 Number of Bias = 	512
+	 Number of Bias changed = 	502
+ ====================================
+Layer 20
+	 Name =	relu4_1
+	 Type =	ReLULayer
+ ====================================
+Layer 21
+	 Name =	conv4_2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	2359296
+	 Number of weights changed = 	2355539
+	 Number of Bias = 	512
+	 Number of Bias changed = 	502
+ ====================================
+Layer 22
+	 Name =	relu4_2
+	 Type =	ReLULayer
+ ====================================
+Layer 23
+	 Name =	conv4_3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	2359296
+	 Number of weights changed = 	2347399
+	 Number of Bias = 	512
+	 Number of Bias changed = 	496
+ ====================================
+Layer 24
+	 Name =	relu4_3
+	 Type =	ReLULayer
+ ====================================
+Layer 25
+	 Name =	pool4
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 26
+	 Name =	conv5_1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	2359296
+	 Number of weights changed = 	2341510
+	 Number of Bias = 	512
+	 Number of Bias changed = 	487
+ ====================================
+Layer 27
+	 Name =	relu5_1
+	 Type =	ReLULayer
+ ====================================
+Layer 28
+	 Name =	conv5_2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	2359296
+	 Number of weights changed = 	2339267
+	 Number of Bias = 	512
+	 Number of Bias changed = 	481
+ ====================================
+Layer 29
+	 Name =	relu5_2
+	 Type =	ReLULayer
+ ====================================
+Layer 30
+	 Name =	conv5_3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	2359296
+	 Number of weights changed = 	2284167
+	 Number of Bias = 	512
+	 Number of Bias changed = 	490
+ ====================================
+Layer 31
+	 Name =	relu5_3
+	 Type =	ReLULayer
+ ====================================
+Layer 32
+	 Name =	pool5
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 33
+	 Name =	fc6
+	 Type =	Convolution2DLayer
+	 Number of weights = 	102760448
+	 Number of weights changed = 	102757884
+	 Number of Bias = 	4096
+	 Number of Bias changed = 	3686
+ ====================================
+Layer 34
+	 Name =	relu6
+	 Type =	ReLULayer
+ ====================================
+Layer 35
+	 Name =	drop6
+	 Type =	DropoutLayer
+ ====================================
+Layer 36
+	 Name =	fc7
+	 Type =	Convolution2DLayer
+	 Number of weights = 	16777216
+	 Number of weights changed = 	16776853
+	 Number of Bias = 	4096
+	 Number of Bias changed = 	3471
+ ====================================
+Layer 37
+	 Name =	relu7
+	 Type =	ReLULayer
+ ====================================
+Layer 38
+	 Name =	drop7
+	 Type =	DropoutLayer
+ ====================================
+Layer 39
+	 Name =	score_fr
+	 Type =	Convolution2DLayer
+	 This layer is trained ***from SCRATCH**
+	 Number of weights = 	12288
+	 Number of weights changed = 	12288
+	 This layer is trained ***from SCRATCH**
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 40
+	 Name =	upscore2
+	 Type =	TransposedConvolution2DLayer
+	 Number of weights = 	144
+	 Number of weights changed = 	144
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 41
+	 Name =	fuse_pool4
+	 Type =	AdditionLayer
+ ====================================
+Layer 42
+	 Name =	upscore_pool4
+	 Type =	TransposedConvolution2DLayer
+	 Number of weights = 	144
+	 Number of weights changed = 	144
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 43
+	 Name =	fuse_pool3
+	 Type =	AdditionLayer
+ ====================================
+Layer 44
+	 Name =	upscore8
+	 Type =	TransposedConvolution2DLayer
+	 Number of weights = 	2304
+	 Number of weights changed = 	2304
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 45
+	 Name =	score
+	 Type =	Crop2DLayer
+ ====================================
+Layer 46
+	 Name =	softmax
+	 Type =	SoftmaxLayer
+ ====================================
+Layer 47
+	 Name =	pixelLabels
+	 Type =	PixelClassificationLayer
+ ====================================
+Layer 48
+	 Name =	score_pool4
+	 Type =	Convolution2DLayer
+	 This layer is trained ***from SCRATCH**
+	 Number of weights = 	1536
+	 Number of weights changed = 	1536
+	 This layer is trained ***from SCRATCH**
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 49
+	 Name =	score_pool4c
+	 Type =	Crop2DLayer
+ ====================================
+Layer 50
+	 Name =	score_pool3
+	 Type =	Convolution2DLayer
+	 This layer is trained ***from SCRATCH**
+	 Number of weights = 	768
+	 Number of weights changed = 	768
+	 This layer is trained ***from SCRATCH**
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 51
+	 Name =	score_pool3c
+	 Type =	Crop2DLayer
+===========================================================
+===========================================================
+Number of layers = 51
+Total number of Weights = 		134265312
+Total number of Weights trained = 		134128821
+Total number of Bias = 		12434
+Total number of Bias trained = 		11279
+Total number of Learnables= 		134277746
+===========================================================
+===========================================================

@@ -1,0 +1,25 @@
+\begin{comment}
+\begin{table}[!t]
+	\color{blue}
+	\centering
+	\label{tab:Segmentaion_final_combo}
+	\caption{\color{blue}
+		Percentage distance error reduction from ({\tt sens}, {\tt spec}) = $(1, 1)$ of 
+		proposed method. This method combines segmentations from Henney Harvey, FCN and
+		SegNet with Level Sets achieving a significant reduction as depicted in this
+		table.  
+	}
+	\begin{tabular}{p{2cm} p{0.75cm} p{0.75cm} p{0.75cm} p{0.75cm} p{0.75cm}}
+		\toprule
+		\textbf{Methods} & \multicolumn{5}{c}{\textbf{Percentage of Reduction in Error Distance}}\\
+						& \textbf{min} & $\mathbf{25\%}$ & \textbf{med} & $\mathbf{75\%}$ & \textbf{max}\\
+		\midrule
+		HenneyHarvey & 47.1 & 50.0 & 55.7 & 62.2 & 64.7\\[0.01cm]
+
+		FCN (EUVI)& 25.9 & 33.8 & 36.0 & 44.6 & 45.0 \\[0.01cm] % 134,277,746
+		SegNet (EUVI) & 51.4 & 51.4 & 49.7 & 57.1 & 54.4 \\[0.01cm] % 521,289
+		U-Net (EUVI) & 76.7 & 73.1 & 71.2 & 71.0 & 65.12 \\[0.01cm] % 521,289
+		\bottomrule	
+	\end{tabular}
+\end{table}
+\end{comment}

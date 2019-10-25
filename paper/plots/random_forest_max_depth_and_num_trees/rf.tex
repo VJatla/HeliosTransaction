@@ -1,0 +1,46 @@
+\begin{figure}[!t]
+	\color{blue}
+		\begin{tikzpicture}
+		\centering
+		\begin{axis}[
+		grid=both,
+		enlarge x limits=false,
+		xlabel={Number of trees},
+		ymin  = 0,
+		ymax  = 0.6,
+		ylabel={OOB error},
+		legend style ={no markers,at={(0.98,0.98)},},
+		legend columns=3
+		]
+		
+
+
+        \addlegendimage{empty legend}
+		\addlegendentry{Maximum}		
+		\addlegendimage{empty legend}
+		\addlegendentry{Depth}
+        \addlegendimage{empty legend}
+		\addlegendentry{}
+		\addplot[mark=none] table [x=trees, y=five, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\addplot table [x=trees, y=seven, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\addplot[green] table [x=trees, y=nine, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\addplot table [x=trees, y=eleven, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\addplot table [x=trees, y=thirteen, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\addplot table [x=trees, y=fifteen, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\addplot table [x=trees, y=twentyone, col sep=comma] {./plots/random_forest_max_depth_and_num_trees/data.csv};
+		\draw[line width=0.75mm, gray] (20,0) -- (20,0.6);
+
+		\addlegendentry{5}
+		\addlegendentry{7}
+		\addlegendentry{9}
+		\addlegendentry{11}
+		\addlegendentry{13}
+		\addlegendentry{15}
+		\addlegendentry{21}
+		\end{axis}
+		\end{tikzpicture}
+\caption{\color{blue}
+		Out-of-bag (OOB) error used to determine the optimal parameters for the Random Forest.		
+	   \color{black}}
+\label{plt:random_forest_n_trees_and_max_depth}
+\end{figure}

@@ -1,0 +1,1412 @@
+%
+\documentclass[journal]{IEEEtran}
+%               Packages 
+\usepackage[pdftex]{graphicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amssymb} % ----> ??? NOT RECOMMENDED BY IEEE (mathenv is recommended)
+\usepackage{xcolor}
+\newcommand{\COMMENT}[1]{$\triangleright$  #1}
+\newcommand{\C}[1]{$\triangleright$  #1}
+
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage{textcomp}  % For apostrophe
+
+
+
+\usepackage{pgfplots}
+\usepackage{etoolbox}
+\usepgfplotslibrary{dateplot}
+\pgfplotsset{compat=1.12}
+\pgfplotsset{every axis/.append style={
+		tick label style={font=\footnotesize}  
+}}
+
+
+
+
+\graphicspath{{./figures/}} % Activated by CCD, to set the default figures directory
+\DeclareGraphicsExtensions{.pdf} % Activated by CCD for using PDFs only
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Diagrams 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc, fit, backgrounds} %graphs, graphs.standard} 
+
+% Figures with side captions
+%\usepackage[capbesideposition=inside, facing=yes,capbesidesep=quad]{floatrow}
+
+% Control figure placement: 
+%\usepackage[verbose]{placeins}
+
+% Figures extra
+\usepackage[indention=10pt, singlelinecheck=false]{subfig}
+
+% Space saving commands:
+%\usepackage[compact]{titlesec}  % Saves a lot of space in sections
+\usepackage{cite}  % Combine citations nicely together
+
+% Allow figure wrap-arounds:
+\usepackage{wrapfig}
+
+\usepackage{comment}
+
+% FIGURE definitions right here:
+\input{figures/DiagramDefs.tex}
+
+\begin{document}
+
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Image Processing Methods for Coronal Hole Segmentation, Matching, 
+	and Map Classification}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+\author{V.~Jatla,~\IEEEmembership{Member,~IEEE,}
+	M.S.~Pattichis,~\IEEEmembership{Senior Member,~IEEE,}      
+	and C.N.~Arge
+	\thanks{V.~Jatla and M.S.~Patthics are with Department of 
+		Electrical and Computer Engineering,
+		The University of New Mexico, Albuquerque, NM 87131. 
+		E-mail: (venkatesh369@unm.edu; pattichi@unm.edu)}
+	\thanks{C. N. Arge is the Chief of the Solar Physics Laboratory in the Heliophysics Science 
+		Division at the National Aeronautics and Space Administration\textquotesingle s Goddard Space Flight 
+		Center of. E-mail: (charles.n.arge@nasa.gov).}
+}% <-this % stops a space
+
+
+% The paper headers
+\markboth{IEEE Transactions on Image Processing}%
+{Image Processing Methods for Coronal Hole Segmentation, Matching, 
+        and Map Classification}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+%--------------------------------------------------------------
+%------------------------ABSTRACT
+%--------------------------------------------------------------
+\begin{abstract}
+The paper presents the results from a multi-year effort
+   to develop and validate image processing methods for
+   selecting the best physical models based on
+   solar image observations.
+The basic approach consists of
+    selecting the physical models based
+    on their agreement with coronal holes extracted
+    from the images.
+ Here, we note that coronal holes are associated with open 
+        magnetic fields regions that produce much of 
+        the solar wind.
+High speed wind emerging 
+        from deep within the corona can disrupt the Earth's
+        magnetic field generating geomagnetic storms.
+        
+We decompose the problem into three
+  subproblems:
+  (i) coronal hole segmentation based on physical constraints,
+  (ii) matching clusters of coronal holes between different maps, and
+  (iii) physical map classification.
+\color{blue}
+For segmenting coronal holes,
+  we develop a multi-modal method that 
+  uses segmentation maps from 
+  three different methods to initialize
+  a level-set method that
+  evolves the initial coronal hole segmentation
+  to the magnetic boundary that marks the transition from one polarity to another.
+\color{black}  
+Then, we introduce a new method
+  based on Linear Programming for
+  matching clusters of coronal holes.
+The final matching is then performed using Random Forests.
+  
+The methods were carefully validated using
+  consensus maps derived from multiple readers,
+  manual clustering, manual map classification, and   
+  \textcolor{blue}{method validation} for 50 maps.
+\color{blue}
+The proposed multi-modal 
+   segmentation method significantly outperformed
+   SegNet, U-net, Henney-Harvey, and FCN.
+\color{black}  
+Overall, the method gave a \textcolor{blue}{95.5\%}
+  classification accuracy.
+\end{abstract}
+
+%--------------------------------------------------------------
+%------------------------KEY WORDS
+%--------------------------------------------------------------
+\begin{IEEEkeywords}
+Solar images, Consensus maps, Segmentation, Matching, Classification, Random Forests.
+\end{IEEEkeywords}
+
+
+%--------------------------------------------------------------
+%                                               INTRODUCTION
+%--------------------------------------------------------------
+\section{Introduction}
+Intense solar activity can cause severe disruptions
+   to the Earth's magnetic field.
+Typically, open magnetic field lines on the sun 
+   form the origin of solar wind that reaches 
+   the earth.   
+Forecasting requires accurate physical modeling
+   of the sun's magnetic field and accurate
+   tracking of open magnetic field lines.   
+Solar regions characterized by open magnetic
+   lines are associated with coronal holes.
+Thus, in summary, to support forecasting,
+   our goal is to develop
+   solar image analysis methods that 
+   can automatically segment coronal holes in 
+   solar observations, match them to coronal holes generated
+   by candidate physical models, and then
+   select the best candidate models for forecasting.
+
+% Manual segmentation
+\input{figures/figCoronalHole.tex}
+
+We present an example of the coronal hole
+   segmentation problem in Fig. \ref{fig:idl_tool}.
+Coronal holes are distinguished as regions of
+   the same magnetic polarity, lower electron density, 
+   and lower temperatures \cite{munro1972properties}.
+In the extreme ultraviolet (EUV) region,
+   coronal holes appear darker than their surrounding regions
+   (see Fig. \ref{fig:idl_tool}).
+
+Physical models of the corona and solar wind include Potential Field Source
+        Surface based models, such as the Wang-Sheeley-Arge (WSA) model\cite{arge2004stream}
+        and the magnetohydrodynamics (MHD) models such as CORHEL
+        \cite{linker1999magnetohydrodynamic}.
+Physical models use
+   solar image observations of the photospheric magnetic
+   field 
+   as their input to model the solar wind propagating throughout the heliosphere. 
+Unfortunately, our physical models are incomplete.
+Certain parameters are missing. 
+Examples of missing parameters include  
+  (a) the source surface height in the Potential Field Source Surface (PFSS) model 
+  (see references in \cite{arge2004stream}) 
+  of the solar atmosphere (corona), and (b) the amount of heating in more advanced Magnetohydrodynamics (MHD) coronal models. 
+In what follows, we assume the use of the WSA model based on PFSS.
+In WSA, the amount of open flux and hence the coronal hole area provided by 
+  the physical model depends on the source surface radius used (i.e., it is a free parameter in the model beyond which all magnetic field lines flow out into space forming the solar wind). 
+More advanced MHD models estimate the amount of heating that will in-turn 
+  affect the amount of open flux and hence the coronal hole area 
+  \cite{Arge2000, Arge2003, Arge2004}.    
+  
+To assess the performance of a map produced by a model, there is a need
+to establish ground truth from solar observations. 
+Unfortunately, the standard practice based on segmentations by a single
+     human expert can produce significant inter-rater variability.
+To reduce inter-rate variability, we require that the solar images
+      should first be manually segmented by two independent experts.
+After manual segmentation, the experts meet and agree upon
+      a consensus map that represents their combined efforts.
+
+\input{figures/figMatching.tex}
+\color{blue}
+To automate the segmentation process,
+   we consider an automatic segmentation approach.
+We begin with a review of modern segmentation methods
+   and follow-up with a brief summary
+   of our proposed approach.
+We note that modern
+   segmentation methods have been dominated by 
+   neural-network based approaches.   
+We consider recent segmentation methods
+   that are based on convolutional networks
+   for visual image classification.
+As we shall describe later, 
+   we incorporated the best performing methods
+   into our segmentation system
+   to allow for better initialization
+   to our level-set segmentation approach.    
+   
+In \cite{long2015fully,shelhamer2016fully}, 
+the authors developed fully convolutional
+networks (FCN) for semantic segmentation.
+The basic idea is to use transfer learning from
+popular, pre-trained visual classifiers:
+AlexNet \cite{AlexNet}, VGG net \cite{VGGNet}, and GoogLe Net \cite{GoogleNet},
+by adding multi-scale
+deconvolutional layers to
+predict ground truth segmentation maps from 
+previously trained convolutional layers.
+The deconvolutional layers are initialized
+with linear interpolation kernels
+and trained on the specific segmentation
+images.
+In \cite{long2015fully,shelhamer2016fully}, 
+the authors were able to produce state of the
+art segmentations by combining the final prediction
+layer with 
+deconvolutional layers derived from
+32x, 16x, and 8x  downsampling strides.   
+
+The most significant limitation of the fully connected 
+neural networks comes from the loss of resolution
+accuracy due to the upsampling operation
+\cite{shelhamer2016fully}.
+To understand the limitation, in the updated
+version of their manuscript
+\cite{shelhamer2016fully},
+the authors suggest a method to deliver
+upper bounds on performance accuracy.
+As an approximate upper bound of what can be achieved,
+the authors took the ground truth segmentation
+images, downsample them by different factors
+and then upsample them to the original
+resolution.
+They then compare the upsampled images
+against the unprocessed images to establish
+an approximation of what can be achieved.
+Thus, as explored by the creators of the method,
+it is quite clear that such networks should not
+be used to detect small regions (such as small
+coronal holes) or to achieve pixel-level
+resolution accuracy.
+For our application, it is also important
+to note that the size of the coronal holes
+may appear to be significantly reduced
+due to missing observations, where the spacecraft
+was unable to collect any data.  
+
+Instead of the FCN approach of combining 
+    images from different resolutions,
+    the SegNet architecture considered        
+    the development of a simpler
+    auto-encoding architecture \cite{SegNet}.
+Thus, while both FCN and SegNet performed
+    very well, a fundamental advantage of the SegNet
+    architecture is that is based on learning
+    far fewer parameters.
+For SegNet, the encoder is still
+    made of convolutional layers followed
+    by max pool layers.
+However, instead of combining the reduced resolution maps,
+    the decoder is made of just the transposed operations.
+Thus, the decoder consists of unpool and deconvolution layers
+    that are in the reversed-order (compared to the encoder order).
+More specifically, the SegNet architecture
+    consists of 4 layers with 64 
+    features with 7x7 convolution kernels,
+    ReLU activation functions,
+    followed by max pool layers over 2x2
+    non-overlapping regions.
+For the decoder, the max-sample locations are used
+to reverse each layer, starting with the last layer
+and continuing to the first layers, without 
+the use of any activation functions.
+The final layer consists of SoftMax classification
+   into different categories.
+A Bayesian extension of SegNet appeared in 
+   \cite{BayesianSegNet}.
+In \cite{BayesianSegNet}, the authors made it very
+   clear that there is strong model uncertainty at
+   the boundaries.
+Hence, as we shall demonstrate, post-processing
+   SegNet results by a carefully designed
+   level-set method can yield accurate 
+   boundary segmentation.
+
+For the the U-net architecture, the authors
+   followed a hybrid approach \cite{UNet}.
+As for SegNet, the decoder includes
+   the transpose operations.
+However, similar to FCN, the decoder combines
+   the decoded outputs with the corresponding
+   encoder outputs from each one of the convolution layers
+   at both the original and reduced-resolution layers.
+For U-net, the number of parameters to be learned
+   is much larger than for SegNet, but it is also significantly
+   less than for FCN.
+As for SegNet and FCN, U-net cannot perform accurate boundary segmentation.   
+
+As mentioned earlier,
+   we propose a new segmentation method
+   that uses the best-performing methods to initialize
+   a level-set segmentation method.
+The basic idea is to initialize
+   level-set segmentation close
+   to the coronal-hole boundaries,
+   and then allow level-sets to evolve
+   the coronal-hole boundary curves to 
+   the magnetic boundaries.
+To accomplish this, the level-set function
+   is modified to take into account
+   both the magnetic boundary as well as
+   the local gradient of the EUV image.   
+Furthermore, to reduce artifacts,
+   we post-process the initial segmentation
+   maps to remove invalid coronal holes
+   that may not be
+   unipolar or appear dark.
+
+Based on the segmented images, our goal is to determine 
+      the physical map models that best reflect the observations.
+\color{black}
+Then, as mentioned earlier,
+      space weather forecasting is based on the use of physical maps
+      to predict disruptions to the earth's magnetic field.
+To accomplish this task, we introduce the coronal hole matching problem
+     as an intermediate step.
+
+% Matching problem
+We demonstrate the coronal hole matching problem in Fig. \ref{fig:matching}.
+Each example in Fig. \ref{fig:matching} represents
+     a \textit{consensus map} (solid red and blue regions)
+     and the physical model map (hollow and light red and blue regions).              
+Coronal hole matching poses several challenges.
+First, we have wrap-around effects since the coronal holes
+    are located on a spherical surface
+    (see Fig. \ref{fig:matching}(a) and \ref{fig:matching}(b)).
+Second, coronal hole areas and distances also require geometric corrections.
+Third, matching needs to consider missing pixel observations
+    (see black pixels in Fig. \ref{fig:idl_tool}),
+    the generation of new coronal holes by the physical models
+    (see Fig. \ref{fig:matching}(f)),
+    or the fact that some of the coronal holes may be missing entirely from
+    the physical models (see Fig. \ref{fig:matching}(g)).
+Fourth, due to randomization of parameters in the physical model
+    and the fact that observations may come from different times,
+    there is strong variability in the number, location, and
+    the areas of the coronal holes.    
+Thus, instead of matching individual coronal holes,
+    we decided to cluster them together and
+    match their clusters (see Fig. \ref{fig:matching}).        
+
+We summarize the primary contributions of the paper into:
+\begin{itemize}
+  \item Development of a new dataset segmentation problem based
+              on consensus maps derived from two independent experts.              
+           %   
+\begin{comment}
+  \item A new segmentation method for detecting coronal holes based on
+level set theory and physical constraints on the observations.
+The approach significantly expands prior, intensity based methods
+(e.g., \cite{Henney2005}, \cite{krista2009automated})
+and significantly improves the segmentation results
+(related conference paper in \cite{Jatla2014}).
+%
+\end{comment}
+ \item {\color{blue} A new segmentation method for detecting coronal holes based on
+ 	a level-set method initialized 
+ 	by a combination of the Henney-Harvey algorithm \cite{Henney2005}, SegNet \cite{SegNet},
+ 	and FCN \cite{long2015fully,shelhamer2016fully}.
+ 	The proposed approach achieves substantial improvements over
+ 	    prior methods.}
+ \item Development of a new approach for detecting matches, missing,
+            and new coronal holes.       
+          Due to the significant physical constraints, our approach
+            is significantly different from any prior method.
+          For example, in  \cite{Chen2006, Li2010, Dewan2011}, the authors
+           studied a similar problem in cells and nuclei matching.
+         These approaches used heuristics based on shape, size, and
+            empirical set distances.
+         In our case, we develop a Linear Programming model using
+            spherical geometry to compute
+            physical distances and areas derived from their projections.
+       Furthermore, unlike cells, we have the new problems of having
+            to detect the random creation and disappearance of coronal holes.
+          %
+   \item Development of a physical map classification system.
+       This new system is built upon the coronal hole segmentation and matching
+            approaches to determine the physical maps that will be used for forecasting.         
+\end{itemize}
+
+The rest of the paper is organized into four sections. Section \ref{sec:sec2_manualClassification}
+describes carefully developed manual protocols that help in creating consistent ground truth for
+segmentation, matching and classification. Following this we have Section \ref{sec:methodology},
+giving a brief introduction to segmentation and a detailed description of matching and classification
+algorithms. In Section \ref{sec:results} we go over results followed by conclusion in Section \ref{sec:conclusion}.
+% --------------------------------------------------------------
+% MANUAL CLASSIFICATION
+% --------------------------------------------------------------
+\section{Solar image analysis problem setup
+             \label{sec:sec2_manualClassification}}
+\subsection{Coronal hole segmentation problem setup}\label{sec:hole}
+
+To generate the consensus map, we followed a three-step process.
+First, a human was trained to manually outline
+the individual coronal holes based on
+physical constraints 
+(e.g., unipolarity and appearance, see Fig. \ref{fig:idl_tool}).
+Second, the process was repeated with a second human reader.
+Third, the two human readers got together to generate the consensus maps
+by agreeing on what constitutes a coronal hole based on a second look
+and by reviewing their original maps.
+\subsection{Coronal hole matching problem setup}\label{sec:match}
+In this section, we provide a summary of the 
+   process of creating ground truth for the 
+   coronal hole matching algorithm.
+We summarize the manual protocol for clustering
+   coronal holes in Fig. \ref{fig:holeClusterManual}
+   and demonstrate the application of the protocol
+   in Fig. \ref{fig:clusteringInAction}.
+   
+\begin{figure}[!t]
+        \begin{itemize}
+                \item[{\bf CR1.}] \textbf{Cluster polar coronal holes}:
+                   Coronal holes that are within $30^{\circ}$ from north and south poles are clustered together.
+                   Furthermore, any coronal hole that crosses the $30^{\circ}$ lines is clustered into
+                       the corresponding polar coronal hole.
+                       The resulting clusters represent the north and south polar coronal hole clusters.
+                   %    
+                \item[{\bf CR2.}] \textbf{Nearby clustering}: Coronal holes that are extremely close to each other
+                are clustered together.
+                %
+                \item[{\bf CR3.}] \textbf{Small-small clustering}: 
+                Groups of small coronal holes that are relatively close to each other are
+                clustered together.
+                %
+                \item[{\bf CR4.}] \textbf{Large-small clustering}:
+                A small coronal hole that is close to a much larger one is considered
+                part of the larger cluster that involves the larger coronal hole.
+                %
+                \item[{\bf CR5.}] \textbf{No large-large clustering}:
+                In general, larger coronal holes are not clustered together
+                unless they are extremely close to each other (see \textbf{CR2}).
+        %
+        \end{itemize}
+        \caption{Coronal hole clustering protocol. The manual protocol was
+            used for implementing physically meaningful and consistent rules.
+        The protocol was applied several times to
+        ensure reproducibility and little to no intra-rater variability.}
+    \label{fig:holeClusterManual}
+\end{figure}
+\input{figures/figClusteringInAction}
+
+We describe a manual protocol that ensures reproducibility
+    of the coronal hole matching problem in
+    Fig.  \ref{fig:clusterMatchingManual}.
+The protocol is used to match clusters of the same polarity.
+The remaining clusters that could not be matched,
+     depending on their presence in the consensus maps,
+     they are labeld as new or missing
+     (e.g., see  Fig. \ref{fig:matching} ).
+     
+\begin{figure}[!t]
+\begin{itemize}
+        \item[{\bf M1.}] {\bf Polar to polar matching:} Polar clusters with a relatively large area
+        overlap (70\% to 100\%) are matched.
+        % 
+        \item[{\bf M2.}] {\bf Polar to mid-latitude matching:}
+        A coronal hole cluster from the consensus map that is located
+        in the mid-latitude region is matched to a polar cluster from
+        the physical model when they overlap by at-least 15\% to 20\%, or more.
+        % 
+        \item[{\bf M3.}] {\bf Mid-latitude to mid-latitude matching:}
+        Mid-latitude clusters are matched with good area overlap 
+        (e.g., overlap area $>30\%$) or weaker area overlap but
+        good localization.
+\end{itemize}
+        \caption{Cluster matching protocol. The manual protocol was used
+        to produce a reference matching approach for training and
+    testing matching rules. The protocol was applied several times to
+    ensure reproducibility and little to no intra-rater variability.}
+\label{fig:clusterMatchingManual}
+\end{figure}
+
+\input{algorithms/algClassAlg.tex}
+\input{figures/figClassificationInAction.tex}
+
+\subsection{Coronal hole map classification problem setup}\label{sec:map}
+To ensure reproducibility of the process, we need to take into account that
+    many physical models appear very similar to each other.
+Thus, to standardize our approach, we group together
+    maps that are virtually indistinguishable and 
+    classify each group as opposed to classifying individual maps.
+
+Maps are pre-classified into two
+groups. We use ranks to describe each group. 
+In the rank 1 group, we include maps that tend to be closer to the consensus map.
+In the rank 2 group, we include maps that tend to be further away from the consensus map.
+We then make the final classifications of what
+constitutes a good and a bad map based on the rules given in Fig. \ref{fig:classAlg}.
+
+To decide the rankings, we examine the mid-latitude coronal holes.
+Initially, similar to clustering, we group maps based on how similar
+they are to each other.
+The collection of all of the groups are then classified 
+as being closer to the consensus map (rank 1)
+or further from the consensus map (rank 2).
+Here, we classify a group as being closer to the consensus map if
+it contains a substantial number of matched, 
+fewer cases of new (generated) and missing (removed) coronal holes.
+A ranked group of maps (rank 1 or 2) is then classified a \textit{good match}
+if it is in good agreement of the consensus map, where we also
+allow slight over-estimation of the area of the coronal holes.
+A group of maps that is not considered a \textit{good match} is
+classified as a \textit{bad match}. 
+We present a classification example in Fig. \ref{fig:classificationInAction}.
+
+\begin{comment}
+The filled regions represent coronal hole clusters in the consensus map.
+The hollow regions represent coronal hole clusters in the physical map.
+In the interface, a rectangular region (not shown here)
+was used to specify a matching.
+Once the matching has been specified, 
+all coronal hole clusters that overlapped
+with the user-specified rectangular region
+are selected as a match.
+A green bounding
+box is drawn around the matched coronal hole clusters.
+Note that since the bounding boxes are extended out 
+to the full size of each coronal hole cluster,
+they also contain unmatched coronal holes.
+In fact, matched coronal holes are represented 
+with faded colors (not bright blue or red).
+The remaining coronal hole clusters are automatically
+classified as new (generated) or removed (missing).                
+They are represented using bright red (positive) or bright blue (negative).
+\end{comment}
+
+
+We show examples from two groups in Fig. \ref{fig:classificationInAction}.
+Group A maps do not have a matching for the positive polarity coronal hole located 
+in the upper-right region (depicted as bright red).
+Group B maps do have a matching cluster for the same coronal hole
+(depicted as faded red).
+Furthermore, group 2 maps missed (removed) fewer coronal holes
+(depicted as solid blue here).
+Thus, group B maps are thus classified as rank 1 and group A maps 
+are classified as rank 2.
+Furthermore, since rank 1 maps detected more of the coronal holes,
+  rank 1 maps were classified as \textit{good matchings}.
+On the other hand, since rank 2 maps missed some of the coronal holes,  
+  rank 2 maps were classified as \textit{bad matchings}.
+
+\input{figures/figMainDiagram_new2.tex}
+
+
+\input{tables/segnet_arch.tex}
+
+\input{tables/fcn_arch.tex}
+
+
+\section{Methodology}\label{sec:methodology}
+We provide an overview of the proposed approach in Fig. \ref{fig:IntroBlkDiag}.
+We decompose the proposed system into three components:
+(i) coronal hole segmentation,
+(ii) clustering and matching, and
+(iii) classification.
+We describe the image segmentation approach in
+subsection \ref{sec:Segmentation}.
+For matching, we consider each physical map against
+the segmented map.
+To reduce variability, we form clusters of coronal holes
+and attempt to match clusters between maps.
+The basic method is given in subsection \ref{sec:ClusteringAndMatching}.
+Physical maps are then classified based on
+their matching performanced
+as described in section \ref{sec:Classification}.\\
+
+\color{blue}
+\subsection{Multimodal Segmentation of Coronal Holes}\label{sec:Segmentation} 
+We develop a multi-modal segmentation approach as shown
+   in Fig. \ref{fig:IntroBlkDiag}.
+The basic idea is to provide an initial segmentation
+   map that is then input to a level-set method
+   that is designed to 
+   provide an accurate segmentation by evolving the
+   initial segmentation to the magnetic boundary.
+   
+To initialize the segmentation approach, we use
+   three different methods working
+   with three different sets of pixel resolutions.
+At the pixel resolution level, we use the original
+   Henney-Harvey method \cite{Henney2005}
+   that uses pixel classification 
+   to select candidate coronal holes that are both
+   unipolar and darker in the EUV images.
+At the $2\times$ and $4\times$ downsampled resolution levels,
+   SegNet reconstructs pixel-level segmentations
+   by first encoding the EUV image 
+   at 1/2 and 1/4 of the original image resolution
+   and then decoding the encoded maps to provide
+   classification at the full resolution.
+At the $2\times$ to $32\times$ downsampled resolution levels,
+   FCN reconstructs pixel-level segmentations by
+   first encoding at 1/2 to 1/32 of the original image resolution,
+   and then combining $8\times, 16\times, 32\times$ encodings to
+   form the predicted segmentation image at the full resolution.
+   
+For the neural-net based methods,
+   we only input the EUV images since they are used
+   for visual classification by the astronomers and avoid
+   combining them with the magnetic images.
+For the magnetic images, 
+    note that the training set is rather limited, 
+   there is no possibility of pre-training since they are very different
+   from visual images used in standard datasets,
+   and we defer further processing by 
+   the coronal-hole selector and level-set methods.   
+Here, we also note that we had to learn $134.2$M parameters for FCN
+   (pre-trained on VGG-16 \cite{VGGNet,VGG16})
+   and $0.52$M parameters for SegNet.
+In any case, we also verified these claims experimentally.
+As we describe in the results section, the performance
+   of SegNet when input with both the magnetic and EUV images 
+   deteriorated considerably while there was no observed 
+   improvement for FCN.
+  
+   
+We provide more details on the specific SegNet and FCN
+   architectures in Tables \ref{tab:segnet_arch} and \ref{tab:fcn_arch}.
+All of the parameters were learned on the training set.
+The training set represents a random sample of 70\% of the images.
+None of these images overlap with the remaining test set that
+   are used in the Results section.
+For both methods, we used 50 epochs with a mini-batch size of 7.
+For SegNet, we used a learning rate of 0.1 with a momentum set to 0.9.
+It took about an hour to train the SegNet on dual NVIDIA GTX 1080 video cards 
+    with 2,560 cores and 8GB each.
+On the same system, it took about 20 minutes for the pre-trained FCN to be re-trained   
+   using a learning rate of $10^{-3}$ and a momentum parameter set to 0.9.
+
+The coronal holes resulting from the initial segmentations
+   are classified (selected) to further impose physical constraints
+   on their appearance.
+Thus, since coronal holes are supposed to be dark in EUV images
+   and unipolar in the magnetic images, we use
+   histograms of EUV intensity (255 bins) and magnetic flux (40 bins)
+   as input features to the classifier.
+Furthermore, we add the area of each coronal hole as an input feature
+   since the downsampling and upsampling operations
+   generate small, noisy estimates of the actual coronal holes.
+For classifying each coronal hole, we use a Random Forest for each segmentation method.
+
+To select the parameters for the Random Forest, we further split
+    the training set into 70\% training for each classifier model
+    and 30\% testing for selecting the best classifier model
+    (\cite{ESLII}).
+We used the out-of-bag error determine the best models
+    that avoid over-fitting:
+    (i)   50 trees with 50 splits for Henney-Harvey,
+    (ii)  30 trees with 50 splits for SegNet, and
+    (iii) 30 trees with 20 splits for FCN.  
+   
+
+After identifying candidate coronal holes, we use a union
+    operation to combine the outputs.
+Here, we recognize that the union operation will likely
+    overestimate the actual coronal holes.
+However, given the potentially catastrophic consequences
+    of missing an actual coronal hole, we prefer to err on
+    the side of providing a slight
+    over-estimation as opposed to missing one of them.
+The union map is then input to the level-set method
+    that can provide an accurate estimation
+    of the magnetic boundary.
+\color{black}
+\subsubsection{\textcolor{blue}{Level-set Segmentation}}\label{sec:LS}
+We develop a multi-modal segmentation approach by expanding
+     the Distance Regularized Level Set Evolution (DRLSE) method \cite{chunming2010}
+     to account for physical constraints on
+     the Extreme Ultra Violet (EUV) images and photo maps.
+Our physical constraints include:
+     (i) coronal holes appear darker in EUV images \cite{altschuler1972coronal},
+     (ii) they are unipolar in photo map images (positive or negative values only), and
+     (iii) they are not allowed to cross magnetic neutral lines (zero crosses in
+           photo map images)  \cite{antiochos2007structure}.
+
+%\input{algorithms/algMainSegment.tex}           
+%\input{algorithms/algSegCombination.tex}
+
+\input{algorithms/algLevelSets.tex}
+
+           
+
+To summarize the level-set segmentation method, we review
+     the basic definitions given in \cite{chunming2010}.
+Let $p(.)$ be used for defining a regularized distance for
+     the level set function ($\phi$),
+     $g(.)$ denote the edge function that  should be minimized at image edges,
+     $G(.)$ denote the Gaussian, and
+     $\nabla$ denote the gradient operator.
+     We then define the divergence
+     operator using
+     $d_p(s) \overset{\vartriangle}{=} p'(s)/s$,
+     the edge function
+     $g=1/(1+|\nabla G*I |^2) $,
+     and a localization function
+     $\delta_\epsilon(x)$
+     that is zero for  $|x|>\epsilon$ 
+     and non-zero for $|x|<\epsilon$.
+{\color{blue}
+	We modify the edge function so that it does not allow crossing the magnetic neutral lines.
+	This is accomplished by modifying the edge function to be:
+	\begin{equation}
+	\label{eq:pg}
+	\color{blue}
+	pg = (1-p) g
+	\end{equation}
+}
+\color{blue}
+where $p$ assumes the value of 1 over the magnetic polarity 
+boundaries detected in the
+magnetic image and is zero away from the boundary.
+Thus, over the magnetic lines, the edge function becomes zero and prevents crossing of the neutral line boundary.
+
+The segmented image is computed by evolving the level set as given by:
+\begin{align}
+  \frac{\partial \phi}{\partial t} &= \mu {\cal R}_p (\phi) 
+                                     + \lambda {\cal L}_{pg} (\phi) 
+                                     + \alpha    {\cal A}_{pg} (\phi)
+                                     \label{eq:leveldef1}
+                                     \intertext{where:}
+                                     {\cal R}_p (\phi) &= \rm{div}(\rm{d_p}(|\nabla\phi|)\nabla\phi) 
+                                         \,\,\text{is the distance term,} \nonumber \\
+  {\cal L}_{pg} (\phi) &=  \delta_\epsilon(\phi)\cdot {\rm div}
+                              \left(pg\cdot \frac{\nabla\phi}{|\nabla\phi|} \right)
+                           \,\, \text{is the boundary term, and} \nonumber \\
+  {\cal A}_{pg} (\phi) &= pg\cdot \delta_\epsilon(\phi) 
+                      \quad\text{is an area term.} \nonumber 
+\end{align}
+
+We provide a description of the proposed level-set
+   segmentation algorithm in 
+   Fig. \ref{fig:LevelSets}.  
+The approach requires 
+joint processing of the EUV and magnetic images.
+\begin{comment}
+Most importantly, we need
+to modify the edge function so that it does not allow crossing the magnetic neutral lines.
+This is accomplished by modifying the edge function to be:
+\begin{equation}
+	\label{eq:pg}
+	\color{blue}
+	pg = (1-p) g
+\end{equation}
+\end{comment} 
+From \eqref{eq:leveldef1}, we have found that $\alpha$ and
+the spatial spread of the Gaussian ($\sigma$) used for computing 
+the edge function are the two parameters that can affect overall segmentation
+performance.
+To find the optimal parameter values, we compare against
+the consensus maps, and look for the optimal values:
+\begin{equation}
+  \min_{\alpha, \, \sigma} \sqrt{[1-{\tt spec}(\alpha, \sigma)]^2 + [1-{\tt sens}(\alpha, \sigma)]^2} 
+  \label{eq:basicOpt}
+\end{equation}
+where ${\tt Spec}$ denotes the (pixel-level) specificity and ${\tt Sens}$ denotes the 
+corresponding sensitivity.
+The solution of \eqref{eq:basicOpt} gives the optimal values for each image.
+For each image, we constrain the optimization problem for 
+$\alpha\in[-3, +3], \, \sigma\in [0.2, 1]$.
+Over the training set, we select the median values
+over the entire set. 
+
+The optimization of \eqref{eq:basicOpt} is challenging since
+derivative estimates can be very noisy.
+To this end, we use a robust optimization method
+based on Pattern-search initialized with $\alpha_0=0, \sigma_0=0.5$.
+We refer to \cite{optbook} for details on the optimization procedure.       
+\color{black}
+
+\input{algorithms/algMapClass.tex}
+\input{algorithms/algPreClass.tex}
+\subsection{Clustering and Matching}\label{sec:ClusteringAndMatching}
+We use the segmented maps as reference maps for comparing
+   against the physical models as detailed in Fig. \ref{Fig:autoClassOverviewAlg}.
+For each date, we compare each physical model against the reference
+   map to determine new, missing, and matching coronal hole clusters. 
+In what follows, we provide more details for each step. 
+\subsubsection{Pre-processing}\label{sec:ch4preprocessing}
+Pre-processing is summarized in Fig. \ref{fig:preProcessing}.
+\color{blue} 
+Each physical map is resized from $144\times 172$ to 360$\times$180 using bilinear interpolation
+ to match the resolution of the EUV, magnetic, and final segmentation maps.
+\color{black} 
+Then, we remove the polar regions and regions where we have no observations.
+We return the positive and negative maps separately for further processing.
+
+\subsubsection{Clustering}\label{sec:ch4clustering_close}
+The initial clusters are formed from coronal holes that are close to each other.
+To measure distance, let $A$ and $B$ define the set of pixels that belong to 
+   two coronal holes of the same polarity.
+We define set distance using $d(A, B)=\min_{x\in A, y\in B} d(x, y)$ where
+   $d(x,y)$ is based on distance.
+Thus, initially, we cluster $A$ and $B$ into the same cluster
+   if $d(A, B)<T$ where $T$ is a threshold value that is determined during training.
+Here, we note that the relationship is transitive.
+In other words, if $d(A, B)<T$ and $d(B, C)<T$, we cluster 
+   $A, B, C$ into the same cluster.   
+
+\subsubsection{Detecting new and missed coronal hole clusters}\label{sec:ch4detecting_genrem}
+After clustering, there is a need to compare the reference map to the model maps to detect significant differences. We use the Mahalanobis distance to determine coronal hole clusters that are sufficiently close for possible matching.
+For computing the Mahalanobis distance, we compare  the physical areas and set distances (minimum physical distances) between coronal hole clusters.  
+
+The remaining coronal hole clusters are assumed to be too far apart to be matchable.
+Then, from the remaining ones, coronal hole clusters that are in the reference map but are missing from the model maps are classified as \textit{missing} and are added to the {\tt missing\_map$_p$} (for the $p$-th model map).
+Similarly, coronal hole clusters that are in the model map but are missing from the reference map are classified as \textit{new} and are added to the  {\tt new\_map$_p$} (for the $p$-th model map).
+
+\subsubsection{Matching with re-clustering}\label{sec:ch4Matching}
+After removing the new and missing coronal hole clusters, the 
+remaining ones need to be matched. Unfortunately, we
+can still have different numbers of clusters in each map.
+Thus, instead of matching  maps having different number
+of clusters, we need to first combine them
+together to have equal numbers of clusters. Clustering
+is accomplished using the minimum physical distance between coronal holes.
+\color{blue}
+Here, we note that our use of the minimum spherical distance takes
+   into account wrap-around effects.
+\color{black}
+The basic idea is to iteratively cluster together all
+coronal hole clusters that are separated by a minimal
+physical distance until we reach the desired number of
+clusters. We introduce linear programming model for
+computing an optimal matching between coronal hole clusters.
+
+Let $i$ be used to index clusters in the reference map.
+Similarly, let $j$ be used to index clusters in the physical map.
+Then, we use  $m_{i,j}$
+to denote a possible match between cluster $i$ in the reference map
+and cluster $j$ in the physical map.
+Thus, $m_{i,j}=1$ when there is a match between the clusters
+and $m_{i,j}=0$ otherwise.
+We also assign a cost $w_{i,j}$ associated with the matching.
+Here, we set the $w_{i,j}$ to be the shortest spherical distance
+between the clusters (set distance).
+Thus, $w_{i,j}=0$ when the clusters overlap.
+
+Formally, we find an optimal matching by solving:
+\begin{align}
+ &\min_{m_{i,j}} \,\, \sum_i \sum_j w_{i,j} m_{i, j} 
+\label{eq:min_problem} \\
+\intertext{subject to:}          
+&\sum_i m_{i, j} = 1, \label{eq:constri} \\
+&\sum_j m_{i, j} = 1  \label{eq:constrj}\\
+&m_{i, j} \in \{0, 1\} 
+\end{align}\\
+\\
+where $m_{i, j}$ denotes the assignment that minimizes
+the weighted matching of \eqref{eq:min_problem},
+while each cluster can only be assigned to one
+other cluster as required by \eqref{eq:constri} and \eqref{eq:constrj}.
+This is a typical bipartite matching setup, making matching matrix
+created from $m_{i,j}$ to be totally unimodular. As discussed in
+\cite{papadimitriou1982combinatorial} this problem when solved with
+linear programming will return an integer solution.
+\subsection{Classification}\label{sec:Classification}
+After cluster matching, we need to make a decision
+     on whether the physical model is sufficiently good for forecasting
+     applications.
+Based on the cluster matching results, we extract the following features for classification:
+ (i)   number of new coronal hole clusters,
+ (ii)  number of missing coronal holes,
+ (iii) total physical area of new coronal hole clusters, 
+ (iv)  total physical are of missing coronal hole clusters, and
+ (v)   overestimate of physical area of coronal holes as estimated by the physical model.
+Here, we note that the area overestimate comes from the need to avoid underestimating
+   the impact that the coronal holes will have on the earth.
+The basic idea is that the excessive area will likely account for 
+   more potential events that should not be missed by the physical models.
+        
+For the final classifier, we use a Random Forest. Here, we note that a random forest classifier produces a majority classification based on a collection of tree classifiers. For each tree, decisions are represented as inequalities implemented on the five basic features that we have just described. The majority vote can significantly reduce the variance of the resulting classifier (see   
+   \cite{Breiman2001,ESLII} for details).
+   
+% --------------------------------------------------------------
+% ------------------------RESULTS
+% --------------------------------------------------------------
+
+\section{Results} \label{sec:results}
+The results are summarized in five sections.
+First, we provide a description of the dataset in section \ref{sec:ground_truth}.
+We then show an example of image segmentation in section \ref{sec:segm}.
+We summarize results for \textcolor{blue}{coronal hole matching}
+   in section \ref{sec:detection},
+   and final classification
+   results in section \ref{sec:classification_results}.
+
+\subsection{Dataset}\label{sec:ground_truth}
+The dataset consisted of two Carrington rotations \cite{howard1981surface}
+for a total of 50 days. The first Carrington rotation covers the dates 
+from 07/13/2010 to 08/09/2010. The second Carrington rotation covers the
+dates from 01/20/2011 to 02/16/2011. For each day, we used:
+\begin{itemize}
+        \item The EUV (synoptic) image (see \cite{altschuler1977high})
+        \item Magnetic photo map image
+        \item Expert segmentations by two independent expers
+        \item The Consensus map derived from the expert segmentations
+        \item Twelve physical model maps manually classified as Good or Bad
+               based on their agreement with the corresponding consensus map.
+\end{itemize}
+For each day we have 12 coronal hole forecasts. 
+Hence, for training the random forest classifier, we
+consider 600 images that correspond to 12 physical models per day (50 days total).
+
+\color{blue}
+For level-set segmentation, we used 70\% of the images for training
+    and 30\% for testing.    
+We report segmentation results on the test set.
+Similarly, for physical map classification, we    
+   train the classifier on 70\% (419 maps) of the maps and report the 
+   results on the remaining 30\% (181 maps).
+\color{blue}
+
+\color{blue}
+\subsection{Segmentation}\label{sec:segm}
+We demonstrate the performance of the proposed segmentation algorithm 
+   in Fig. \ref{fig:segmentation}.
+The inputs are the EUV and the magnetic images appearing in 
+   (a) and (b).
+The ground truth consensus segmentation is shown in (c).
+Initial segmentations for
+  (d) Henney-Harvey (distance from ({\tt Sens}=1, {\tt Spec}=1) is $d$=0.36), 
+  (e) FCN ($d$=0.12), and 
+  (f) SegNet ($d$=0.18).
+In (d), (e), (f), 
+  we use green lines to mark the selected valid coronal holes and
+  red to mark coronal holes that were rejected by the random-forest
+  coronal hole selector.  
+In (g), we show the initial segmentation boundary in red and its final
+  evolution in red.
+In (h), we compare the final segmentation against the consensus maps ($d$=0.09).
+The coronal holes with yellow outlines are in agreement with the Consensus map.
+The coronal holes with pink outlines are not in agreement with the Consensus map.
+The final segmentation results are also shown on the EUV images in (h).
+An unoptimized Matlab implementation of Level-set segmentation takes about 38 seconds
+   on a 2.2 GHz Intel Xeon.
+For real-time level-set implementations for video data, we refer to \cite{FastLevel}.
+For our application, there was no need to improve the speed of the segmentation method.
+
+From the results in Fig. \ref{fig:segmentation}, we can see that
+    the Random Classifier selector is very effective. 
+A large number of invalid coronal holes were removed
+    from the initial segmentations of     
+    Figs \ref{fig:segmentation}(d)-(f) (marked red).
+On the other hand, we can see that we have also achieved a slight
+    over-segmentation in Fig. \ref{fig:segmentation}(h).
+As discussed earlier, we prefer to over-segmentation  over
+    the possibility that we may miss a valid coronal hole.        
+As can be seen from the results in Fig. 
+    \ref{fig:segmentation}(h), the level-set method propagated
+    the coronal-hole boundary to the local magnetic boundary.
+
+
+
+To document the accuracy provided by the level-set method,
+   refer to Table \ref{tab:SegmentationLevelSets}.
+From Table \ref{tab:SegmentationLevelSets}, it is clear
+   that level-set segmentations can be used to provide
+   substantial improvements over all other methods that
+   were considered.
+Furthermore, from the results in 
+       Table \ref{tab:SegmentationLevelSets},
+       it is clear that the addition of the magnetic
+       maps did not improve segmentation for FCN and SegNet.
+For the proposed method, we considered the full-segmentation
+      method described in Fig. \ref{fig:IntroBlkDiag}.
+We also show results for individual dates in Fig. \ref{plt:segmentation_results}.
+Overall, the proposed method performed extremely well.
+In comparison, 
+    the error ranges from $2\times$ to $3\times$ for Henney-Harvey (two to three times larger),
+    $1.5\times$ to $2\times$ for FCN, 
+    $2\times$ to  $3\times$ for SegNet, and
+    $3\times$ to  $5\times$ for U-net. 
+\color{black}   
+
+\input{figures/figSegmentation.tex}
+\input{tables/Segmentation_ls.tex}
+\input{plots/segmentation/seg_results.tex}
+
+%\input{tables/Segmentation_combo.tex}
+\input{tables/tabMatchingResults.tex}
+\begin{figure}[!b]
+	\subfloat[Clustered, positive polarity consensus map.]
+	{ \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20110204_1ref_pos_matchable_clus.png}}
+	~~\subfloat[Clustered, positive polarity model map.]
+	{ \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20110204_1mod_pos_matchable_clus.png}}
+	
+	\subfloat[Matching clusters from Consensus (left) and model (right) for positive polarity.]
+	{ \includegraphics[width=0.94\linewidth]{pictures/thesis/new_chapter5/matching_example/20110204_pos_matched_combined.png}}
+	
+	\subfloat[Clustered, negative polarity consensus map.]
+	{ \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20110204_1ref_neg_matchable_clus.png}}
+	~~\subfloat[Clustered, negative polarity model map.]
+	{ \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20110204_1mod_neg_matchable_clus.png}}        
+	
+	\subfloat[Matching clusters from consensus (left) and model (right) for negative polarity.]
+	{ \includegraphics[width=0.94\linewidth]{pictures/thesis/new_chapter5/matching_example/20110204_neg_matched_combined.png}}
+	
+	\caption{Coronal hole cluster matching example (02-04-2011). Matched clusters share the same color.}
+	\label{fig:ch5Matching_good}
+\end{figure}
+  
+\begin{comment}    
+\subsection{Clustering}\label{sec:clustering}
+Coronal holes which are very close to each other are clustered together based
+on set distance. In this section clustering in reference map and model
+map are demonstrated in Fig. \ref{fig:clustering_model_map} and Fig.
+\ref{fig:clustering_consensus_map}. Clustered coronal holes are filled
+with same shade of red or blue. Shades of red is used to mark
+positive clusters while shades of blue are used for negative clusters. As seen
+from Fig. \ref{fig:clustering_consensus_map} consensus maps tend to 
+have well-separated coronal holes.
+\end{comment}
+
+\begin{comment}
+\begin{figure}
+        \subfloat[Positive model map before clustering.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1mod_pos.png}
+                \label{subfig:pos_model}}
+        ~\subfloat[Positive model map after clustering.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1mod_pos_clustered.png}
+                \label{subfig:clustered_pos_model}}
+        
+        \subfloat[Negative model map before clustering]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1mod_neg.png}
+                \label{subfig:neg_model}}
+        ~\subfloat[Negative model map after clustering.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1mod_neg_clustered.png}
+                \label{subfig:clustered_neg_model}}
+        \caption{Examples from initial clustering based on set distance 
+                (see \ref{sec:ch4clustering_close}).}
+        \label{fig:clustering_model_map}
+\end{figure}
+
+\begin{figure}
+        \subfloat[Positive consensus map before clustering]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1ref_pos.png}
+                \label{subfig:pos_consensus}}
+        ~\subfloat[Positive consensus map after clustering closest coronal holes]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1ref_pos_clustered.png}
+                \label{subfig:clustered_pos_consensus}}
+        
+        \subfloat[Negative consensus map before clustering]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1ref_neg.png}
+                \label{subfig:neg_consensus}}
+        ~\subfloat[Negative consensus map after clustering closest coronal holes]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/clus_example/beforeGenRem/20110213_1ref_neg_clustered.png}
+                \label{subfig:clustered_neg_consensus}}
+        \caption{Clustering consensus}
+        \label{fig:clustering_consensus_map}
+\end{figure}
+\end{comment}
+
+\subsection{\textcolor{blue}{Coronal hole matching}}\label{sec:detection}
+We present the results from coronal hole 
+     \textcolor{blue}{matching between the Physical maps and the Consensus maps}
+     in Table \ref{tab:matchingConfusionMatrix}.
+\textcolor{blue}{The results are compared against manual matching each coronal hole.}     
+Overall, at $92.8\%$, the method produced 7,522 matches,
+   in agreement with manual labeling.
+The proposed approach failed to match 776 coronal holes
+    (776=416+360) while it overmatched 25 (25=22+3) of them.
+Thus, compared to the human expert,
+    the proposed approach tends to undermatch.       
+Nevertheless, at $92.8\%$, the proposed method performed
+    very well.    
+
+\begin{comment}
+\begin{figure}
+        \subfloat[Consensus map]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20100713_1_ref.png}
+                \label{subfig:gen_rem_good_consensus}}
+        \subfloat[Model map]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20100713_1_wsa.png}
+                \label{subfig:gen_rem_good_model}}
+        
+        \subfloat[Coronal holes missing from model map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20100713_1_rem.png}
+                \label{subfig:gen_rem_good_missed}}
+        \subfloat[New coronal holes that appear in model map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20100713_1_gen.png}
+                \label{subfig:gen_rem_good_new}}
+        \caption{An example that demonstrates  good detection of missing and new coronal holes (07-13-2010). In this case, manual labeling and the algorithm agreed on all of the coronal holes 
+                except for the upper-right coronal hole depicted in (d).}
+        \label{fig:ch5genrem_good_case}
+\end{figure}
+\end{comment}
+
+\begin{comment}
+\begin{figure}
+        \subfloat[Consensus map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20110205_2_ref.png}
+                \label{subfig:gen_rem_bad_consensus}}
+        \subfloat[Model map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20110205_2_wsa.png}
+                \label{subfig:gen_rem_bad_model}}
+        
+        \subfloat[Coronal holes missing from model.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20110205_2_rem.png}
+                \label{subfig:gen_rem_missed}}
+        \subfloat[New coronal holes in model.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/20110205_2_gen.png}
+                \label{subfig:gen_rem_new}}
+        
+        \subfloat[Manual matching.]
+        { \includegraphics[width=0.94\linewidth]{pictures/thesis/new_chapter5/gen_rem_example/combined_marked.png}
+                \label{subfig:gen_rem_man_matched}}
+        \caption{A difficult coronal hole detection example (05-02-2011). The coronal hole shown in green is manually classified as removed but it is  classified as matched by the algorithm.}
+        \label{fig:ch5genrem_bad_case}
+\end{figure}
+\end{comment}
+
+\begin{figure}
+        \subfloat[Clustered, positive polarity consensus map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20100807_1ref_pos_matchable_clus.png}
+                \label{subfig:ch5consensus_cluster}}
+        ~~\subfloat[Clustered, positive polarity  model map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20100807_1mod_pos_matchable_clus.png}}        
+        
+        \subfloat[Matching clusters from consensus (left) and model (right) for positive polarity.]
+        {\includegraphics[width=0.94\linewidth]{pictures/thesis/new_chapter5/matching_example/20100807_pos_combined.png}}
+        
+        \subfloat[Clustered, negative polarity consensus map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20100807_1ref_pos_matchable_clus.png}}
+        ~~\subfloat[Clustered, negative polarity model map.]
+        { \includegraphics[width=0.47\linewidth]{pictures/thesis/new_chapter5/matching_example/20100807_1mod_neg_matchable_clus.png}}        
+        
+        \subfloat[Matching clusters from consensus (left) and model (right) for negative polarity.]
+        {\includegraphics[width=0.94\linewidth]{pictures/thesis/new_chapter5/matching_example/20100807_neg_combined.png}}
+        
+        \caption{Difficult example of coronal hole matching showing issues in the algorithm 
+                (07-08-2010). Matched clusters share the same color. }        
+        \label{fig:ch5Matching_bad}
+\end{figure}
+
+Results of matching using linear programming are demonstrated in Figs. \ref{fig:ch5Matching_good} 
+and \ref{fig:ch5Matching_bad}.
+Fig. \ref{fig:ch5Matching_good} shows an example where automated matching
+agrees with manual matching.
+Fig. \ref{fig:ch5Matching_bad} shows an example where there are significant
+differences between automated and manual matching (see pink cluster).
+
+\begin{comment}
+\begin{table} 
+	\caption{
+		Classification results using automatic segmentation.
+		After segmentation and feature extraction, a Random Forest
+		is used for the final classification. The automated segmentation
+		method gave the same overall accuracy as the consensus maps. 
+	}
+	\label{tab:ch5classificaiton_results_auto}
+	\centering
+	\begin{tabular}{l l l l  l l }
+		\toprule
+		\textbf{Manual}
+		& \multicolumn{2}{c}{\textbf{Consensus}} & 
+		& \multicolumn{2}{c}{\textbf{Aut. Segm.}} \\
+		\cmidrule{2-3} \cmidrule{5-6}
+		& Bad & Good & & Bad & Good \\
+		\midrule         
+		Bad      & 72  & 7    & & 73  & 6  \\
+		Good     & 7  & 95   & & 3   & 99\\
+		\midrule
+		Accuracy & \multicolumn{2}{c}{$92.26\%$} & \multicolumn{2}{c}{$95.02\%$} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\end{comment}
+
+\input{./plots/random_forest_max_depth_and_num_trees/rf.tex}
+\subsection{Classification results}\label{sec:classification_results}
+\color{blue}
+We present the results from training the Random Forest classifier in Fig. \ref{plt:random_forest_n_trees_and_max_depth}.
+To train the classifier, we further split the training set into 
+   a 70\% training set and a 30\% test set as recommended in
+   \cite{ESLII}.
+The results over the test set (part of the original training set) 
+   were used for determining the optimal parameters.
+The out-of-bag error (OOB)  error is shown as function of the number of trees and the maximum tree depth
+   in Fig. \ref{plt:random_forest_n_trees_and_max_depth}.
+From the graph, we determine that the optimal configuration will be to use
+   20 decision trees at a maximum depth of 11.
+
+
+We present classification results over the training set
+   in Table \ref{tab:ch5classificaiton_results_auto}.
+\color{black}
+Table \ref{tab:ch5classificaiton_results_auto} summarizes the results over
+   the remaining 30\% of the data that were left for testing.
+Overall, the classifier had a very accuracy at {\color{blue} 95.5\%}.
+
+We also examine the relative importance of each feature in the Random Forest
+   classifier and report the results in Fig. \ref{fig:randomForest_features}.
+Here, we note that the relative importance is a measure of
+    the predictive performance of each variable   \cite{ESLII}.
+From Fig. \ref{fig:randomForest_features}, the 
+    most important features come from the area features.
+Most importantly, a bad physical map will be the result of large amounts
+    of missing area.
+Similarly, a good physical map will share the same area or have slightly more
+    area.             
+
+\begin{table}[!b]
+	\color{blue}
+	\caption{
+		Classification results for selecting physical maps for forecasting.
+		We classify a physical map as \textit{good} if it should be used for forecasting.
+		On the other hand, a \textit{bad} physical map is not appropriate for forecasting.
+		Overall classification accuracy is {\color{blue} $95.5\%$}.
+	}
+	\label{tab:ch5classificaiton_results_auto}
+	\centering
+	\begin{tabular}{l  p{1cm} p{0.5cm} l}
+		\toprule
+		\textbf{Manual}	
+		&\multicolumn{2}{c}{\textbf{Proposed Method}}
+		& \\
+		\cmidrule{2-3}	
+		& Bad & Good & Total \\
+		\midrule         
+		Bad      & \textbf{76}  & 3           & 79  \\
+		Good     & 5            & \textbf{97} & 102 \\
+		\midrule
+		Total    & 81  & 100 & 181\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\input{plots/classification_feature_importance/feature_importance.tex}
+
+% \begin{figure}[!t]
+%        \includegraphics[width=1\linewidth]{pictures/thesis/new_chapter5/classification/classificationFeatures.png}
+%        \caption{Relative importance of features from random forest. The features from left to right are 
+ %       	\texttt{newN}=number of new coronal holes, 
+ %       	\texttt{newA}=image area of new coronal holes,
+ %       	\texttt{missN}=number of missing coronal holes,
+ %       	\texttt{missA}=image area of missing coronal holes,
+ %       	\texttt{overA}=spherical area overestimated by model,
+ %       	\texttt{sameA}=spherical area overlap.}
+ %       \label{fig:randomForest_features}
+%\end{figure}
+
+
+\begin{comment}
+\begin{table}[!b]
+  \caption{
+     Classification results using expert segmentations.
+     The results are based on manual segmentations provided
+       by the individual experts
+       \textbf{R1} and \textbf{R2}, feature extraction,
+       and final classification using a Random Forest classifier.       
+     The manual classification is based on the use of the consensus map.   
+  }
+  \label{tab:ch5classificaiton_results_eachExpert}
+  \centering
+  \begin{tabular}{l l l   l   l l }
+    \toprule
+    \textbf{Manual}
+    &\multicolumn{2}{c}{\textbf{R1}}& 
+    &\multicolumn{2}{c}{\textbf{R2}}\\
+    \cmidrule{2-3} \cmidrule{5-6}
+    & Bad & Good & 
+    & Bad &  Good \\
+    \midrule    
+    Bad   & 71  & 8  &  & 71 & 5 \\
+    Good  & 7   & 95 &  & 6 & 96 \\
+    \midrule
+     Accuracy & \multicolumn{2}{c}{$91.7\%$} & 
+    &\multicolumn{2}{c}{$93.82\%$} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{comment}
+
+%--------------------------------------------------------------
+%------------------------Conclusion
+%--------------------------------------------------------------
+\section{Conclusion}\label{sec:conclusion}
+The manuscript summarizes the development of several new solar image analysis methods:
+  (i)   Coronal hole detection method,
+  (ii)  new segmentation method to detect coronal holes, 
+  (iii) manual protocol to support reproducible classification of physical models, 
+  (iv)  coronal hole clustering and matching system using, and
+  (v) a fully automated method for physical model classification. 
+The performance of each method is validated against human experts. 
+\color{blue}
+The proposed segmentation method significantly outperformed several other segmentation methods.
+The code and datasets are available at \url{https://github.com/venkatesh369/HeliosTransactions}.
+\color{black}
+
+The significance of the proposed method is that it can support 
+    forecasting based on space weather models.
+Nevertheless, prior to deployment, we will need to perform
+    large-scale studies.
+    
+\section* {Acknowledgments}
+The authors would like to acknowledge Dr. R. Hock and Callie Darsey
+for contributing to the manual protocols and helping with the manual segmentation.
+
+%\bibliographystyle{IEEEtran}
+%\bibliography{bibs_new,cnn}
+\input{new_refs.tex}
+
+\begin{comment}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{pictures/biography/vj.jpg}}]{Venkatesh Jatla}
+        Venkatesh Jatla received his B.Tech. degree in electrical and communications engineering (ECE) in 2011 from
+        VIT, Tamilnadu, India and the M.S. degree in computer engineering in 2016 from University of New Mexico, Albuquerque, USA. He is currently working on his Ph.D. in computer engineering with Dr. Marios Pattichis. His current research
+        interests include video analysis, video compression, image processing and machine learning. He is also interested
+        in real time video delivery over http and webRTC.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{pictures/biography/Pattichis.jpg}}]{Marios Pattichis}
+Marios  Pattichis  (M’99,  SM’06)
+received  the  B.Sc.(High  Hons.  and  Special  Hons.)
+degree  in  computer  sciences  and  the  B.A.  (High
+Hons.)  degree  in  mathematics,  both  in  1991,  the
+M.S.  degree  in  electrical  engineering  in  1993,  and
+the  Ph.D.  degree  in  computer  engineering  in  1998,
+all  from  the  University  of  Texas,  Austin.  He  is
+currently  a  Professor  with  the  Department  of  Elec-
+trical and Computer Engineering, University of New
+Mexico  (UNM),  Albuquerque.  His  current  research
+interests  include  digital  image,  video  processing,
+communications,   dynamically   reconfigurable   computer   architectures,   and
+biomedical and space image-processing applications.
+Dr.  Pattichis  is  currently  a  senior  associate  editor  of  the
+IEEE Signal Processing Letters. He has served as an associate editor for the
+IEEE Trans-actions on Image Processing, IEEE Transactions on Industrial Informatics,
+and has also served as a guest associate editor for the IEEE Transactions on
+Information Technology in Biomedicine. He was the general chair of the
+2008 IEEE Southwest Symposium on Image Analysis and Interpretation
+.  He  was a  recipient  of  the  2004  Electrical  and  Computer  Engineering  Distinguished
+Teaching Award at UNM. For his development of the digital logic design labs
+at  UNM  he  was  recognized  by  the  Xilinx  Corporation  in  2003  and  by  the
+UNM School of Engineering’s Harrison faculty excellent award in 2006. He
+was a founding Co-PI of COSMIAC at UNM. At UNM, he is currently the
+director of the image and video Processing and Communications Lab (ivPCL)
+\end{IEEEbiography}
+\end{comment}
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

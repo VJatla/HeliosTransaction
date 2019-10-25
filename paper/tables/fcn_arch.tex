@@ -1,0 +1,35 @@
+\color{blue}
+\begin{table}[t!]
+	\centering	
+	\caption{\color{blue}
+		FCN architecture.
+		The total number of parameters to be learned is 134.2M.
+		The input is the EUV image and the output is the segmented image.
+	}
+	\label{tab:fcn_arch}
+	\color{blue}
+	\begin{tabular}{p{1cm} p{7cm}}
+		\toprule
+		\textbf{Layer(s)} & \textbf{Description}\\
+		\midrule
+		Conv1	& 64 feature maps with two 3x3 conv-ReLU \\
+		Pool1	& 2x2 Max pooling with stride of [2, 2] (2$\times$ downs.) \\
+		Conv2	& 128 feature maps with two 3x3 conv-ReLU\\
+		Pool2	& Same as Pool1 (4$\times$ downs. of original)\\
+		Conv3	& 256 feature maps with three 3x3 conv-ReLU\\
+		Pool3	& Same as Pool1 (8$\times$ downs. of original) \\
+		Conv4	& 512 feature maps with three 3x3 conv-ReLU\\
+		Pool4	& Same as Pool1 (16$\times$ downs. of original)\\
+		Conv5	& Same as Conv4\\
+		Pool5	& Same as Pool1 (32$\times$ downs. of original)\\
+		FC6	    & 4096 7x7 convs for 512 features\\
+		D6   	& 50\% dropout\\						
+		FC7	    & 4096 fully-connected layer \\
+		D7	    & Same as D6\\
+		Fuse1	& Combine 16$\times$ and 32$\times$ downsampled outputs \\
+		Fuse2	& Combine 8$\times$, 16$\times$, 32$\times$  downsampled outputs \\
+		SoftMax	& Pixel-level classification\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\color{black}

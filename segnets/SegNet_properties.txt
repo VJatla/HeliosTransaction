@@ -1,0 +1,298 @@
+----> Note Here I did not print Batch Normalization
+      Trainable prameters.
+      Hence number of learnables are more than what
+      we have in this property table.
+====================================
+Layer 1
+	 Name =	inputImage
+	 Type =	ImageInputLayer
+ ====================================
+Layer 2
+	 Name =	encoder1_conv1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	576
+	 Number of weights changed = 	576
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 3
+	 Name =	encoder1_bn_1
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 4
+	 Name =	encoder1_relu_1
+	 Type =	ReLULayer
+ ====================================
+Layer 5
+	 Name =	encoder1_conv2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 6
+	 Name =	encoder1_bn_2
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 7
+	 Name =	encoder1_relu_2
+	 Type =	ReLULayer
+ ====================================
+Layer 8
+	 Name =	encoder1_conv3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 9
+	 Name =	encoder1_bn_3
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 10
+	 Name =	encoder1_relu_3
+	 Type =	ReLULayer
+ ====================================
+Layer 11
+	 Name =	encoder1_conv4
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 12
+	 Name =	encoder1_bn_4
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 13
+	 Name =	encoder1_relu_4
+	 Type =	ReLULayer
+ ====================================
+Layer 14
+	 Name =	encoder1_maxpool
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 15
+	 Name =	encoder2_conv1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 16
+	 Name =	encoder2_bn_1
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 17
+	 Name =	encoder2_relu_1
+	 Type =	ReLULayer
+ ====================================
+Layer 18
+	 Name =	encoder2_conv2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 19
+	 Name =	encoder2_bn_2
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 20
+	 Name =	encoder2_relu_2
+	 Type =	ReLULayer
+ ====================================
+Layer 21
+	 Name =	encoder2_conv3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 22
+	 Name =	encoder2_bn_3
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 23
+	 Name =	encoder2_relu_3
+	 Type =	ReLULayer
+ ====================================
+Layer 24
+	 Name =	encoder2_conv4
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 25
+	 Name =	encoder2_bn_4
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 26
+	 Name =	encoder2_relu_4
+	 Type =	ReLULayer
+ ====================================
+Layer 27
+	 Name =	encoder2_maxpool
+	 Type =	MaxPooling2DLayer
+ ====================================
+Layer 28
+	 Name =	decoder2_unpool
+	 Type =	MaxUnpooling2DLayer
+ ====================================
+Layer 29
+	 Name =	decoder2_conv4
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 30
+	 Name =	decoder2_bn_4
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 31
+	 Name =	decoder2_relu_4
+	 Type =	ReLULayer
+ ====================================
+Layer 32
+	 Name =	decoder2_conv3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 33
+	 Name =	decoder2_bn_3
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 34
+	 Name =	decoder2_relu_3
+	 Type =	ReLULayer
+ ====================================
+Layer 35
+	 Name =	decoder2_conv2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 36
+	 Name =	decoder2_bn_2
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 37
+	 Name =	decoder2_relu_2
+	 Type =	ReLULayer
+ ====================================
+Layer 38
+	 Name =	decoder2_conv1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 39
+	 Name =	decoder2_bn_1
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 40
+	 Name =	decoder2_relu_1
+	 Type =	ReLULayer
+ ====================================
+Layer 41
+	 Name =	decoder1_unpool
+	 Type =	MaxUnpooling2DLayer
+ ====================================
+Layer 42
+	 Name =	decoder1_conv4
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 43
+	 Name =	decoder1_bn_4
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 44
+	 Name =	decoder1_relu_4
+	 Type =	ReLULayer
+ ====================================
+Layer 45
+	 Name =	decoder1_conv3
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 46
+	 Name =	decoder1_bn_3
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 47
+	 Name =	decoder1_relu_3
+	 Type =	ReLULayer
+ ====================================
+Layer 48
+	 Name =	decoder1_conv2
+	 Type =	Convolution2DLayer
+	 Number of weights = 	36864
+	 Number of weights changed = 	36864
+	 Number of Bias = 	64
+	 Number of Bias changed = 	64
+ ====================================
+Layer 49
+	 Name =	decoder1_bn_2
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 50
+	 Name =	decoder1_relu_2
+	 Type =	ReLULayer
+ ====================================
+Layer 51
+	 Name =	decoder1_conv1
+	 Type =	Convolution2DLayer
+	 Number of weights = 	1728
+	 Number of weights changed = 	1728
+	 Number of Bias = 	3
+	 Number of Bias changed = 	3
+ ====================================
+Layer 52
+	 Name =	decoder1_bn_1
+	 Type =	BatchNormalizationLayer
+ ====================================
+Layer 53
+	 Name =	decoder1_relu_1
+	 Type =	ReLULayer
+ ====================================
+Layer 54
+	 Name =	softmax
+	 Type =	SoftmaxLayer
+ ====================================
+Layer 55
+	 Name =	pixelLabels
+	 Type =	PixelClassificationLayer
+===========================================================
+===========================================================
+Number of layers = 55
+Total number of Weights = 		518400
+Total number of Weights trained = 		518400
+Total number of Bias = 		963
+Total number of Bias trained = 		963
+Total number of Learnables= 		519363
+===========================================================
+===========================================================
